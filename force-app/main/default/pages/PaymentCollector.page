@@ -1,0 +1,207 @@
+<apex:page docType="html-5.0" standardController="Orl_invoice__c" extensions="PaymentCollectorController">
+    <apex:form >
+        <html>
+            <head>
+                <style>
+                    .center {
+                    text-align: center;
+                    }
+                    
+                </style>
+                
+            </head>
+             <apex:pageBlock title="Payment Information"  id="paymentInfoBlock" >
+              
+             
+                <apex:pageBlockSection >
+                    
+                    <apex:outputText value="{!Invoice.Advanced_Order__r.cgcloud__Order_Account__r.Name}" />
+                    <apex:outputText value="{!Invoice.Name}"/>
+                    <apex:outputText value="{!Invoice.Advanced_Order__r.cgcloud__Gross_Total_Value__c}"/>
+                    
+                    <apex:inputText value="{!collectorID}" label="Collector ID"/>
+                      
+                    <apex:outputText value="{!Invoice.Total_Amount_Paid__c}" label="Amount Paid" id="amountPaid"/>
+                    
+                    <apex:selectList label="Payment Type" value="{!PaymentType}" multiselect="false" size="1" id="pttype">
+                        <apex:selectOption itemValue="Full Payment" itemLabel="Full Payment"/>
+                        <apex:selectOption itemValue="Partial Payment" itemLabel="Partial Payment"/>
+                        <apex:actionSupport event="onchange" action="{!paymentTypeHandler}" reRender="balance1"/>
+                       <!--  <apex:actionSupport event="onchange" action="{!paymentTypeHandler}" reRender="balance1"/> -->
+                    </apex:selectList>
+                    
+                 
+                    
+                 <apex:outputPanel id="balance1" >
+                        <div style="padding-left:160px">
+                            <apex:outputLabel value="Amount To be Paid: " style="font-weight:700" for="partial" /> 
+                           
+                            <apex:inputText rendered="{!showPartial}" value="{!Amount}" label="Balance Amount" id="partial"/>
+                             
+                          <apex:outputText rendered="{!showFull}" value="{!Invoice.Due_Amount__c}"  />
+                                     
+                        </div>
+                            
+                    </apex:outputPanel> 
+                    
+                    
+                    
+                    
+                   
+                                              
+                </apex:pageBlockSection>
+                 
+
+                 
+                 
+                 
+                
+                 `<!--old-->
+                 <apex:pageBlockSection >
+                   
+                 
+                    <div class="center" >
+                        <apex:commandButton style="position: relative; right:11% ;" value="Save" action="{!createPayment}" reRender="errmsg ,panelToUpdate,balance1,pttype"   oncomplete="handleSaveComplete();"/>
+                            <apex:actionFunction name="refreshDetailsFunction" action="{!togglePaymentDetails}" rerender="panelToUpdate,balance1" />
+                        
+                        <apex:actionFunction name="refreshPaymentSection" reRender="paymentInfoBlock,balance1" />
+                       
+                          <!--  rerender="paymentInfoBlock,  errmsg, panelToUpdate"    -->                    
+                        <script>
+                        function handleSaveComplete() {
+                            refreshPaymentSection();
+                        }
+                        </script>
+                        
+                            <!-- paymentDetailsSection , --> 
+                          <!--oncomplete="location.reload();"-->
+                       <!--  rerender="panelToUpdate , errmsg" -->
+                     <!-- disabled="{!disableSaveButton}" -->                        
+                    </div>       
+                 <apex:commandButton style="position: relative; right:14% ;" value="View Payments" action="{!togglePaymentDetails}"  rerender=" panelToUpdate ,errmsg"  >
+                          <!--rerender="panelToUpdate , errmsg" -->
+                    </apex:commandButton>                  
+                    
+                    <!-- this block for err msg-->
+               </apex:pageBlockSection>
+                <apex:outputPanel id="errmsg">
+                    <apex:pagemessages rendered="true"/> 
+                </apex:outputPanel>
+                 <!--old-->
+                
+              
+                    
+            </apex:pageBlock>  
+            
+                       
+                 
+            <br/>
+        </html> 
+        <script>
+        </script>
+        <br/>
+        <br/>
+        <br/>
+        
+        
+        <!---sahil-->
+        <apex:outputPanel id="panelToUpdate">  
+        <apex:pageBlock title="PAYMENT DETAILS" rendered="{!showPaymentDetails}" >
+            <!--  id="paymentDetailsSection"  rendered="{!showPaymentDetails}" -->
+        <!--     <apex:actionFunction name="refreshPaymentDetails" action="{!togglePaymentDetails}" rerender="paymentDetailsSection"/> -->
+            
+            <table style="border-collapse: collapse; width: 100%;">
+                <tr>
+                    <th style="border: 1px solid black;"><b>Payment Name</b></th>
+                    <th style="border: 1px solid black;"><b>Type of payment</b></th>
+                    <th style="border: 1px solid black;"><b>Invoice</b></th>
+                    <th style="border: 1px solid black;"><b>Amount Paid</b></th>
+                    <th style="border: 1px solid black;"><b>Advanced Order</b></th>
+                    <th style="border: 1px solid black;"><b>Collector ID</b></th>
+                    <th style="border: 1px solid black;"><b>Mode of Payment</b></th>
+                    <th style="border: 1px solid black;"><b>Recipt</b></th>
+
+                </tr>
+                
+                <!-- Render order row -->
+                
+                <!-- Iterate through related order items -->
+                
+                 <apex:repeat value="{!paymentData}" var="invPayment">
+                    <!-- <h2>
+                        {!invPayment.id}
+                    </h2> -->
+                    <tr >
+                        <td style="border: 1px solid black;"> {!invPayment.Name} </td>
+                        <td style="border: 1px solid black;">{!invPayment.Type_of_payment__c}</td>
+                        <td style="border: 1px solid black;">{!invPayment.Invoice__r.Name}</td>
+                        <td style="border: 1px solid black;">{!invPayment.Amount_Paid__c}</td>
+                        <td style="border: 1px solid black;">{!invPayment.Advanced_Order__r.Name}</td>
+                        <td style="border: 1px solid black;">{!invPayment.Collector_ID__c}</td>
+                        <td style="border: 1px solid black;">{!invPayment.Mode_of_Payment__c}</td>
+                        
+                        <td style="border: 1px solid black;">
+                            <apex:commandButton value="Create Receipt" action="{!navigateToAnotherPage}" rerender="myForm">
+                                <!-- You can pass parameters or use {!invPayment.Id} to include specific payment data in the action method rerender="myForm"-->
+                                <apex:param name="selectedPayment" value="{!invPayment.Id}" assignTo="{!selectedPaymentId}" />
+                            </apex:commandButton>
+                        </td>
+                        
+                        
+                    </tr>
+                    
+                </apex:repeat>
+                
+            </table>
+             
+            
+        </apex:pageBlock> 
+             
+            <!-- <apex:actionFunction name="togglePaymentDetails" action="{!togglePaymentDetails}" rerender="paymentDetailsSection">
+            <apex:param name="param1" assignTo="{!collectorID}" value="{!collectorID}" />
+        </apex:actionFunction>  --> 
+            
+           
+
+
+     </apex:outputPanel>      
+    <!--  <apex:commandButton value = "Update Second Section" action ="{!updateSecondSection}" rerender = "secondSection" oncomplete ="refreshFirstSection();"/> -->
+    </apex:form>
+  
+     </apex:page>
+   
+    <!--Sudarshan N B>
+    <apex:form>
+        <apex:pageBlock>
+            <apex:pageBlockTable value="{!paymentData}" var="invPayment">
+                
+                <apex:column headerValue="Name" style="border: 1px solid black;">
+                    {!invPayment.Name}
+                </apex:column>
+                <apex:column headerValue="Type of Payment" style="border: 1px solid black;">
+                    {!invPayment.Type_of_payment__c}
+                </apex:column>
+                <apex:column headerValue="Invoice Name" style="border: 1px solid black;">
+                    {!invPayment.Invoice__r.Name}
+                </apex:column>
+                <apex:column headerValue="Amount Paid" style="border: 1px solid black;">
+                    {!invPayment.Amount_Paid__c}
+                </apex:column>
+                <apex:column headerValue="Advanced Order Name" style="border: 1px solid black;">
+                    {!invPayment.Advanced_Order__r.Name}
+                </apex:column>
+                <apex:column headerValue="Collector ID" style="border: 1px solid black;">
+                    {!invPayment.Collector_ID__c}
+                </apex:column>
+                <apex:column headerValue="Mode of Payment" style="border: 1px solid black;">
+                    {!invPayment.Mode_of_Payment__c}
+                </apex:column>
+                <apex:column headerValue="Action" style="border: 1px solid black;">
+                    <apex:commandButton value="Create Receipt" action="{!navigateToAnotherPage}" rerender="myForm">
+                        <!-- You can pass parameters or use {!invPayment.Id} to include specific payment data in the action method rerender="myForm"-->
+                        <!--apex:param name="selectedPayment" value="{!invPayment.Id}" assignTo="{!selectedPaymentId}" />
+                    </apex:commandButton> 
+                </apex:column>
+            </apex:pageBlockTable>
+        </apex:pageBlock>
+    </apex:form-->

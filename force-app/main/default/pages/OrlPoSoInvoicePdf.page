@@ -1,0 +1,196 @@
+<apex:page standardController="Orl_invoice__c" extensions="InvoicePdfGeneratorHandler" renderAs="pdf" applyBodyTag="false" >
+    <div style="font-family:sans-serif; font-size: 13px;">       
+        <div class="row" align="right">
+                      
+           <tr><td width="800px"><apex:outputLabel value="{!DAY(TODAY())}-{!MONTH(TODAY())}-{!YEAR(TODAY())}"/> </td></tr>
+            <tr><td width="800px"><apex:outputLabel value="Copy"/></td></tr>
+        </div> 
+        <br/>
+        
+        <div class="column" align="left" width="500px">
+                          
+           
+           <tr><td width="500px"><apex:outputField value="{!Orl_invoice__c.Orl_Distributor__c}"/></td></tr>    
+            <tr><td width="500px"><apex:outputField value="{!Orl_invoice__c.Orl_Distributor__r.BillingStreet}"/> , &nbsp;<apex:outputField value="{!Orl_invoice__c.Orl_Distributor__r.BillingCity}"/></td></tr> 
+            <tr><td width="500px"><apex:outputField value="{!Orl_invoice__c.Orl_Distributor__r.BillingCountry}"/>, &nbsp;<apex:outputField value="{!Orl_invoice__c.Orl_Distributor__r.BillingPostalCode}"/></td></tr> 
+        </div> <br/> <br/>
+        
+    <div class="row">       
+                <tr><td width="650px" ><h2 style= "text-align: center"><strong><apex:outputText value="Order Invoice"/></strong></h2></td> </tr>                                     
+        <div> <br/>
+            <div class="column" align="left" width="500px">
+                
+           
+                <tr><td width="500px"><apex:outputLabel value="Invoiced To : "/></td>                   <td width="300px"><apex:outputLabel value="TAX Invoice No : "/> <apex:outputText value="{!Orl_invoice__c.Orl_Invoice_No__c} "/></td> </tr>
+                <tr><td width="500px"><apex:outputField value="{!Orl_invoice__c.Orl_Invoice_Bill_To__Street__s}"/> <apex:outputField value="{!Orl_invoice__c.Orl_Invoice_Bill_To__City__s}"/></td>                                 <td width="300px"><apex:outputLabel value="Invoiced Date : "/> <apex:outputText value="{!Orl_invoice__c.Orl_Invoiced_Date__c} "/></td></tr>
+                <tr><td width="500px"><apex:outputField value="{!Orl_invoice__c.Orl_Invoice_Bill_To__PostalCode__s}"/>  <apex:outputField value="{!Orl_invoice__c.Orl_Invoice_Bill_To__CountryCode__s}"/>                                     </td><td width="300px"><apex:outputLabel value="Sales Person : "/> <apex:outputText value="{!Orl_invoice__c.Orl_Sales_Person__c} "/></td></tr>
+                <tr><td width="500px"><apex:outputLabel value=""/></td>                                 <td width="300px"><apex:outputLabel value="Tel : "/> <apex:outputText value="{!Orl_invoice__c.Orl_Tel__c} "/></td></tr>   
+                
+                <tr><td width="500px"><apex:outputLabel value="Credit Period : "/><apex:outputText value="{!Orl_invoice__c.Orl_Credit_Period__c} "/></td></tr>
+                        
+            </div>
+        </div> <br/><br/>
+        <div class="column" align="left" width="500px">
+                          
+            <tr><td width="500px"><strong><apex:outputLabel value="Orderd Products"/></strong></td></tr>
+            
+        </div> 
+   <apex:pageBlock >
+    <apex:pageBlockTable value="{!OrderlineItems}" var="OrderItem" border="1.5" align="center" cellpadding="1" cellspacing="0.5" columns="8" style="width:100%; border-collapse:collapse;">
+        <apex:column headerValue="Item code" style="text-align:left;">
+            <apex:outputText value="{!OrderItem.cgcloud__Product__r.cgcloud__Product_Short_Code__c}" />
+        </apex:column>
+        <apex:column headervalue="Item Type" style="text-align:left;">
+            <apex:outputText value="{!OrderItem.cgcloud__Order_Item_Template__r.Name}" />
+        </apex:column>
+        <apex:column headervalue="Description" style="text-align:left;">
+            <apex:outputText value="{!OrderItem.cgcloud__Product__r.Name}" />
+        </apex:column>
+        <apex:column headerValue="Units Qty" style="text-align:left;">
+            <apex:outputText value="{!OrderItem.cgcloud__Quantity__c}" rendered="{!OrderItem.cgcloud__Order_Item_Template__r.Name != 'Free Item'}"/>
+        </apex:column>
+        <apex:column headerValue="Free Qty" style="text-align:left;">
+            <apex:outputText value="{!OrderItem.cgcloud__Quantity__c}" rendered="{!OrderItem.cgcloud__Order_Item_Template__r.Name == 'Free Item'}"/>
+        </apex:column>
+        <apex:column headerValue="Price" style="text-align:left;">
+            <apex:outputText value="{!OrderItem.cgcloud__Price__c}"/>
+        </apex:column>
+        <apex:column headerValue="Dis%" style="text-align:left;">
+            <apex:outputText value="{!OrderItem.cgcloud__Discount__c}"/>
+        </apex:column>
+        <apex:column headerValue="Value" style="text-align:left;">
+            <apex:outputText value="{!OrderItem.cgcloud__Value__c}"/>
+        </apex:column>
+    </apex:pageBlockTable>
+</apex:pageBlock>
+
+        <br/>&nbsp;
+        
+     <thead align="right">
+    <tr>
+        <th width="350px" style="padding-left:250px; text-align:right; font-size:12px; white-space: nowrap;">
+            <apex:outputLabel value="Gross Value Total:" style="margin-right: 80px;"/>
+        </th>
+        <td style="text-align:center; white-space: nowrap;">
+            <apex:outputField value="{!Orl_invoice__c.Gross_Total_Value__c}" style="margin-left: 10px;"/>
+        </td>
+    </tr>
+</thead>&nbsp;&nbsp;
+
+
+        
+        <!-- <thead align="right">
+             <tr>
+                 <th width= "350px" style="padding-left:250px;text-align:right; font-size:12px;"><apex:outputLabel value="Gross Value Total:"/></th>
+                <td style="text-align:center;"><apex:outputField value="{!Orl_invoice__c.Orl_Gross_Value_Total__c}"/></td>
+            </tr>
+            </thead>&nbsp; -->
+       <thead align="right">
+    <tr>
+        <th width="350px" style="padding-left:250px; text-align:right; font-size:12px;">
+            <apex:outputLabel value="Overall Discount (0.00%):" style="margin-right: 80px;"/>
+        </th>
+        <td style="text-align:center; white-space: nowrap;">
+            <apex:outputText value="" style="margin-left: 10px;"/>
+        </td>
+    </tr>
+</thead>&nbsp;
+
+<thead align="right">
+    <tr>
+        <th width="350px" style="padding-left:250px; text-align:right; font-size:12px;">
+            <apex:outputLabel value="Net aft Discounts:" style="margin-right: 80px;"/>
+        </th>
+        <td style="text-align:center; white-space: nowrap;">
+            <apex:outputText value="" style="margin-left: 10px;"/>
+        </td>
+    </tr>
+</thead>&nbsp;
+
+<thead align="right">
+    <tr>
+        <th width="350px" style="padding-left:250px; text-align:right; font-size:12px;">
+            <apex:outputLabel value="Dis2 (0.00%):" style="margin-right: 80px;"/>
+        </th>
+        <td style="text-align:center; white-space: nowrap;">
+            <apex:outputText value="" style="margin-left: 10px;"/>
+        </td>
+    </tr>
+</thead>&nbsp;
+
+<thead align="right">
+    <tr>
+        <th width="350px" style="padding-left:250px; text-align:right; font-size:12px;">
+            <apex:outputLabel value="Net of Dis2 Total:" style="margin-right: 80px;"/>
+        </th>
+        <td style="text-align:center; white-space: nowrap;">
+            <apex:outputText value="" style="margin-left: 10px;"/>
+        </td>
+    </tr>
+</thead>&nbsp;
+
+<thead align="right">
+    <tr>
+        <th width="350px" style="padding-left:250px; text-align:right; font-size:12px;">
+            <apex:outputLabel value="Dis3 (0.00%):" style="margin-right: 80px;"/>
+        </th>
+        <td style="text-align:center; white-space: nowrap;">
+            <apex:outputText value="" style="margin-left: 10px;"/>
+        </td>
+    </tr>
+</thead>&nbsp;
+
+<thead align="right">
+    <tr>
+        <th width="350px" style="padding-left:250px; text-align:right; font-size:12px;">
+            <apex:outputLabel value="Net of Dis3 Total:" style="margin-right: 80px;"/>
+        </th>
+        <td style="text-align:center; white-space: nowrap;">
+            <apex:outputText value="" style="margin-left: 10px;"/>
+        </td>
+    </tr>
+</thead>&nbsp;
+
+<thead align="right">
+    <tr>
+        <th width="350px" style="padding-left:250px; text-align:right; font-size:12px;">
+            <apex:outputLabel value="Invoice Value:" style="margin-right: 80px;"/>
+        </th>
+        <td style="text-align:center; white-space: nowrap;">
+            <apex:outputText value="" style="margin-left: 10px;"/>
+        </td>
+    </tr>
+</thead>&nbsp;
+
+        
+        <br/><br/> <br/><br/>
+        
+        
+        <div class="column" align="left" width="500px">
+                          
+           <!-- <tr><td width="500px"><strong><apex:outputLabel value="VAT charged Items is marked with * "/></strong></td></tr> -->
+            
+        </div> <br/><br/><br/>
+        <div class="column" align="left" width="500px">
+                          
+            <tr><td width="500px"><apex:outputLabel value="Accepted above items in order"/></td></tr>&nbsp;
+            
+        </div><br/>
+        <div class="column" align="left" width="500px">
+                          
+<tr>
+    <td width="500px">
+        <apex:outputLabel value="Customer Signature .............."/>
+        <span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span> <!-- Add a space -->
+        <apex:outputText value="Invoiced by ..............."/>
+        <span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span> <!-- Add a space -->
+        <apex:outputLabel value="Authorized by ..............."/>
+    </td>
+</tr>
+            
+        </div>
+        
+        
+    </div>
+    </div>
+</apex:page>

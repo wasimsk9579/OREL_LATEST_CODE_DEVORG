@@ -1,0 +1,32 @@
+<template>
+    <lightning-card title="Quote Information" icon-name="standard:opportunity">
+        <template if:true={showDetails}>
+            <div class="slds-p-around_medium">
+
+                <template for:each={quoteDetails} for:item="quote">
+                    <div key={quote.id}>
+                        <p class="label"><strong>Quote Name:</strong> {quote.quoteName}</p>
+                        <p class="label"><strong>Quote Number:</strong> {quote.QuoteNumber}</p>
+                        <p class="label"><strong>Grand Total:</strong> {quote.Grand_Total_price__c}</p>
+                        <div style="font-weight: bold; font-size: 15px;">
+                            <lightning-input label="Reason" value={customerResponse} onchange={handleResponse}></lightning-input>
+                            
+                        </div> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                    </div>
+                </template>
+
+                <div>
+                    <lightning-button-group>
+                        <lightning-button label="Approve" onclick={handleApprove} disabled={isDisabled}  variant="brand"></lightning-button> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                        <lightning-button label="Reject" onclick={handleReject} disabled={isDisabled} variant="destructive"></lightning-button>
+                    </lightning-button-group> &nbsp;&nbsp;&nbsp;&nbsp;
+                </div>
+            </div>
+        </template>
+        <template if:false={showDetails}>
+            <div class="slds-p-around_medium">
+                <p>Thank you for your response!</p>
+            </div>
+        </template>
+    </lightning-card>
+</template>

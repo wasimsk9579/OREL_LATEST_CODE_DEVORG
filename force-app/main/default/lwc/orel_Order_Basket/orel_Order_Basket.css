@@ -1,0 +1,14 @@
+.pagination{
+	float: left;
+    padding-left: 50px
+}
+
+.add_cancel{
+	float : right;
+}
+
+.instruction{
+	text-align: center;
+    font-weight: 700;
+    font-size: medium
+}

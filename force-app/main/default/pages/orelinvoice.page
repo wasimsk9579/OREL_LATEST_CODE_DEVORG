@@ -1,0 +1,121 @@
+<apex:page renderAs="pdf" standardController="Orl_invoice__c" extensions="InvoicePdfGeneratorHandler">
+    <!-- Include qrcode.js library -->
+
+  <apex:form >
+    <html>
+        <head>
+            <style>
+                body {
+                    font-family: Arial, sans-serif;
+                }
+                .container {
+                    width: 100%;
+                    max-width: 800px;
+                    margin: 0 auto;
+                }
+                .column {
+                    width: 50%;
+                    text-align: center;
+                }
+                h2 {
+                    text-align: center;
+                }
+                .center-align {
+                    display: flex;
+                    justify-content: center;
+                    align-items: center;
+                }
+                .styled-table {
+                    border-collapse: collapse;
+                    margin: 25px 0;
+                    font-size: 0.9em;
+                    font-family: sans-serif;
+                    min-width: 400px;
+                    box-shadow: 0 0 20px rgba(0, 0, 0, 0.15);
+}
+            </style>
+        </head>
+        <body>
+            <div class="container">
+                <div class="column">
+                        
+        <div class="row">       
+                <tr><td width="650px" ><h2 style= "text-align: center"><strong><apex:outputText value="Tax Invoice"/></strong></h2></td> </tr>                                   
+        <div> <br/>
+        <div class="column" align="left" width="500px">
+
+    <tr><td width="500px"><apex:outputLabel value="Invoice Name : "/><apex:outputText value="{!Invoice.Name}"></apex:outputText></td>                   <td width="300px"><apex:outputLabel value="Invoiced To : "/> <apex:outputText value="{!Invoice.Orl_Invoice_No__c} "/></td> </tr>
+    <tr><td width="500px"><apex:outputLabel value="Units Qty : "/><apex:outputText value="{!Invoice.Orl_Units_Qty__c}"></apex:outputText></td>                   <td width="300px"><apex:outputLabel value="Distributor : "/> <apex:outputText value="{!Invoice.Orl_Distributor__r.Name} "/></td> </tr>
+    <tr><td width="500px"><apex:outputLabel value="Invoiced Date : "/><apex:outputText value="{!Invoice.Orl_Invoiced_Date__c}"></apex:outputText></td>                   <td width="300px"><apex:outputLabel value="Currency : "/> <apex:outputText value="{!Invoice.CurrencyIsoCode} "/></td> </tr>
+    <tr><td width="500px"><apex:outputLabel value="Order No : "/><apex:outputText value="{!Order.Name}"></apex:outputText></td>              <td width="300px"><apex:outputLabel value="Sales Person : "/> <apex:outputText value="{!Order.cgcloud__Responsible__r.Name} "/></td></tr>
+    <tr><td width="500px"><apex:outputLabel value="Distributor VAT No : "/><apex:outputText value="{!VATNO}"></apex:outputText></td>                        <td width="300px"><apex:outputLabel value="Tax Type : "/> <apex:outputText value="{!TaxType} "/></td></tr>
+    <tr><td width="500px"><apex:outputLabel value="Gross Total Value : "/><apex:outputText value="{!Order.cgcloud__Gross_Total_Value__c}"></apex:outputText></td> <td width="300px"><apex:outputLabel value="VAT : " rendered="{!Order.cgcloud__Order_Account__r.Orl_Tax_Type__c != 'Non-Tax Registered'}"/> <apex:outputText value="{!Order.VAT__c} %" rendered="{!Order.cgcloud__Order_Account__r.Orl_Tax_Type__c != 'Non-Tax Registered'}"/></td></tr>
+    <tr><td width="500px"><apex:outputLabel value="Total (After Tax) : " rendered="{!Order.cgcloud__Order_Account__r.Orl_Tax_Type__c != 'Non-Tax Registered'}"/><apex:outputText value="{!Order.Gross_Value_After_Tax__c}" rendered="{!Order.cgcloud__Order_Account__r.Orl_Tax_Type__c != 'Non-Tax Registered'}"></apex:outputText></td></tr>                   
+
+    <br/><br/><br/>
+    <table border="1" border-collapse="collapse" cellpadding="6" width="100%" margin="25px">
+        <tr>
+            <th>Item Code</th>
+            <th>Item Type</th>
+            <th>Quantity</th>
+            <th>Free Qty</th>
+            <th>Price</th>
+            <th>Discount</th>
+            <th>Value</th>
+
+        </tr>
+        
+        <apex:repeat value="{!OrderlineItems}" var="OrderItem"> 
+            <tr>
+                <td><apex:outputText value="{!OrderItem.cgcloud__Product__r.cgcloud__Product_Short_Code__c}"/></td>
+                <td><apex:outputText value="{!OrderItem.cgcloud__Order_Item_Template__r.Name}"/></td>
+                <td><apex:outputText value="{!OrderItem.cgcloud__Quantity__c}" rendered="{!OrderItem.cgcloud__Order_Item_Template__r.Name != 'Free Item'}"/></td>
+                <td><apex:outputText value="{!OrderItem.cgcloud__Quantity__c}" rendered="{!OrderItem.cgcloud__Order_Item_Template__r.Name == 'Free Item'}"/></td>
+                <td><apex:outputText value="{!OrderItem.cgcloud__Price__c}"/></td>
+                <td><apex:outputText value="{!OrderItem.cgcloud__Discount__c}"/></td>
+                <td><apex:outputText value="{!OrderItem.cgcloud__Value__c}"/></td>
+            </tr>
+            </apex:repeat>
+    </table>  
+    <br/>
+
+     <!--   <div align="right">
+            <tr><td  width="620px"><apex:outputLabel value="Gross Total Value : "/><apex:outputText value="{!Order.cgcloud__Gross_Total_Value__c}"></apex:outputText></td></tr><br/><br/>
+            <tr><td  width="618px"><apex:outputLabel value="Overall Discount : "/><apex:outputText value="{!Order.cgcloud__Gross_Total_Value__c}"></apex:outputText></td></tr>
+            <tr><td  width="620px"><apex:outputLabel value="Net after Discounts : "/><apex:outputText value="{!Order.cgcloud__Gross_Total_Value__c}"></apex:outputText></td></tr>
+            <tr><td  width="600px"><apex:outputLabel value="Dis2 : "/><apex:outputText value="{!Order.Orl_Area_Manager_Discount__c}"></apex:outputText></td></tr>
+            <tr><td  width="620px"><apex:outputLabel value="Net of Dis2 Total : "/><apex:outputText value="{!Order.cgcloud__Gross_Total_Value__c}"></apex:outputText></td></tr>
+            <tr><td  width="610px"><apex:outputLabel value="Dis3 : "/><apex:outputText value="{!Order.Orl_Regional_Manager_Discount__c}"></apex:outputText></td></tr>
+            <tr><td  width="620px"><apex:outputLabel value="Net of Dis3 Total : "/><apex:outputText value="{!Order.cgcloud__Gross_Total_Value__c}"></apex:outputText></td></tr>
+            <tr><td  width="600px"><apex:outputLabel value="VAT Total : "/><apex:outputText value="{!Order.cgcloud__Gross_Total_Value__c}"></apex:outputText></td></tr>
+            <tr><td  width="605px"><apex:outputLabel value="Invoice Value : "/><apex:outputText value="{!Order.cgcloud__Gross_Total_Value__c}"></apex:outputText></td></tr>
+
+        </div>-->
+      <!--  <apex:repeat value="{!OrderlineItems}" var="OrderItem"> 
+            <tr>
+                <td><apex:outputText value="{!OrderItem.cgcloud__Product__r.cgcloud__Product_Short_Code__c}"/></td>
+                <td><apex:outputText value="{!OrderItem.cgcloud__Order_Item_Template__r.Name}"/></td>
+                <td><apex:outputText value="{!OrderItem.cgcloud__Quantity__c}"/></td>
+                <td><apex:outputText value="{!OrderItem.cgcloud__Quantity__c}"/></td>
+                <td><apex:outputText value="{!OrderItem.cgcloud__Price__c}"/></td>
+                <td><apex:outputText value="{!OrderItem.cgcloud__Discount__c}"/></td>
+                <td><apex:outputText value="{!OrderItem.cgcloud__Value__c}"/></td>
+            </tr>
+            </apex:repeat>-->
+<br/><br/><br/><br/><br/><br/>
+
+    <div align="center">
+       <apex:image style="width:200px;height:200px" url="{!qrcodeurl}" />  
+    </div>
+<br/><br/>    
+            </div>
+                </div>
+            </div>
+                </div>
+            </div>
+        </body>
+    </html>
+    <script>
+    </script>
+    </apex:form>
+</apex:page>

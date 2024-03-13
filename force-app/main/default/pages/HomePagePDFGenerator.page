@@ -1,0 +1,36 @@
+<apex:page renderAs="pdf">
+    <head>
+        <style type="text/css">
+            /* Add any custom styles for your PDF here */
+            table {
+            width: 100%;
+            border-collapse: collapse;
+            }
+            table tr {
+            border: 1px solid black;
+            padding: 8px;
+            text-align: left;
+            }
+            td:not(:last-child) {
+            border-right: 1px solid black; /* Add a vertical line to all cells except the last one */
+            }
+        </style>
+    </head>
+    <table border="1" cellpadding="6" width="100%">
+        <tr>
+            <th>Inventory Name</th>
+            <th>Product Name</th>
+            <th>Quantity</th>
+            <th>Template Type</th>
+            <th>Actual Amount</th>
+        </tr>
+        
+        <tr>
+            <td>Data 1</td>
+            <td>Data 2</td>
+            <td>Data 3</td>
+            <td>Data 4</td>
+            <td>Data 5</td>
+        </tr>
+    </table>  
+</apex:page>

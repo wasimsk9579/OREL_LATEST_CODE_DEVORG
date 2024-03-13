@@ -1,0 +1,22 @@
+<!-- quoteSearch.html -->
+<!-- quoteSearchComponent.html -->
+<template>
+    <lightning-card title="Quote Search">
+        <lightning-input label="Enter Quote Number" value={quoteNumber} onchange={handleQuoteNumberChange}></lightning-input>
+        <lightning-button label="Search" variant="brand" onclick={searchQuote}></lightning-button>
+
+        
+        <template if:true={quotes}>
+            <lightning-datatable columns={quoteColumns} data={quotes} key-field="Id" onrowselection={handleRowSelection}></lightning-datatable>
+        </template>
+
+        <template if:true={quoteLineItems}>
+            <lightning-datatable columns={quoteLineItemColumns} data={quoteLineItems} key-field="Id" onrowselection={handleProductRowSelection}></lightning-datatable>
+        </template>
+        
+        <template if:true={selectedProductParts}>
+            <lightning-datatable columns={productPartColumns} data={finalLineItems} key-field="Id" hide-checkbox-column></lightning-datatable>
+            <lightning-button label="Insert" variant="brand" onclick={handleInsert}></lightning-button>
+        </template>
+    </lightning-card>
+</template>

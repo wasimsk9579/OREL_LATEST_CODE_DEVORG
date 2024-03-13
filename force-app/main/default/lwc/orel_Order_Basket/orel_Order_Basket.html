@@ -1,0 +1,38 @@
+<template>
+    <lightning-card> 
+        <lightning-layout multiple-rows >
+            <lightning-layout-item size="12" flexibility="auto" padding="horizontal-small" class="slds-text-align_right">
+                <lightning-button variant="brand" label="Add Products" title="titleName" onclick={clickHandler}
+                ></lightning-button>
+            </lightning-layout-item>
+        </lightning-layout>
+
+        <template if:true={showAddProducts}>
+                <c-orel-add-search-modal advid={recordId} onclose={closeModalHandler}></c-orel-add-search-modal>
+        </template>
+
+        <template lwc:if={itemsPresent}>
+            <div class="slds-p-around_medium">
+                <lightning-datatable data={visibleRecords} key-field="Id" data-id="datarow" selected-rows={selection}
+                onrowselection={handleRowSelection}  columns={columns} min-column-width="110" max-column-width = "200"
+                draft-values={fldsItemValues} suppress-bottom-bar onkeyup={keyUpHandler} oncellchange={cellChangeHandler}>
+                </lightning-datatable><br>
+
+                <div class="pagination" style="padding-left: 251px;">
+                    <c-pagination records={orderItems} onupdate={updateHandler}></c-pagination>
+                </div>
+           
+                <div class="add_cancel">
+                    <lightning-button variant="brand" label="Save" title="save" onclick={editHandler} disabled={disableEdit}></lightning-button>&nbsp;
+                    <lightning-button variant="brand" label="Cancel" title="cancel" onclick={cancelHandler}></lightning-button>&nbsp;&nbsp;
+                </div>
+                <br> 
+            </div>
+            
+        </template>
+        <template lwc:else>
+            <div class="instruction">Please click on Add Products button to add products to the order basket</div>
+        </template>    
+        
+    </lightning-card>
+</template>

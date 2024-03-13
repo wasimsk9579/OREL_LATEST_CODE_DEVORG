@@ -1,0 +1,33 @@
+<template>
+<h1>Payment Information</h1>
+<div class="slds-grid slds-gutters">
+    <div class="slds-col">
+        Distributor ID : {}
+    </div>
+    <div class="slds-col">
+        Invoice No : {}
+    </div>
+</div>
+    <div class="slds-grid slds-gutters">
+    <div class="slds-col">
+        <lightning-input type="text" name="Collector ID" label="Collector ID" placeholder="type here..."></lightning-input>
+    </div>
+    <div class="slds-col">
+       <lightning-input type="number" name="Amount" label="Amount" placeholder="type here..."></lightning-input>
+    </div>
+    </div>
+     <div class="slds-grid slds-gutters">
+    <div class="slds-col">
+       <lightning-combobox
+           name="Payment Type"
+           label="Payment Type"
+           value={value}
+           placeholder="Select Payment Type"
+           options={paymentOptions}
+           onchange={handleChange} ></lightning-combobox>
+    </div>
+     </div>
+     <div>
+         <lightning-button variant="base" label="Save" title="Save" onclick={handleClick}></lightning-button>
+     </div>
+</template>

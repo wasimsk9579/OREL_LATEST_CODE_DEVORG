@@ -1,0 +1,21 @@
+<apex:page standardController="cgcloud__Order__c" extensions="orelsaveattachmentclass" showHeader="false" title="Sales Order PDF" applyBodyTag="false" showQuickActionVfHeader="false" renderAs="pdf">
+    <h1>Debug Info:</h1>
+    <p>Record Id: {!recordId}</p>
+    <p>Rec Id: {!recId}</p>
+    <p>Show Success Message: {!showSuccessMessage}</p>
+
+    <apex:form >
+        <center>
+            <h1>Debug Info 2:</h1>
+            <apex:commandButton action="{!pdfAction}" value="Send and Save Attachment" rendered="{!showSuccessMessage}" />
+            <apex:commandButton action="{!cancel}" value="Cancel" rendered="{!showSuccessMessage}" />
+        </center>
+        <br/>
+        <center>
+            <h1>Debug Info 3:</h1>
+            <apex:iframe height="700px" width="1100px" src="/apex/salesordervfpage?id={!recId}" />
+        </center>
+    </apex:form>
+    <br/>
+    <footer class="slds-modal__footer"></footer>
+</apex:page>

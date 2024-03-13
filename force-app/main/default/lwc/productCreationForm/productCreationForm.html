@@ -1,0 +1,96 @@
+<template>
+  <lightning-card title="Product Bundle creation steps"> 
+      <c-product-bundle-progress-indicator></c-product-bundle-progress-indicator>      
+  </lightning-card>
+<lightning-card title="Create Master Product">
+  <div class="slds-p-horizontal_small">
+    <lightning-record-form
+      object-api-name={objectName}
+      record-type-id={recordTypeId}
+      fields={objectFields}
+      columns="2"
+      oncancel={handleCancel}
+      onsuccess={handleSuccess}
+      onrowselection={handleRowSelection}
+    >
+    </lightning-record-form>
+  </div>
+<div  style="width:100%;border-bottom: solid 2px #c9c9c9;height:2px "></div>
+
+<lightning-card title="Product Filtering" style="margin-top: 15px;">
+<div  style="width:100%;height:100%;display:flex; justify-content: space-between; margin-top: 10px; padding:10px;">
+  <lightning-combobox
+        name="Item Type"
+        
+        placeholder="Select Category"
+        options={items}
+        onchange={handleChange} ></lightning-combobox>
+
+        <lightning-combobox
+        name="Brands"
+        
+        placeholder="Select Brand"
+        options={sheets}
+        onchange={handle} ></lightning-combobox>
+
+        <lightning-combobox
+        name="Poles"
+        
+        placeholder="Select Pole"
+        options={categories}
+        onchange={handleCha} ></lightning-combobox>
+
+        <lightning-combobox
+        name="Current"
+      
+        placeholder="Select Current"
+        options={widths}
+        onchange={handlewidth} ></lightning-combobox>
+    <lightning-button label="Search" variant="brand" onclick={handleSearch} style="display:flex;justify-content: center;align-items: center;margin-top:5px"></lightning-button>
+
+    </div> 
+  </lightning-card>
+
+  <template if:true={isProduct}>
+    <lightning-card title="Available products for selected filter" style="margin-top: 15px;">
+
+      <lightning-datatable
+         key-field="Id"
+         data={products}
+         show-row-number-column
+         row-number-offset={rowOffset}
+         suppress-bottom-bar
+         columns={columns}
+         onrowselection={handleRowSelection}>
+   
+     </lightning-datatable> 
+   </lightning-card>
+      <lightning-button label="Add More" variant="brand" onclick={handleNext}></lightning-button>   
+   
+    <!-- <lightning-button label="Show Inserted" variant="brand" onclick={handleInserted}></lightning-button>    
+     <lightning-button label="Add products" variant="brand" onclick={handleInserted}></lightning-button>   -->
+   
+
+      <lightning-card title="Selected Products" style="margin-top: 15px;">
+        <lightning-datatable
+           key-field="Id"
+           data={productBundlePartsData}
+           columns={Addcolumns}
+           draft-values={draftValues}
+           onrowaction={handleDelete}
+           onsave={handleSave}>
+   
+     
+       </lightning-datatable> 
+      </lightning-card>
+
+      <lightning-button label="Create new product" variant="brand" onclick={handleRefresh}></lightning-button>
+      <span>&nbsp;&nbsp;&nbsp;</span>
+      <lightning-button label="cancel" variant="destructive-text" onclick={handlecancel}></lightning-button>
+  </template>
+
+ 
+
+
+</lightning-card>
+</template>

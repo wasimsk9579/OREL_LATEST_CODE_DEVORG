@@ -1,0 +1,11 @@
+<template>
+    <div style="height: 500px;">
+        <template if:true={accountList}>
+            <lightning-datatable
+            key-field="id"
+            data={accountList}
+            columns={column}
+            ></lightning-datatable>
+        </template>
+    </div>
+</template>

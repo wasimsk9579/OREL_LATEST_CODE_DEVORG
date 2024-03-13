@@ -1,0 +1,14 @@
+<apex:page controller="PublicQuotePageController">
+    <apex:form >
+        <apex:outputText value="{!quoteName}"/>
+            <br/>
+        <apex:outputText value="{!QuoteId}"/>
+                <br/>
+        <apex:outputText value="{!FinalSubTotal}"/>
+               <apex:commandButton value="Agree" action="{!submitResponse}"/>
+        <apex:param name="response" value="Agree" assignTo="{!customerResponse}"/>
+        
+        <apex:commandButton value="Disagree" action="{!submitResponse}"/>
+        <apex:param name="response" value="Disagree" assignTo="{!customerResponse}"/>
+    </apex:form>
+</apex:page>

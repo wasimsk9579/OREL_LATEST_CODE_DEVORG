@@ -1,0 +1,103 @@
+<apex:page standardController="cgcloud__Order__c" extensions="orelsalesvfclass" showHeader="false" renderAs="pdf">
+        
+            <div class="row">
+                <div style="width: 650px; margin: 0 auto; text-align: center;">
+                    <h2><strong>Sales Order</strong></h2>
+                </div>
+            </div>
+            <br/>
+       <table style="width: 100%;font-size: 13px;">
+        <tr>
+            <!-- First column -->
+            <td style="width: 50%; vertical-align: top; padding-right: 20px;">
+                <apex:repeat var="retorder" value="{!vfdatamethod}">
+                    <div style="display: flex; flex-direction: column; margin-bottom: 10px;">
+                        <div>
+                            <apex:outputLabel value="SALES ORDER : "/>
+                            <apex:outputText value="{!retorder.Name} "/>
+                        </div>
+                        <div>
+                            <apex:outputLabel value="ORDER TEMPLATE : "/>
+                            <apex:outputText value="{!retorder.cgcloud__Order_Template__r.Name} "/>
+                        </div>
+                        <div>
+                             <apex:outputLabel value="CUSTOMER : "/>
+                            <apex:outputText value="{!retorder.cgcloud__Order_Account__r.Name} "/>
+                        </div>
+                        <div>
+                        
+                             <apex:outputLabel value="DELIVERY RECIPIENT: "/>
+                            <apex:outputText value="{!retorder.cgcloud__Delivery_Recipient__r.Name}"/>
+                        </div>
+                        <!-- Add more div blocks for other fields -->
+                    </div>
+                </apex:repeat>
+            </td>
+            <!-- Second column -->
+            <td style="width: 50%; vertical-align: top; padding-left: 20px;">
+                <apex:repeat var="retorder" value="{!vfdatamethod}">
+                    <div style="display: flex; flex-direction: column; margin-bottom: 10px;">
+                        <div>
+                            <apex:outputLabel value="ORDER DATE : "/>
+                            <apex:outputText value="{!retorder.cgcloud__Order_Date__c} "/>
+                        </div>
+                        <div>
+                            <apex:outputLabel value="DELIVERY DATE : "/>
+                            <apex:outputText value="{!retorder.cgcloud__Delivery_Date__c} "/>
+                        </div>
+                         <div>
+                            <apex:outputLabel value="INITIATION DATE : "/>
+                            <apex:outputText value="{!retorder.cgcloud__Initiation_Date__c} "/>
+                        </div>
+                        <!-- Add more div blocks for other fields -->
+                    </div>
+                </apex:repeat>
+            </td>
+        </tr>
+    </table>
+    
+        <br/><br/>
+        
+        
+<apex:pageBlock title="DETAILS">
+    <table style="border-collapse: collapse; width: 100%;">
+        <tr>
+            <th style="border: 1px solid black;"><b>Sales Order</b></th>
+            <th style="border: 1px solid black;"><b>Product Name</b></th>
+            <th style="border: 1px solid black;"><b>Quantity</b></th>
+            <th style="border: 1px solid black;"><b>Price</b></th>
+            <th style="border: 1px solid black;"><b>Total Price</b></th>
+        </tr>
+        <apex:repeat value="{!retpro}" var="order">
+            <!-- Render order row -->
+            <tr>
+                <td style="border: 1px solid black;" rowspan="{!order.cgcloud__Order_Items__r.size + 1}">
+                    {!order.Name}
+                </td>
+            </tr>
+            <!-- Iterate through related order items -->
+            <apex:variable var="firstRow" value="true" />
+            <apex:repeat value="{!order.cgcloud__Order_Items__r}" var="item">
+                <tr>
+                    <td style="border: 1px solid black;"> {!item.cgcloud__Product__r.Name}</td>
+                    <td style="border: 1px solid black;">{!item.cgcloud__Quantity__c}</td>
+                    <td style="border: 1px solid black;">{!item.cgcloud__Price__c}</td>
+                    <td style="border: 1px solid black;">{!item.cgcloud__Value__c}</td>
+
+                </tr>
+                <apex:variable var="firstRow" value="false" />
+            </apex:repeat>
+        </apex:repeat>
+    </table>
+</apex:pageBlock>
+
+
+
+    
+    <br/><br/><br/><br/>
+                 <div style="width: 100%;">
+                    <apex:outputLabel value="Customer Signature .............."/>
+                    <span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span> <!-- Add spaces -->
+                    <apex:outputLabel value="Authorized by ..............."/>
+                </div>
+    </apex:page>

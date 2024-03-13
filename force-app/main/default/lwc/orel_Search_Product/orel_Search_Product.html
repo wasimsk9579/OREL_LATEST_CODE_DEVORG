@@ -1,0 +1,26 @@
+<template>
+    <lightning-card title="Search Products">        
+        <div class="slds-var-m-around_medium">  
+            <lightning-layout multiple-rows>
+                <lightning-layout-item size="12" padding="around-small" small-device-size="3" medium-device-size="6" large-device-size="4" >
+                    <lightning-input type="text" variant="standard" name="pname" label="Product Name" onchange={changeHandler} placeholder="Enter Product name..."></lightning-input>
+                </lightning-layout-item>
+                <lightning-layout-item size="12" padding="around-small" small-device-size="3" medium-device-size="6" large-device-size="4">
+                    <lightning-input type="text" variant="standard" name="pcode" label="Product Code" onchange={changeHandler} placeholder="Enter Product code..."></lightning-input>
+                </lightning-layout-item>
+                <lightning-layout-item size="12" padding="around-small" small-device-size="3" medium-device-size="6" large-device-size="4">
+                    <lightning-input type="text" variant="standard" name="ptemplate" label="Product Template" onchange={changeHandler} placeholder="Enter Product template..."></lightning-input>
+                </lightning-layout-item>
+            </lightning-layout>      
+            <lightning-button variant="brand" label="Search" title="search" class="slds-align_absolute-center" onclick={handleSearch}></lightning-button>
+        </div>
+
+        <div class="slds-var-m-around_medium">
+            <lightning-datatable data={visibleRecords} key-field="Id" data-id="datarow" selected-rows={selection}
+            onrowselection={handleRowSelection}  columns={columns} min-column-width="110" max-column-width = "200"
+             draft-values={fldsItemValues} onsave={saveHandler} oncellchange={cellChangeHandler}>
+            </lightning-datatable>
+        </div>
+            <c-pagination records={prodRecords} onupdate={updateHandler}></c-pagination>
+    </lightning-card>
+</template>

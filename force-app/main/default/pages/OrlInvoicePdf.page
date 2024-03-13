@@ -1,0 +1,142 @@
+<apex:page standardController="Orl_invoice__c" renderAs="pdf" applyBodyTag="false" >
+    <div style="font-family:sans-serif; font-size: 13px;">
+        <!--div class="column">
+                    <img src="https://business-customization-1646--oreldev--c.sandbox.vf.force.com/resource/1697517214000/Orel_Logo" width="100px" height ="50px" align="Left"/>
+        </div> <br/> <br/-->
+        
+        
+        <div class="row" align="right">
+                          
+            <tr><td width="800px"><apex:outputLabel value="06/09/2023 12:14 PM"/></td></tr>
+            <tr><td width="800px"><apex:outputLabel value="Copy"/></td></tr>
+        </div> 
+        <br/>
+        
+        <div class="column" align="left" width="500px">
+                          
+            <tr><td width="500px"><apex:outputLabel value="DULANJA AGENCIES (PVT) LTD "/></td></tr>
+            <tr><td width="500px"><apex:outputLabel value="NO-15,,BUTHGAMUWA ROAD,RAJAGIRIYA,"/></td></tr>
+        </div> <br/> <br/>
+        
+    <div class="row">
+              <!--div class="column">
+                    <img src="https://business-customization-1646--oreldev--c.sandbox.vf.force.com/resource/1697517214000/Orel_Logo" width="100px" height ="50px" align="Left"/>
+              </div-->
+        
+            
+                <tr><td width="650px" ><h2 style= "text-align: center"><strong><apex:outputText value="Tax Invoice"/></strong></h2></td> </tr>                			         
+        <div> <br/>
+            <div class="column" align="left" width="500px">
+                
+               
+                <tr><td width="500px"><apex:outputLabel value="Invoiced To : "/></td>                   <td width="500px"><apex:outputLabel value="TAX Invoice No : CINL014729074"/></td> </tr>
+                <tr><td width="500px"><apex:outputLabel value="SIYARATA HARDWARE - ECMCO020093"/></td>  <td width="500px"><apex:outputLabel value="Invoiced Date : 05/09/2023"/></td></tr>
+                <tr><td width="500px"><apex:outputLabel value="NO 274/1 KADUWELA ROAD, RAJAGIRIYA"/></td><td width="500px"><apex:outputLabel value="Sales Person : DAMITH SURANGA (ECOL) -ECMCOE02"/></td></tr>
+                <tr><td width="500px"><apex:outputLabel value="Outlet VAT No : 660310525-7000 "/></td>    <td width="500px"><apex:outputLabel value="Tel : 0765233049"/></td></tr>
+                <tr><td width="500px"><apex:outputLabel value="Distributor VAT No : 114423386-7000"/></td></tr>
+                <tr><td width="500px"><apex:outputLabel value="Credit Period : 0"/></td></tr>
+                             
+            </div>
+        </div> <br/><br/>
+        <div class="column" align="left" width="500px">
+                          
+            <tr><td width="500px"><strong><apex:outputLabel value="Orderd Products"/></strong></td></tr>
+            
+        </div> 
+        <apex:pageBlock ><apex:pageBlockTable value="{!Orl_invoice__c }" var="qlite" border="1.5" align="center" cellpadding="1" cellspacing="0.5" columns="8" style="width:100%; border-collapse:collapse;text-align:center;">
+            
+            <apex:column headerValue="Item code">
+           
+            <apex:outputText value="*470-3003" /></apex:column>
+            <apex:column headervalue="Free Type"> </apex:column>
+            <apex:column headervalue="Description"><apex:outputText value="MCB 1 POLE 10A TYPE C -Sigma"/></apex:column>
+            <apex:column headerValue="Units Qty"><apex:outputText value="24"/></apex:column>
+            <apex:column headerValue="Free Qty"><apex:outputText value="0"/></apex:column>
+            <apex:column headerValue="Price"><apex:outputText value="666.29 "/></apex:column>
+            <apex:column headerValue="Dis%"><apex:outputText value="0.00 "/></apex:column>
+            <apex:column headerValue="Value"><apex:outputText value="15,991.07"/></apex:column>
+            
+           
+            </apex:pageBlockTable>
+        </apex:pageBlock>
+        <br/>
+        
+        <thead align="right">
+             <tr>
+                 <th width= "350px" style="padding-left:250px;text-align:right; font-size:12px;"><apex:outputLabel value="Gross Value Total"/></th>
+                <td style="text-align:center;"><apex:outputText value="15,991.07"/></td>
+            </tr>
+            </thead>
+        <thead align="right">
+             <tr>
+                 <th width= "350px" style="padding-left:250px;text-align:right; font-size:12px;"><apex:outputLabel value="Overall Discount (0.00%)"/></th>
+                <td style="text-align:center;"></td>
+            </tr>
+            </thead>
+        <thead align="right">
+             <tr>
+                 <th width= "350px" style="padding-left:250px;text-align:right; font-size:12px;"><apex:outputLabel value="Net aft Discounts"/></th>
+                <td style="text-align:center;"><apex:outputText value="15,991.07"/></td>
+            </tr>
+            </thead>
+        <thead align="right">
+             <tr>
+                 <th width= "350px" style="padding-left:250px;text-align:right; font-size:12px;"><apex:outputLabel value="Dis2 (0.00%)"/></th>
+                <td style="text-align:center;"><apex:outputText value="0.00"/></td>
+            </tr>
+            </thead>
+        <thead align="right">
+             <tr>
+                 <th width= "350px" style="padding-left:250px;text-align:right; font-size:12px;"><apex:outputLabel value="Net of Dis2 Total   "/></th>
+                <td style="text-align:center;"><apex:outputText value="15,991.07"/></td>
+            </tr>
+            </thead>
+        <thead align="right">
+             <tr>
+                 <th width= "350px" style="padding-left:250px;text-align:right; font-size:12px;"><apex:outputLabel value="Dis3 (0.00%)"/></th>
+                <td style="text-align:center;"><apex:outputText value="0.00"/></td>
+            </tr>
+            </thead>
+         <thead align="right">
+             <tr>
+                 <th width= "350px" style="padding-left:250px;text-align:right; font-size:12px;"><apex:outputLabel value="Net of Dis3 Total     "/></th>
+                <td style="text-align:center;"><apex:outputText value="15,991.07"/></td>
+            </tr>
+            </thead>
+         <thead align="right">
+             <tr>
+                 <th width= "350px" style="padding-left:250px;text-align:right; font-size:12px;"><apex:outputLabel value="VAT Total"/></th>
+                <td style="text-align:center;"><apex:outputText value="1,918.93"/></td>
+            </tr>
+            </thead>
+        <thead align="right">
+             <tr>
+                 <th width= "350px" style="padding-left:250px;text-align:right; font-size:12px;"><apex:outputLabel value="Invoice Value"/></th>
+                <td style="text-align:center;"><apex:outputText value="17,910.00"/></td>
+            </tr>
+            </thead>
+        
+        <br/><br/> <br/><br/>
+        
+        
+        <div class="column" align="left" width="500px">
+                          
+            <tr><td width="500px"><strong><apex:outputLabel value="VAT charged Items is marked with * "/></strong></td></tr>
+            
+        </div> <br/><br/><br/>
+        <div class="column" align="left" width="500px">
+                          
+            <tr><td width="500px"><apex:outputLabel value="Accepted above items in order"/></td></tr>
+            
+        </div><br/>
+        <div class="column" align="left" width="500px">
+                          
+            <tr><td width="500px"><apex:outputLabel value="Customer Signature .............. Invoiced by ............... Authorized by ...............
+"/></td></tr>
+            
+        </div>
+        
+        
+    </div>
+    </div>
+</apex:page>

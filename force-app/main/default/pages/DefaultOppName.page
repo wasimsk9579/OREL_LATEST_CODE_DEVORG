@@ -1,0 +1,5 @@
+<apex:page standardController="Opportunity" >
+ <script>
+      window.top.location.href = '/lightning/o/Opportunity/new?nooverride=1&defaultFieldValues=Name=Test';
+  </script>
+</apex:page>

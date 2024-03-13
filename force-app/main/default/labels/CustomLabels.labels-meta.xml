@@ -1,0 +1,57 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomLabels xmlns="http://soap.sforce.com/2006/04/metadata">
+    <labels>
+        <fullName>Accepted_denied_img</fullName>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>Accepted denied img</shortDescription>
+        <value>https://business-customization-1646--oreldev.sandbox.file.force.com/servlet/servlet.ImageServer?id=0151m000000a4mb&amp;oid=00D1m0000000Mti&amp;lastMod=1705382599000</value>
+    </labels>
+    <labels>
+        <fullName>Oppourtinity_Rerun_Record_Type</fullName>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>Oppourtinity Rerun Record Type</shortDescription>
+        <value>Runner</value>
+    </labels>
+    <labels>
+        <fullName>Project_Head</fullName>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>Project Head</shortDescription>
+        <value>pratiagre23@gmail.com</value>
+    </labels>
+    <labels>
+        <fullName>Project_Team</fullName>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>Project Team</shortDescription>
+        <value>pratikshaagresfdc@gmail.com</value>
+    </labels>
+    <labels>
+        <fullName>Runner_Warrenty</fullName>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>Runner Warrenty</shortDescription>
+        <value>For ORANGE ELECTRIC Products, Lifetime-Warranty for all Switches and Sockets, Low Voltage Switchgear 10kA &amp; SIGMA Ranges.
+5-Years Warranty for all Fan Controllers, Shaver-Outlet, Low Voltage Switchgear Alpha.
+24-Months Warranty for LED Lamps and Industrial Products.
+12 to 18-Months Warranty for all CFLs.
+12 Months Warranty for Home Appliances.
+The above Warranties would be applicable from Date of Invoice.</value>
+    </labels>
+    <labels>
+        <fullName>gmail_com</fullName>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>gmail.com</shortDescription>
+        <value>Default</value>
+    </labels>
+    <labels>
+        <fullName>yahoo_com</fullName>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>yahoo.com</shortDescription>
+        <value>Default</value>
+    </labels>
+</CustomLabels>

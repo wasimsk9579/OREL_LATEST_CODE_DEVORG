@@ -1,0 +1,513 @@
+<apex:page renderAs="pdf" standardController="Quote" extensions="QuotePDFController" applyBodyTag="false">
+    
+     <head>
+        <style> 
+ 			@page {
+                size: A4;
+                margin-top: 1cm;
+                margin-bottom: 2.6cm;
+                margin-left: 0.5cm;
+                margin-right: 0.5cm;
+                
+                @top-center {
+                content: element(header);
+                }
+                
+                @bottom-left {
+                content: element(footer);
+                }
+                }
+                
+                div.header {
+                display: block;
+                position: running(header);
+                }
+                
+                div.footer {
+                display: block;
+                position: running(footer);
+                }
+                
+                .pagenumber:before {
+                content: counter(page);
+                }
+                
+                .pagecount:before {
+                content: counter(pages);
+                }
+                
+                .slds-modal__container {
+                width: 90% !important;
+                min-width: 73rem !important;
+                }
+            
+            .myBox {
+            background-color: #000080;
+      		color: blue;
+      		width: 97%;
+      		padding: 10px;
+            margin-top:10px;
+            margin-bottom: 0px;
+    		}
+             .myBox2 {
+      		color: black;
+      		width: 96%;
+      		padding: 10px;
+            border: 2px solid black;
+            height: 100px;
+    		}
+            .bold {
+      		font-weight: bold;
+    		}
+              
+ 
+		</style> 
+    </head>
+    <body>
+                       
+        <!--footer-->
+                        <div class="footer" style="border-bottom:0px #ccc solid; ">
+                        <table cellspacing="0" cellpadding="0" border="0" style="width: 100%; border-collapse: collapse;  text-align:left; border-bottom:0px #ccc solid; border:1px;">
+                            <tr>
+                                <td style=" position:relative; border-top:0px #ccc solid; padding-top:0px;font-size:10px; text-align:center; ">
+								<apex:image id="footerImage" value="{!$Resource.Orel_Footer}" width="450" height="100" />                           
+                                </td>
+                            </tr>
+                        </table>
+                    </div>
+        
+     <apex:form >
+                
+           <!-- header--> 
+               <body>           
+                    
+                    
+                    
+       <apex:image id="theImage" value="{!$Resource.orllogo}" width="160" height="50"/> <br />
+         <div style=" margin-left: 430px;position:relative; top:-50px;">
+                    <img src="https://api.qrserver.com/v1/create-qr-code/?size=100x100&data=https://business-customization-1646--oreldev.sandbox.my.site.com/quotedetails/s/quotedetails?recordid={!Quote.Id}" alt="QR Code" width="80" height="80"/>
+         </div>
+         
+         
+<table style=" position:relative; top:-30px; font-size: 11pt; width :100%;">
+   	 <tr>
+        <td >
+            <strong>  Sales Person :- </strong>{!Quote.CreatedBy.Name} | {!Quote.CreatedBy.Phone}
+        </td>
+    </tr>
+</table>
+        
+                   
+  <table style=" margin-left:530px; position:relative;bottom:170px; "> 
+       <tbody >
+               <tr >
+                    <td>
+                        <div>
+ 							 <tr >
+                                 <td style="font-size: 17pt;  text-align: right; color:Blue;"><strong> QUOTATION  &#160;  &#160; &#160; &#160;  </strong></td>
+                            </tr> 
+                            <tr>
+                                <td style="font-size: 10pt;  text-align: left; ">Quotation # : {!Quote.Name} &#160;  &#160; &#160;   </td>
+                            </tr>
+                            <tr>
+                                <td style="font-size: 10pt;  text-align: left; ">Quotation Number : {!Quote.QuoteNumber} &#160;  &#160; &#160;   </td>
+                            </tr>
+                            <tr>
+                                <td style="font-size: 10pt;  text-align: left; ">Quotation Date :{!TEXT(DATEVALUE(Quote.CreatedDate))} &#160;  &#160;  &#160; &#160;  </td>
+                            </tr>
+                            <tr>
+                                <td style="font-size: 10pt;  text-align: left; ">Order Ref #  &#160;  &#160;  &#160; &#160; </td>
+                            </tr>
+                            <tr>
+                                <td style="font-size: 10pt;  text-align: left; ">Order Date : {!TEXT(DATEVALUE(Quote.CreatedDate))}  &#160;   &#160;  &#160;  </td>
+                            </tr>
+                            
+                            <div style ="background-color: black; height:1px; width:100% ; margin-top:-165px;padding-top: 0px;">
+                                <hr></hr>   
+                        </div> 
+                        
+                   </div>  
+     		 </td>   
+         </tr>
+      </tbody>
+</table>
+    
+    
+                    
+                    
+    <table width="100%">
+        <tbody>
+            <tr>
+                <td style = " Margin-left:10px; Width:30%;">
+                    <span style="font-size: 11pt;"><strong> Bill To:</strong></span><br/>
+                    <span style="font-size:10pt;">{!Quote.BillingName}</span><br/>
+                    <span style="font-size:10pt;">{!Quote.billingStreet}</span><br/>
+                    <span style="font-size:10pt;">{!Quote.billingcity}</span><br/>
+                    <span style="font-size:10pt;">{!Quote.billingstate},{!Quote.billingpostalcode}</span><br />
+                    <span style="font-size:10pt;">{!Quote.billingcountry}</span><br />
+                    
+                </td>
+                
+                <td style = "Width:30%;">
+                    <span style="font-size:11pt;"><strong> Ship To:</strong></span><br/>
+                    <span style="font-size:10pt;">{!Quote.ShippingName}</span><br/>
+                    <span style="font-size:10pt;">{!Quote.ShippingStreet}</span><br/>
+                    <span style="font-size:10pt;">{!Quote.Shippingcity}</span><br/>
+                    <span style="font-size:10pt;">{!Quote.Shippingstate},{!Quote.Shippingpostalcode}</span><br />
+                    <span style="font-size:10pt;">{!Quote.Shippingcountry}</span><br />
+                </td>
+                
+                <td>
+                    <span style="font-size: 11pt;"><strong> TERMS AND NOTES:</strong></span><br/>
+                    <span style="font-size:10pt;">Payment Terms&#160;  : {!Quote.Payment_Terms_R__c}</span><br/>
+                    <span style="font-size:10pt;">Price  &#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;: {!Quote.Price_list__c}</span><br/>
+                    <span style="font-size:10pt;">Price Validity&#160;&#160;&#160;&#160;   : {!Quote.Price_Validity__c}</span><br />
+                    <span style="font-size:10pt;">Delivery&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160; &#160;&#160;: {!Quote.Delivery__c}</span><br /> 
+                    <span style="font-size:10pt;"> </span><br /> 
+                </td>
+                
+                <div style ="background-color: black; height:1px; width:100% ; margin-top:-10px;padding-top: 0px;">
+                    <hr></hr>
+            </div> 
+    </tr>
+</tbody>
+</table>
+
+
+
+
+
+<table style= "Width: 100%; border-bottom: 1px solid #dcdcdc; font-family: TeXGyreHeros;" >
+    
+    <tr>
+        <th style="font-size: 14px; text-align:Center;padding-bottom: 15px; ">NO</th>
+        <th style="font-size: 14px; text-align:Center;padding-bottom: 15px;  ">ITEM</th>
+        <th style="font-size: 14px; text-align:left;padding-bottom: 15px;  ">DESCRIPTION</th>
+        <th style="font-size: 14px; text-align:Center;padding-bottom: 15px; ">QTY </th>
+        <th style="font-size: 14px; text-align:Center;padding-bottom: 15px; ">PRICE </th>
+        <th style="font-size: 14px; text-align:Center;padding-bottom: 15px; ">AMOUNT</th>
+        
+    </tr>
+    
+    <tbody>
+        
+        
+        <apex:variable var="rowNumber" value="{!1}"/> 
+        
+        <apex:repeat value="{!QuoteLineItems}" var="item" >
+            
+            <tr Style = " border-bottom: 1.5px ;">
+                <td style="font-size: 13px;text-align:center;padding-bottom: 10px;border-bottom: 1.5px ;">{!Floor(rowNumber)}</td>
+                <td style="font-size: 13px;text-align:center;padding-bottom: 10px;border-bottom: 1.5px;">{!item.LineNumber}</td> 
+                <td style="font-size: 13px;text-align:left;padding-bottom: 10px;border-bottom: 1.5px ;">{!item.Product2.Name}</td> 
+                <td style="font-size: 13px;text-align:center;padding-bottom: 10px;border-bottom: 1.5px ;">{!item.Quantity}</td>
+                <td style="font-size: 13px;text-align:center;padding-bottom: 10px;border-bottom: 1.5px ; ">{!item.UnitPrice}</td>
+                <td style="font-size: 13px; text-align:center;padding-bottom: 10px;border-bottom: 1.5px ;">{!item.Subtotal}</td>
+            </tr>
+            
+            <apex:variable var="rowNumber" value="{!rowNumber + 1}" /> 
+        </apex:repeat>
+    </tbody>
+    <div style ="background-color: black; height:1px; width:100% ; margin-top:-10px;padding-top: 0px;">
+        <hr></hr>
+</div> 
+</table>
+
+
+
+
+
+
+
+
+
+<apex:outputPanel rendered="{!Quote.VAT__c == 'Include' && Quote.Runner_Discount__c > 0}">
+<table width="100%">
+                        <tbody>
+                            <tr>
+                                <td>
+                                    <span style="font-size: 10pt; float: left; margin-left: 480px;">
+                                        Subtotal:  
+                                    </span>
+                                    <span style="font-size: 10pt; float: right; margin-right: 57px;">
+                                       {!Quote.Final_SubTotal__c}
+                                    </span><br/>
+                                    <span style="font-size: 10pt; float: left; margin-left: 480px;">
+                                        Discount
+                                    </span>
+                                    <span style="font-size: 10pt; float: right; margin-right: 57px;">
+                           				{!Quote.Runner_Discount_Price__c}
+                                    </span><br/>
+                                    <span style="font-size: 10pt; float: left; margin-left: 480px;">
+                                        Total Price
+                                    </span>
+                                    <span style="font-size: 10pt; float: right; margin-right: 57px;">
+                           				{!Quote.Final_Total_Price__c}
+                                    </span><br/>
+                                    <span style="font-size: 10pt; float: left; margin-left: 480px;">
+                                        VAT
+                                    </span>
+                                    <span style="font-size: 10pt; float: right; margin-right: 57px;">
+                           				{!Quote.VAT_Amount_R__c} 
+                                    </span><br/>
+                                      
+                                    <div style ="margin-left:  480px; background-color: black; height:1px; width:100% ;padding-top: 0px;">
+                                        <hr/>    
+                                    </div>
+                                    <span style="font-size: 10pt; float: left; margin-left: 480px;">
+                                        Grand Total
+                                    </span>
+                                    <span style="font-size: 10pt; float: right; margin-right: 57px;">
+                                        {!Quote.Final_Total_Price_with_VAT__c}
+                                    </span><br/> <br/>             
+                                    <div style =" background-color: black; height:1px; width:100% ;padding-top: 0px;">
+                                        <hr/>    
+                                    </div>
+                                </td>
+                            </tr>
+                        </tbody>
+                    </table> 
+    </apex:outputPanel> 
+
+
+
+<apex:outputPanel rendered="{!Quote.VAT__c == 'Include' && Quote.Runner_Discount__c <= 0}">
+<table width="100%">
+                        <tbody>
+                            <tr>
+                                <td>
+                                    <span style="font-size: 10pt; float: left; margin-left: 480px;">
+                                        Subtotal:  
+                                    </span>
+                                    <span style="font-size: 10pt; float: right; margin-right: 57px;">
+                                       {!Quote.Final_SubTotal__c}
+                                    </span><br/>
+                                  
+                                    <span style="font-size: 10pt; float: left; margin-left: 480px;">
+                                        VAT
+                                    </span>
+                                    <span style="font-size: 10pt; float: right; margin-right: 57px;">
+                           				{!Quote.VAT_Amount_R__c} 
+                                    </span><br/>
+                                      
+                                    <div style ="margin-left:  480px; background-color: black; height:1px; width:100% ;padding-top: 0px;">
+                                        <hr/>    
+                                    </div>
+                                    <span style="font-size: 10pt; float: left; margin-left: 480px;">
+                                        Grand Total
+                                    </span>
+                                    <span style="font-size: 10pt; float: right; margin-right: 57px;">
+                                        {!Quote.Final_Total_Price_with_VAT__c}
+                                    </span><br/> <br/>             
+                                    <div style =" background-color: black; height:1px; width:100% ;padding-top: 0px;">
+                                        <hr/>    
+                                    </div>
+                                </td>
+                            </tr>
+                        </tbody>
+                    </table> 
+    </apex:outputPanel> 
+
+
+
+
+
+
+<!-- Quote Generation with  VAT. --> 
+
+<apex:outputPanel rendered="{!Quote.VAT__c == 'Exclude' &&  Quote.Runner_Discount__c > 0}">
+<table width="100%">
+                        <tbody>
+                            <tr>
+                                <td>
+                                    <span style="font-size: 10pt; float: left; margin-left: 480px;">
+                                        Subtotal:  
+                                    </span>
+                                    <span style="font-size: 10pt; float: right; margin-right: 57px;">
+                                       {!Quote.Final_SubTotal__c}
+                                    </span><br/>
+                                    <span style="font-size: 10pt; float: left; margin-left: 480px;">
+                                        Discount
+                                    </span>
+                                    <span style="font-size: 10pt; float: right; margin-right: 57px;">
+                           				{!Quote.Runner_Discount_Price__c}
+                                    </span><br/>
+                                 
+                                 
+                                      
+                                    <div style ="margin-left:  480px; background-color: black; height:1px; width:100% ;padding-top: 0px;">
+                                        <hr/>    
+                                    </div>
+                                      <span style="font-size: 10pt; float: left; margin-left: 480px;">
+                                        Total Price
+                                    </span>
+                                    <span style="font-size: 10pt; float: right; margin-right: 57px;">
+                           				{!Quote.Final_Total_Price__c}
+                                    </span><br/> <br/>             
+                                    <div style =" background-color: black; height:1px; width:100% ;padding-top: 0px;">
+                                        <hr/>    
+                                    </div>
+                                </td>
+                            </tr>
+                        </tbody>
+                    </table> 
+</apex:outputPanel> 
+
+
+
+<apex:outputPanel rendered="{!Quote.VAT__c == 'Exclude' &&  Quote.Runner_Discount__c <= 0}">
+<table width="100%">
+                        <tbody>
+                            <tr>
+                                <td>
+                                    <span style="font-size: 10pt; float: left; margin-left: 480px;">
+                                        Subtotal:  
+                                    </span>
+                                    <span style="font-size: 10pt; float: right; margin-right: 57px;">
+                                       {!Quote.Final_SubTotal__c}
+                                    </span><br/>                                 
+                                      
+                                    <div style ="margin-left:  480px; background-color: black; height:1px; width:100% ;padding-top: 0px;">
+                                        <hr/>    
+                                    </div>
+                                      <span style="font-size: 10pt; float: left; margin-left: 480px;">
+                                        Total Price
+                                    </span>
+                                    <span style="font-size: 10pt; float: right; margin-right: 57px;">
+                           				{!Quote.Final_Total_Price__c}
+                                    </span><br/> <br/>             
+                                    <div style =" background-color: black; height:1px; width:100% ;padding-top: 0px;">
+                                        <hr/>    
+                                    </div>
+                                </td>
+                            </tr>
+                        </tbody>
+                    </table> 
+</apex:outputPanel> 
+
+
+
+<!--
+<table style=" position:absolute; margin-left: 10px; ">  
+    <tbody>
+        <tr>
+            <td style="font-size: 12px;text-align: Left;"><strong>Payment &#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;</strong>: {!Quote.Payment__c}  </td>
+        </tr>  
+        <tr>
+            <td style="font-size:12px;text-align: Left; "><strong>Benificiary Details  &#160;&#160;</strong>: {!Quote.Benificiary_Details__c } </td>
+        </tr> 
+        <tr>
+            <td style="font-size:12px;  text-align: Left;  "><strong>Bank Details &#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;</strong>: {!Quote.Bank_Details__c}</td>
+        </tr> 
+        <tr>
+            <td style="font-size:12px;  text-align: Left;   "><strong>Bank A/C &#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160; </strong>: {!Quote.Bank_A_C__c}   </td>
+        </tr> 
+        <tr>
+            <td style="font-size:12px;  text-align: Left; padding-right: 50px;   "><strong>Warranty</strong></td>
+            <td style="font-size:12px;  text-align: Left;   ">: {!Quote.Runner_Warrenty__c} </td>
+        </tr>
+        
+        
+        
+        
+        <tr>
+            <td style="font-size:12px;  text-align: Left;margin-left: 10px; padding-top:20px;  "><strong>Other Terms and Conditions :-&#160;&#160;</strong></td>
+        </tr> 
+        
+        <tr >
+            <td style="font-size:12px;  text-align: Left;margin-left: 10px;   "> All payment to be made in a/c payee cheque in favor of OREL CORPORATION (PVT) LTD.
+                Items are non-returnable, unless otherwise due to a manufacturing defect.</td>
+        </tr>
+        
+        <tr>
+            <td style="font-size:12px; ">&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160; This is a computer generated document. no signature is required and deemed as official</td>
+        </tr> 	
+        
+        
+    </tbody>   
+    
+</table>
+
+-->
+
+
+
+<table style=" border-collapse: collapse; width: 100%;  margin-bottom: 20px;">
+    <tr >
+        <td style="padding-left:5px; width:130px;vertical-align: top;   ">Payment</td>
+        <td style="text-align:left; font-size:14px; padding-left:5px; ">  : {!Quote.Payment__c} </td>
+    </tr>
+    <tr >
+        <td style="padding-left:5px; width:130px; vertical-align: top; ">Benificiary Details</td>
+        <td style="text-align:left; font-size:14px;  padding-left:5px; "> : {!Quote.Benificiary_Details__c } </td>
+    </tr>
+    <tr >
+        <td style="padding-left:5px; width:130px;  vertical-align: top;">Bank Details</td>
+         <td style="text-align:left;  font-size:14px; padding-left:5px;  ">: {!Quote.Bank_Details__c}</td>
+    </tr>
+    <tr >
+        <td style="padding-left:5px; width:130px;  vertical-align: top;">Bank A/C</td>
+         <td style="text-align:left; font-size:14px;  padding-left:5px;  "> : {!Quote.Bank_A_C__c} </td>
+    </tr>
+    <tr >
+        <td style="padding-left:5px; width:130px; vertical-align: top;">Warranty</td>
+         <td style="text-align:left;  font-size:14px; padding-left:5px;  "> : {!Quote.Runner_Warrenty__c} </td>
+    </tr>
+        
+</table>
+
+
+
+
+
+
+<table style=" border-collapse: collapse; width: 100%; margin-bottom: 15px;">
+    <tr >
+        <td style="padding-left:5px; vertical-align: top;  font-size:14px; "><strong>Other Terms and Conditions :-&#160;&#160;</strong></td>
+       
+    </tr>
+    <tr >
+        <td style="padding-left:15px;  font-size:14px;  ">All payment to be made in a/c payee cheque in favor of OREL CORPORATION (PVT) LTD.
+                Items are non-returnable, unless otherwise due to a manufacturing defect.</td>
+    </tr>
+</table>
+
+<table style=" border-collapse: collapse; margin-left: 100px;">    
+     <tr>
+            <td style="font-size:14px;  "> This is a computer generated document. no signature is required and deemed as official</td>
+        </tr> 	
+        
+</table>
+
+
+</body>
+</apex:form>          
+</body>
+</apex:page>
+
+
+<!--  <div class="footer;" >
+  <apex:image id="footerImage" value="{!$Resource.Orel_Footer}" width="450" height="100"/> 
+</div>
+
+
+
+
+
+
+    <div class="footer">
+      <apex:image id="footerImage" value="{!$Resource.Orel_Footer}" width="450" height="100"/> 
+    </div>
+  
+        --> 
+
+
+  <!-- <apex:outputPanel styleClass="page-break" layout="none" rendered="{!rowNumber == 10}">
+                <div></div>
+            </apex:outputPanel>
+
+             FOOTER - Display only on the last page 
+            <div class="footer">
+                <apex:image id="footerImage" value="{!$Resource.Orel_Footer}" width="450" height="100" />
+            </div>
+-->

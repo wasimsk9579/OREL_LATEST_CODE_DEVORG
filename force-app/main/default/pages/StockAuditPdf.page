@@ -1,0 +1,101 @@
+<apex:page renderAs="pdf" standardController="Stock_Audit__c" extensions="StockAuditController">
+    <!-- Include qrcode.js library -->
+
+  <apex:form >
+    <html>
+        <head>
+            <style>
+                body {
+                    font-family: Arial, sans-serif;
+                }
+                .container {
+                    width: 100%;
+                    max-width: 800px;
+                    margin: 0 auto;
+                }
+                .column {
+                    width: 50%;
+                    text-align: center;
+                }
+                h2 {
+                    text-align: center;
+                }
+                .center-align {
+                    display: flex;
+                    justify-content: center;
+                    align-items: center;
+    }
+            </style>
+        </head>
+        <body>
+            <div class="container">
+                <div class="column">
+                        
+        <div class="row">       
+                <tr><td width="650px" ><h2 style= "text-align: center"><strong><apex:outputText value="Stock Audit"/></strong></h2></td> </tr>                			         
+        <div> <br/>
+        <div class="column" align="left" width="500px">
+
+    <tr><td width="500px"><apex:outputLabel value="Stock Audit Name : "/><apex:outputText value="{!Stocks.Name}"></apex:outputText></td>                   <td width="300px"><apex:outputLabel value="Customer : "/> <apex:outputText value="{!Stocks.Customer__r.Name}"/></td> </tr>
+    <tr><td width="500px"><apex:outputLabel value="Audit Date : "/><apex:outputText value="{!Stocks.Audit_Date__c}"></apex:outputText></td>                   <td width="300px"><apex:outputLabel value="Inventory type : "/> <apex:outputText value="{!Stocks.Inventory_Type__c}"/></td> </tr>
+   
+    <br/><br/><br/>
+    <table border="1" cellpadding="6" width="100%">
+        <tr>
+            <th>Inventory Name</th>
+            <th>Product Name</th>
+            <th>Expected Quantity</th>
+            <th>Actual Quantity</th>
+            <th>Inventory Type</th>
+        </tr>
+        
+        <apex:repeat value="{!StockLineItems}" var="OrderItem"> 
+        <tr>
+            <td><apex:outputText value="{!OrderItem.Orl_Inventory__c}"/></td>
+            <td><apex:outputText value="{!OrderItem.Orl_Product_Name__c}"/></td>
+            <td><apex:outputText value="{!OrderItem.Orl_Expected_Quantity__c}"/></td>
+            <td><apex:outputText value="{!OrderItem.Orl_Actual_Quantity__c}"/></td>
+            <td><apex:outputText value="{!OrderItem.Orl_Inventory_Type__c}"/></td>
+        </tr>
+        </apex:repeat>
+    </table>  
+
+  <!--  <table style="vertical-align: top;display:inline-table;margin-top:10px; float:left;text-align:center; font-family: Helvetica, sans-serif; border-top:1px solid; border-bottom:1px solid; border-collapse:collapse;" width="100%" >
+        <tr>
+        <th style="padding:5px;border:1px solid;border-collapse:collapse; font-weight: normal;" width="">No</th>
+        <th style="padding:5px;border:1px solid;border-collapse:collapse;font-weight: normal;" width="">Item description</th>
+        </tr>
+        <apex:variable value="{!1}" var="rowNumber" />
+        <apex:repeat value="{!StockLineItems}" var="OrderItem">            
+        <tr style="border-collapse: collapse;border:1px solid;height:170px;">
+        
+        <td style="padding-top:10px;padding-right:5px;padding-left:8px;border-collapse: collapse;border:1px solid;border-collapse:collapse;vertical-align: top;"><apex:outputText value="{!OrderItem.Name}"/></td>
+        <td style="padding-top:10px;padding-right:5px;padding-left:8px;border-collapse: collapse;border:1px solid;border-collapse:collapse;vertical-align: top;"><apex:outputText value="{!OrderItem.Orl_Actual_Quantity__c}"/></td>
+        </tr>
+        <apex:variable value="{!rowNumber + 1}" var="rowNumber" />
+        </apex:repeat>
+        
+        </table>-->
+
+
+
+  <!--  <apex:pageBlock title="List of Records">
+        <apex:pageBlockTable value="{!StockLineItems}" var="record">
+            <!-- Assuming Orl_Expected_Quantity__c and Orl_Actual_Quantity__c are fields on Stock_Audit_Line_Item__c -->
+          <!--  <apex:column value="{!record.Name}" headerValue="Name"/>
+            <apex:column value="{!StockLineItems[0].Orl_Actual_Quantity__c}" headerValue="Expected"/>-->
+           <!-- <apex:column value="{!record.Orl_Actual_Quantity__c}" headerValue="Actual"/>-->
+            <!-- Add more columns as needed 
+        </apex:pageBlockTable>
+    </apex:pageBlock>-->
+    <br/><br/><br/>    
+            </div>
+                </div>
+            </div>
+                </div>
+            </div>
+        </body>
+    </html>
+    
+    </apex:form>
+</apex:page>

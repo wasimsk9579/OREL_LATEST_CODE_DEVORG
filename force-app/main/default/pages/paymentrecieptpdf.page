@@ -1,0 +1,40 @@
+<apex:page standardController="Payment__c" extensions="OrelPaymentVFClass" showHeader="false" renderAs="pdf">
+    <div style="width: 80%; margin: 0 auto; padding: 20px; border: 1px solid #000; font-size: 18px;">
+        <!-- Header -->
+        <div style="text-align: center; margin-bottom: 20px;">
+            <h3>Payment Receipt</h3>
+        </div>
+        <apex:pageBlock >
+            <table style="border-collapse: collapse; width: 100%;">
+                <tr>
+                    <td style="border: 1px solid black;"><b>Receipt Number</b></td>
+                    <td style="border: 1px solid black;">{!receiptNumber}</td>
+                </tr>
+                <tr>
+                    <td style="border: 1px solid black;"><b>Customer</b></td>
+                    <td style="border: 1px solid black;">{!customer}</td>
+                </tr>
+                <tr>
+                    <td style="border: 1px solid black;"><b>Order Number</b></td>
+                    <td style="border: 1px solid black;">{!orderNumber}</td>
+                </tr>
+                <tr>
+                    <td style="border: 1px solid black;"><b>Invoice Number</b></td>
+                    <td style="border: 1px solid black;">{!invoiceNumber}</td>
+                </tr>
+                <tr>
+                    <td style="border: 1px solid black;"><b>Type of Payment</b></td>
+                    <td style="border: 1px solid black;">{!typeOfPayment}</td>
+                </tr>
+                <tr>
+                    <td style="border: 1px solid black;"><b>Mode of Payment</b></td>
+                    <td style="border: 1px solid black;">{!modeOfPayment}</td>
+                </tr>
+                <tr>
+                    <td style="border: 1px solid black;"><b>Amount Paid</b></td>
+                    <td style="border: 1px solid black;">{!amountPaid}</td>
+                </tr>
+            </table>
+        </apex:pageBlock>
+    </div>
+</apex:page>

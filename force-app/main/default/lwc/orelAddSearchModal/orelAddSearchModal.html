@@ -1,0 +1,61 @@
+<template>
+    <section role="dialog" tabindex="-1" class="slds-modal slds-fade-in-open slds-modal_small" aria-labelledby="modal-heading-01" aria-modal="true">
+        <div class="slds-modal__container">
+        <!-- <button class="slds-button slds-button_icon slds-modal__close slds-button_icon-inverse">
+        <svg class="slds-button__icon slds-button__icon_large" aria-hidden="true">
+        <use xlink:href="/assets/icons/utility-sprite/svg/symbols.svg#close"></use>
+        </svg>
+        <span class="slds-assistive-text">Cancel and close</span>
+        </button> -->
+        
+        <div class="slds-modal__content slds-p-around_medium" id="modal-content-id-1">
+            <lightning-card title="Search Products">        
+                <div class="slds-var-m-around_medium">  
+                    <lightning-layout multiple-rows>
+                        <lightning-layout-item size="12" padding="around-small" small-device-size="3" medium-device-size="6" large-device-size="4" >
+                            <lightning-input type="text" variant="standard" name="pname" label="Product Name" onchange={changeHandler} placeholder="Enter Product name..."></lightning-input>
+                        </lightning-layout-item>
+                        <lightning-layout-item size="12" padding="around-small" small-device-size="3" medium-device-size="6" large-device-size="4">
+                            <lightning-input type="text" variant="standard" name="pcode" label="Product Code" onchange={changeHandler} placeholder="Enter Product code..."></lightning-input>
+                        </lightning-layout-item>
+                        <lightning-layout-item size="12" padding="around-small" small-device-size="3" medium-device-size="6" large-device-size="4">
+                            <lightning-input type="text" variant="standard" name="ptemplate" label="Product Template" onchange={changeHandler} placeholder="Enter Product template..."></lightning-input>
+                        </lightning-layout-item>
+                    </lightning-layout>      
+                    <lightning-button variant="brand" label="Search" title="search" class="slds-align_absolute-center" onclick={handleSearch}></lightning-button>
+                </div>
+
+                <div class="slds-var-m-around_medium">
+                    <lightning-datatable data={visibleRecords} key-field="Id" data-id="datarow" selected-rows={selection}
+                    onrowselection={handleRowSelection}  columns={columns} min-column-width="110" max-column-width = "200"
+                    draft-values={fldsItemValues} suppress-bottom-bar oncellchange={cellChangeHandler} >
+                    </lightning-datatable>
+                </div>
+                <div class="pagination">
+                    <c-pagination records={prodRecords} onupdate={updateHandler}></c-pagination>
+                </div>
+                <div class="add_cancel">
+                    <lightning-button variant="brand" label="Add Products" class="slds-var-m-around_medium" title="addproducts" onclick={addProdHandler}></lightning-button>
+                    <lightning-button variant="brand" label="Cancel" title="cancel" onclick={cancelHandler}></lightning-button>
+                </div>
+                
+                <!-- <lightning-layout multiple-rows>
+                        <lightning-layout-item size="12" padding="around-small" small-device-size="3" medium-device-size="6" large-device-size="6" 
+                        class="slds-float_right">
+                            <c-pagination records={prodRecords} onupdate={updateHandler}></c-pagination>
+                        </lightning-layout-item>
+                        <lightning-layout-item size="12" padding="around-small" small-device-size="3" medium-device-size="6" large-device-size="3">
+                            <lightning-button variant="brand" label="Add Products" title="addproducts" onclick={addProdHandler}></lightning-button>
+                        </lightning-layout-item>
+                        <lightning-layout-item size="12" padding="around-small" small-device-size="3" medium-device-size="6" large-device-size="3">
+                            <lightning-button variant="brand" label="Cancel" title="cancel" onclick={cancelHandler}></lightning-button>
+                        </lightning-layout-item>
+                </lightning-layout> -->
+        
+            </lightning-card>
+        </div>
+
+        </div>
+        </section>
+        <div class="slds-backdrop slds-backdrop_open" role="presentation"></div>
+</template>

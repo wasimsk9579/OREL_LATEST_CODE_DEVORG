@@ -1,0 +1,888 @@
+<apex:page renderAs="pdf" standardController="Quote" extensions="repeaterExtensionClass" applyBodyTag="false">
+    
+     <head>
+        <style> 
+            @page {
+                size: A4;
+                margin-top: 1cm;
+                margin-bottom: 2.6cm;
+                margin-left: 0.5cm;
+                margin-right: 0.5cm;
+                
+                @top-center {
+                content: element(header);
+                }
+                
+                @bottom-left {
+                content: element(footer);
+                }
+                }
+                
+                div.header {
+                display: block;
+                position: running(header);
+                }
+                
+                div.footer {
+                display: block;
+                position: running(footer);
+                }
+                
+                .pagenumber:before {
+                content: counter(page);
+                }
+                
+                .pagecount:before {
+                content: counter(pages);
+                }
+                
+                .slds-modal__container {
+                width: 90% !important;
+                min-width: 73rem !important;
+                }
+            .myBox {
+            background-color: #000080;
+      		color: blue;
+      		width: 97%;
+      		padding: 10px;
+            margin-top:10px;
+            margin-bottom: 0px;
+    		}
+             .myBox2 {
+      		color: black;
+      		width: 96%;
+      		padding: 10px;
+            border: 2px solid black;
+            height: 100px;
+    		}
+            .bold {
+      		font-weight: bold;
+    		}
+       	
+            .text-box {
+            border: 1px solid #ccc;
+            font-size:10pt;
+            padding: 2px;
+            background-color: #f8f8f8;
+            width: 100%;
+        }
+         </style>
+    </head>        
+         <body>
+                       
+        <!--footer-->
+                        <div class="footer" style="border-bottom:0px #ccc solid; ">
+                        <table cellspacing="0" cellpadding="0" border="0" style="width: 100%; border-collapse: collapse;  text-align:left; border-bottom:0px #ccc solid; border:1px;">
+                            <tr>
+                                <td style=" position:relative; border-top:0px #ccc solid; padding-top:0px;font-size:10px; text-align:center; ">
+								<apex:image id="footerImage" value="{!$Resource.Orel_Footer}" width="450" height="100" />                           
+                                </td>
+                            </tr>
+                        </table>
+                    </div>
+     
+    
+    
+     <apex:form >
+                <body>
+                    
+       <apex:image id="theImage" value="{!$Resource.orllogo}" width="160" height="50"/> <br />
+                    
+            <div style=" margin-left: 430px;position:relative; top:-50px;">
+                <img src="https://api.qrserver.com/v1/create-qr-code/?size=100x100&data=https://business-customization-1646--oreldev.sandbox.my.site.com/quotedetails/s/quotedetails?recordid={!Quote.Id}" alt="QR Code" width="80" height="80"/>
+            </div>
+                    
+                    
+       <table style=" position:relative; top:-50px; font-size: 11pt; width :100%;">
+                    <tr>
+                        <td >
+                            <strong>  Sales Person :- </strong>{!Quote.Account.Owner.name} | {!Quote.Account.Owner.Phone} 
+                        </td>
+                    </tr>
+                </table>
+                    
+                    
+<table style=" margin-left: 530px; position:relative;bottom:170px; ">
+        <tbody >
+            <tr >
+                 <td>
+                     <div>
+                         <tr >
+                             <td style="font-size: 17pt;  text-align: right; color:Blue;"><strong> QUOTATION  &#160;  &#160; &#160; &#160;  &#160; </strong></td>
+                         </tr> 
+                         
+                         <tr>
+                             <td style="font-size: 10pt;  text-align: left; ">Quotation # : {!Quote.Name} &#160;  &#160; &#160;   </td>
+                         </tr>
+                         <tr>
+                             <td style="font-size: 10pt;  text-align: left; ">Quotation Date :{!TEXT(DATEVALUE(Quote.CreatedDate))} &#160;  &#160;  &#160;&#160;  </td>
+                         </tr>
+                         <!-- <tr>
+								<td style="margin-left: 40px; font-size: 10pt;  text-align: left; ">Sales Person:- {!Quote.CreatedBy.name} &#160;  &#160; &#160;   </td>
+							</tr>  -->
+                         
+                         
+                         <div style =" background-color: black; height:1px; width:100% ; margin-top:-130px;padding-top: 0px;">
+                             <hr/>
+                             
+                         </div>              
+                     </div>  
+                </td>   
+            </tr> 
+    </tbody>
+</table>
+                    
+    
+                <table width="100%">
+                    <tbody>
+                        <tr>
+                            <td>
+                                <span style="font-size: 10pt;margin-left: 10px;"><strong> Customer Details:</strong></span><br/>
+                                <span style="font-size:10pt;margin-left: 10px;">{!Quote.opportunity.Account.Name}</span><br/> <br/>
+                                <span style="font-size: 10pt;margin-left: 10px;"> Project &#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;: {!Quote.opportunity.Name}</span><br/>
+                                <span style="font-size:10pt;margin-left: 10px;">Prepared By &#160; : {!Quote.createdby.name}</span><br/>
+                                <span style="font-size:10pt;margin-left: 10px;">Atn &#160;&#160;&#160; &#160; &#160; &#160; &#160; &#160;&#160;&#160;&#160;:{!Quote.Contact.Name}</span><br/>
+                            </td>
+                            
+                            <td>
+                                <span style="font-size:10pt;position:absolute; left:370px;"><strong> Product Standards:</strong></span><br/>
+                                <span style="font-size:10pt;position:absolute; left:370px;"> Standard &#160;&#160;: {!Quote.Standard__c}</span><br/>
+                                <span style="font-size:10pt;position:absolute; left:370px;">Protection&#160;: {!Quote.Protection__c} </span><br/>
+                                <span style="font-size:10pt;position:absolute; left:370px;">Colour &#160;&#160;&#160;&#160;&#160;: {!Quote.Colour__c}</span><br/>
+                                <span style="font-size:10pt;position:absolute; left:370px;">Validity&#160;&#160;&#160;&#160;: {!Quote.Rep_Validity__c}</span><br />
+                                <span style="font-size:10pt;position:absolute; left:370px;"></span><br />
+                            </td>
+                            <div style =" background-color: black; height:1px; width:100% ;padding-top: 0px;">
+                                <hr/>    
+                            </div>
+                        </tr>
+                    </tbody>      
+                </table>  
+                
+                
+                <apex:outputPanel rendered="{!Quote.VAT__c == 'Include' && Quote.Rep_Discount__c <= 0}">                    
+                    <table style="width: 100%; border-collapse: collapse;">
+                        <tbody>
+                            <tr >
+                                <th style="margin-left: 10px; font-size: 12px; padding-bottom: 1px; text-align: left;">NO</th>
+                                <th style="margin-left: 30px; font-size: 12px; padding-bottom: 1px; text-align: left;">NAME</th>
+                                <th style="margin-left: 100px; font-size: 12px; padding-bottom: 1px; text-align: left;">QTY</th>
+                                <th style="margin-left: 300px; font-size: 12px; padding-bottom: 1px; text-align: right;">RATE</th>
+                                <th style="margin-right: 30px; font-size: 12px; padding-bottom: 1px; text-align: right;">AMOUNT(LKR)</th>
+                            </tr>
+                            
+                            <apex:variable var="rowNumber" value="{!1}" />
+                            
+                            <apex:repeat value="{!Prod}" var="item">
+                                <tr style="background-color: #9e9ba1;">
+                                    <td style="margin-left: 10px; font-size: 14px; text-align: left;"><strong>{!Floor(rowNumber)}</strong></td>
+                                    <td style="margin-left: 30px; font-size: 14px; text-align: left;"><strong>{!item.name}</strong></td>
+                                    <td style="margin-left: 100px; font-size: 14px; text-align: left;"><strong>{!item.Bundle_Quantity__c}</strong></td>
+                                    <td style="margin-left: 200px; font-size: 14px; text-align: right;"><strong>{!item.Updated_Price_from_Line_item__c}</strong></td>
+                                    <td style="margin-right: 30px; font-size: 14px; text-align: right;"><strong>{!item.Bundle_Price_with_Quantity__c}</strong></td>          
+                                </tr>
+                                <tr>
+                                    <td colspan="5">
+                                        <apex:repeat value="{!item.cgcloud__Product_Parts__r}" var="itemss">
+                                            <span style="margin-left: 10px; text-align: left; font-size: 13px; ">{!itemss.cgcloud__Quantity__c} &#160;&#160;{!itemss.Part_Description__c}</span><br/>
+                                             
+                                        </apex:repeat>
+                                        <span style="margin-left: 10px; text-align: left; font-size: 13px; ">{!item.Unit_Notes__c} </span><br/>
+                                    </td>
+                                </tr>
+                                
+                                <apex:variable var="rowNumber" value="{!rowNumber + 1}" /> 
+                            </apex:repeat>
+                        </tbody>
+                        
+                        <tr>
+                            <td colspan="5" style="background-color: white; height: 1px; width: 100%; padding-top: 0px;">
+                                <hr/>
+                            </td>
+                        </tr>
+                    </table>
+                    
+                    
+                    
+                    
+                    <table width="100%">
+                        <tbody>
+                            <tr>
+                                <td>
+                                    <span style="font-size: 10pt; float: left; margin-left: 480px;">
+                                        Amount:  
+                                    </span>
+                                    <span style="font-size: 10pt; float: right; margin-right: 5px;">
+                                        {!Quote.Products_Price_with_Quantity__c}
+                                    </span><br/>
+                                    <span style="font-size: 10pt; float: left; margin-left: 480px;">
+                                        {!IF(Quote.Tax_Type__c == 'SVAT', 'SVAT:', 'VAT:')} 
+                                    </span>
+                                    <span style="font-size: 10pt; float: right; margin-right: 5px;">
+                                        {!Quote.Vat_Amount__c}
+                                    </span><br/>
+                                    <div style ="margin-left:  480px; background-color: black; height:1px; width:100% ;padding-top: 0px;">
+                                        <hr/>    
+                                    </div>
+                                    <span style="font-size: 10pt; float: left; margin-left: 480px;">
+                                        Total Value (LKR):  
+                                    </span>
+                                    <span style="font-size: 10pt; float: right; margin-right: 5px;">
+                                        {!Quote.Grand_Total_price_with_VAT__c}
+                                    </span><br/>              
+                                    <div style ="margin-left:  480px; background-color: black; height:1px; width:100% ;padding-top: 0px;">
+                                        <hr/>    
+                                    </div>
+                                </td>
+                            </tr>
+                        </tbody>
+                    </table> 
+                </apex:outputPanel>
+                
+                
+                
+                
+                
+                
+                
+                 <apex:outputPanel rendered="{!Quote.VAT__c == 'Include' && Quote.Rep_Discount__c > 0 }">                    
+                    <table style="width: 100%; border-collapse: collapse;">
+                        <tbody>
+                            <tr >
+                                <th style="margin-left: 10px; font-size: 12px; padding-bottom: 1px; text-align: left;">NO</th>
+                                <th style="margin-left: 30px; font-size: 12px; padding-bottom: 1px; text-align: left;">NAME</th>
+                                <th style="margin-left: 100px; font-size: 12px; padding-bottom: 1px; text-align: left;">QTY</th>
+                                <th style="margin-left: 300px; font-size: 12px; padding-bottom: 1px; text-align: right;">RATE</th>
+                                <th style="margin-right: 30px; font-size: 12px; padding-bottom: 1px; text-align: right;">AMOUNT(LKR)</th>
+                            </tr>
+                            
+                            <apex:variable var="rowNumber" value="{!1}" />
+                            
+                            <apex:repeat value="{!Prod}" var="item">
+                                <tr style="background-color: #9e9ba1;">
+                                    <td style="margin-left: 10px; font-size: 14px; text-align: left;"><strong>{!Floor(rowNumber)}</strong></td>
+                                    <td style="margin-left: 30px; font-size: 14px; text-align: left;"><strong>{!item.name}</strong></td>
+                                    <td style="margin-left: 100px; font-size: 14px; text-align: left;"><strong>{!item.Bundle_Quantity__c}</strong></td>
+                                    <td style="margin-left: 200px; font-size: 14px; text-align: right;"><strong>{!item.Updated_Price_from_Line_item__c}</strong></td>
+                                    <td style="margin-right: 30px; font-size: 14px; text-align: right;"><strong>{!item.Bundle_Price_with_Quantity__c}</strong></td>          
+                                </tr>
+                                <tr>
+                                    <td colspan="5">
+                                        <apex:repeat value="{!item.cgcloud__Product_Parts__r}" var="itemss">
+                                            <span style="margin-left: 10px; text-align: left; font-size: 13px; ">{!itemss.cgcloud__Quantity__c} &#160;&#160;{!itemss.Part_Description__c}</span><br/>                                       
+                                        </apex:repeat>
+                                        	<span style="margin-left: 10px; text-align: left; font-size: 13px; ">{!item.Unit_Notes__c} </span><br/>
+                                    </td>
+                                </tr>
+                                
+                                <apex:variable var="rowNumber" value="{!rowNumber + 1}" /> 
+                            </apex:repeat>
+                        </tbody>
+                        
+                        <tr>
+                            <td colspan="5" style="background-color: white; height: 1px; width: 100%; padding-top: 0px;">
+                                <hr/>
+                            </td>
+                        </tr>
+                    </table>
+                    
+                    
+                    
+                    
+                    <table width="100%">
+                        <tbody>
+                            <tr>
+                                <td>
+                                    <span style="font-size: 10pt; float: left; margin-left: 480px;">
+                                        Amount:  
+                                    </span>
+                                    <span style="font-size: 10pt; float: right; margin-right: 5px;">
+                                        {!Quote.Products_Price_with_Quantity__c}
+                                    </span><br/>
+                                    <span style="font-size: 10pt; float: left; margin-left: 480px;">
+                                        Discount:
+                                    </span>
+                                    <span style="font-size: 10pt; float: right; margin-right: 5px;">
+                                        {!Quote.Discounted_Price__c}
+                                    </span><br/>
+                                    <span style="font-size: 10pt; float: left; margin-left: 480px;">
+                                        Discounted Price
+                                    </span>
+                                    <span style="font-size: 10pt; float: right; margin-right: 5px;">
+                                        {!Quote.Product_Price_With_Discount__c}
+                                    </span><br/>
+                                    <span style="font-size: 10pt; float: left; margin-left: 480px;">
+                                        {!IF(Quote.Tax_Type__c == 'SVAT', 'SVAT:', 'VAT:')}
+                                    </span>
+                                    <span style="font-size: 10pt; float: right; margin-right: 5px;">
+                                        {!Quote.Vat_Amount__c}
+                                    </span><br/>
+                                    <div style ="margin-left:  480px; background-color: black; height:1px; width:100% ;padding-top: 0px;">
+                                        <hr/>    
+                                    </div>
+                                    <span style="font-size: 10pt; float: left; margin-left: 480px;">
+                                        Total Value (LKR):  
+                                    </span>
+                                    <span style="font-size: 10pt; float: right; margin-right: 5px;">
+                                        {!Quote.Grand_total_price_with_VAT_Discount__c}
+                                    </span><br/>              
+                                    <div style ="margin-left:  480px; background-color: black; height:1px; width:100% ;padding-top: 0px;">
+                                        <hr/>    
+                                    </div>
+                                </td>
+                            </tr>
+                        </tbody>
+                    </table> 
+                </apex:outputPanel>
+                
+                
+                
+                <apex:outputPanel rendered="{!Quote.VAT__c == 'Exclude' && Quote.Rep_Discount__c <= 0}">
+                    <table style="width: 100%; border-collapse: collapse;">
+                        <tbody>
+                            <tr >
+                                <th style="margin-left: 10px; font-size: 12px; padding-bottom: 1px; text-align: left;">NO</th>
+                                <th style="margin-left: 30px; font-size: 12px; padding-bottom: 1px; text-align: left;">NAME</th>
+                                <th style="margin-left: 100px; font-size: 12px; padding-bottom: 1px; text-align: left;">QTY</th>
+                                <th style="margin-left: 300px; font-size: 12px; padding-bottom: 1px; text-align: right;">RATE</th>
+                                <th style="margin-right: 30px; font-size: 12px; padding-bottom: 1px; text-align: right;">AMOUNT(LKR)</th>
+                            </tr>
+                            
+                            <apex:variable var="rowNumber" value="{!1}" />
+                            
+                            <apex:repeat value="{!Prod}" var="item">
+                                <tr style="background-color: #9e9ba1;">
+                                    <td style="margin-left: 10px; font-size: 14px; text-align: left;"><strong>{!Floor(rowNumber)}</strong></td>
+                                    <td style="margin-left: 30px; font-size: 14px; text-align: left;"><strong>{!item.name}</strong></td>
+                                    <td style="margin-left: 100px; font-size: 14px; text-align: left;"><strong>{!item.Bundle_Quantity__c}</strong></td>
+                                    <td style="margin-left: 200px; font-size: 14px; text-align: right;"><strong>{!item.Updated_Price_from_Line_item__c}</strong></td>
+                                    <td style="margin-right: 30px; font-size: 14px; text-align: right;"><strong>{!item.Bundle_Price_with_Quantity__c}</strong></td>          
+                                </tr>
+                                <tr>
+                                    <td colspan="5">
+                                        <apex:repeat value="{!item.cgcloud__Product_Parts__r}" var="itemss">
+                                            <span style="margin-left: 10px; text-align: left; font-size: 13px; ">{!itemss.cgcloud__Quantity__c} &#160;&#160;{!itemss.Part_Description__c}</span><br/>                                       
+                                        </apex:repeat>
+                                       		<span style="margin-left: 10px; text-align: left; font-size: 13px; ">{!item.Unit_Notes__c} </span><br/>
+                                    </td>
+                                </tr>
+                                
+                                <apex:variable var="rowNumber" value="{!rowNumber + 1}" /> 
+                            </apex:repeat>
+                        </tbody>
+                        
+                        <tr>
+                            <td colspan="5" style="background-color: white; height: 1px; width: 100%; padding-top: 0px;">
+                                <hr/>
+                            </td>
+                        </tr>
+                    </table>
+                    
+                    
+                    
+                    <table width="100%">
+                        <tbody>
+                            <tr>
+                                <td>
+                                    <span style="font-size: 10pt; float: left; margin-left: 480px;">
+                                        Amount:  
+                                    </span>
+                                    <span style="font-size: 10pt; float: right; margin-right: 5px;">
+                                        {!Quote.Products_Price_with_Quantity__c}
+                                    </span><br/>
+                                    <div style ="margin-left:  480px; background-color: black; height:1px; width:100% ;padding-top: 0px;">
+                                        <hr/>    
+                                    </div>
+                                    <span style="font-size: 10pt; float: left; margin-left: 480px;">
+                                        Total Value (LKR):  
+                                    </span>
+                                    <span style="font-size: 10pt; float: right; margin-right: 5px;">
+                                        {!Quote.Products_Price_with_Quantity__c}
+                                    </span><br/>              
+                                    <div style ="margin-left:  480px; background-color: black; height:1px; width:100% ;padding-top: 0px;">
+                                        <hr/>    
+                                    </div>
+                                </td>
+                            </tr>
+                        </tbody>
+                    </table> 
+                </apex:outputPanel>
+                
+                
+                
+                
+                
+                 <apex:outputPanel rendered="{!Quote.VAT__c == 'Exclude' && Quote.Rep_Discount__c > 0}">
+                    <table style="width: 100%; border-collapse: collapse;">
+                        <tbody>
+                            <tr >
+                                <th style="margin-left: 10px; font-size: 12px; padding-bottom: 1px; text-align: left;">NO</th>
+                                <th style="margin-left: 30px; font-size: 12px; padding-bottom: 1px; text-align: left;">NAME</th>
+                                <th style="margin-left: 100px; font-size: 12px; padding-bottom: 1px; text-align: left;">QTY</th>
+                                <th style="margin-left: 300px; font-size: 12px; padding-bottom: 1px; text-align: right;">RATE</th>
+                                <th style="margin-right: 30px; font-size: 12px; padding-bottom: 1px; text-align: right;">AMOUNT(LKR)</th>
+                            </tr>
+                            
+                            <apex:variable var="rowNumber" value="{!1}" />
+                            
+                            <apex:repeat value="{!Prod}" var="item">
+                                <tr style="background-color: #9e9ba1;">
+                                    <td style="margin-left: 10px; font-size: 14px; text-align: left;"><strong>{!Floor(rowNumber)}</strong></td>
+                                    <td style="margin-left: 30px; font-size: 14px; text-align: left;"><strong>{!item.name}</strong></td>
+                                    <td style="margin-left: 100px; font-size: 14px; text-align: left;"><strong>{!item.Bundle_Quantity__c}</strong></td>
+                                    <td style="margin-left: 200px; font-size: 14px; text-align: right;"><strong>{!item.Updated_Price_from_Line_item__c}</strong></td>
+                                    <td style="margin-right: 30px; font-size: 14px; text-align: right;"><strong>{!item.Bundle_Price_with_Quantity__c}</strong></td>          
+                                </tr>
+                                <tr>
+                                    <td colspan="5">
+                                        <apex:repeat value="{!item.cgcloud__Product_Parts__r}" var="itemss">
+                                            <span style="margin-left: 10px; text-align: left; font-size: 13px; ">{!itemss.cgcloud__Quantity__c} &#160;&#160;{!itemss.Part_Description__c}</span><br/>
+                                        </apex:repeat>
+                                       	    <span style="margin-left: 10px; text-align: left; font-size: 13px; ">{!item.Unit_Notes__c} </span><br/>
+                                    </td>
+                                </tr>
+                                
+                                <apex:variable var="rowNumber" value="{!rowNumber + 1}" /> 
+                            </apex:repeat>
+                        </tbody>
+                        
+                        <tr>
+                            <td colspan="5" style="background-color: white; height: 1px; width: 100%; padding-top: 0px;">
+                                <hr/>
+                            </td>
+                        </tr>
+                    </table>
+                    
+                    
+                    
+                    <table width="100%">
+                        <tbody>
+                            <tr>
+                                <td>
+                                    <span style="font-size: 10pt; float: left; margin-left: 480px;">
+                                        Amount:  
+                                    </span>
+                                    <span style="font-size: 10pt; float: right; margin-right: 5px;">
+                                        {!Quote.Products_Price_with_Quantity__c}
+                                    </span><br/>
+                                    <span style="font-size: 10pt; float: left; margin-left: 480px;">
+                                        Discount
+                                    </span>
+                                    <span style="font-size: 10pt; float: right; margin-right: 5px;">
+                                        {!Quote.Discounted_Price__c}
+                                    </span><br/>
+                                    <span style="font-size: 10pt; float: left; margin-left: 480px;">
+                                        Discounted Price
+                                    </span>
+                                    <span style="font-size: 10pt; float: right; margin-right: 5px;">
+                                        {!Quote.Product_Price_With_Discount__c}
+                                    </span><br/>
+                                    <div style ="margin-left:  480px; background-color: black; height:1px; width:100% ;padding-top: 0px;">
+                                        <hr/>    
+                                    </div>
+                                    <span style="font-size: 10pt; float: left; margin-left: 480px;">
+                                        Total Value (LKR):  
+                                    </span>
+                                    <span style="font-size: 10pt; float: right; margin-right: 5px;">
+                                        {!Quote.Product_Price_With_Discount__c}
+                                    </span><br/>              
+                                    <div style ="margin-left:  480px; background-color: black; height:1px; width:100% ;padding-top: 0px;">
+                                        <hr/>    
+                                    </div>
+                                </td>
+                            </tr>
+                        </tbody>
+                    </table> 
+                </apex:outputPanel>
+                
+                
+                
+                
+                
+                
+                
+                <apex:outputPanel rendered="{!Quote.VAT__c == 'Include (Hidden)' && Quote.Rep_Discount__c <= 0}">
+                    <table style="width: 100%; border-collapse: collapse;">
+                        <tbody>
+                            <tr >
+                                <th style="margin-left: 10px; font-size: 12px; padding-bottom: 1px; text-align: left;">NO</th>
+                                <th style="margin-left: 30px; font-size: 12px; padding-bottom: 1px; text-align: left;">NAME</th>
+                                <th style="margin-left: 100px; font-size: 12px; padding-bottom: 1px; text-align: left;">QTY</th>
+                                <th style="margin-left: 300px; font-size: 12px; padding-bottom: 1px; text-align: right;">RATE</th>
+                                <th style="margin-right: 30px; font-size: 12px; padding-bottom: 1px; text-align: right;">AMOUNT(LKR)</th>
+                            </tr>
+                            
+                            <apex:variable var="rowNumber" value="{!1}" />
+                            
+                            <apex:repeat value="{!Prod}" var="item">
+                                <tr style="background-color: #9e9ba1;">
+                                    <td style="margin-left: 10px; font-size: 14px; text-align: left;"><strong>{!Floor(rowNumber)}</strong></td>
+                                    <td style="margin-left: 30px; font-size: 14px; text-align: left;"><strong>{!item.name}</strong></td>
+                                    <td style="margin-left: 100px; font-size: 14px; text-align: left;"><strong>{!item.Bundle_Quantity__c}</strong></td>
+                                    <td style="margin-left: 200px; font-size: 14px; text-align: right;"><strong>{!item.Bundle_Price_With_VAT__c}</strong></td>
+                                    <td style="margin-right: 30px; font-size: 14px; text-align: right;"><strong>{!item.Bundle_Price_with_VAT_Quantity__c}</strong></td>          
+                                </tr>
+                                <tr>
+                                    <td colspan="5">
+                                        <apex:repeat value="{!item.cgcloud__Product_Parts__r}" var="itemss">
+                                            <span style="margin-left: 10px; text-align: left; font-size: 13px; ">{!itemss.cgcloud__Quantity__c} &#160;&#160;{!itemss.Part_Description__c}</span><br/> 
+                                        </apex:repeat>
+                                        	<span style="margin-left: 10px; text-align: left; font-size: 13px; ">{!item.Unit_Notes__c} </span><br/>
+                                    </td>
+                                </tr>
+                                
+                                <apex:variable var="rowNumber" value="{!rowNumber + 1}" /> 
+                            </apex:repeat>
+                        </tbody>
+                        
+                        <tr>
+                            <td colspan="5" style="background-color: white; height: 1px; width: 100%; padding-top: 0px;"> 
+                                <hr/>
+                            </td>
+                        </tr>
+                    </table>
+                    
+                    
+                    
+                    <table width="100%">
+                        <tbody>
+                            <tr>
+                                <td>
+                                    <span style="font-size: 10pt; float: left; margin-left: 480px;">
+                                        Amount:  
+                                    </span>
+                                    <span style="font-size: 10pt; float: right; margin-right: 5px;">
+                                        {!Quote.Grand_Total_with_Qty_VAT_I_H__c}
+                                    </span><br/>
+                                    <div style ="margin-left:  480px; background-color: black; height:1px; width:100% ;padding-top: 0px;">
+                                        <hr/>    
+                                    </div>
+                                    <span style="font-size: 10pt; float: left; margin-left: 480px;">
+                                        Total Value (LKR):  
+                                    </span>
+                                    <span style="font-size: 10pt; float: right; margin-right: 5px;">
+                                        {!Quote.Grand_Total_with_Qty_VAT_I_H__c}
+                                    </span><br/>              
+                                    <div style ="margin-left:  480px; background-color: black; height:1px; width:100% ;padding-top: 0px;">
+                                        <hr/>    
+                                    </div>
+                                </td>
+                            </tr>
+                        </tbody>
+                    </table> 
+                </apex:outputPanel>
+
+
+
+
+
+				<apex:outputPanel rendered="{!Quote.VAT__c == 'Include (Hidden)' && Quote.Rep_Discount__c > 0}">
+                    <table style="width: 100%; border-collapse: collapse;">
+                        <tbody>
+                            <tr >
+                                <th style="margin-left: 10px; font-size: 12px; padding-bottom: 1px; text-align: left;">NO</th>
+                                <th style="margin-left: 30px; font-size: 12px; padding-bottom: 1px; text-align: left;">NAME</th>
+                                <th style="margin-left: 100px; font-size: 12px; padding-bottom: 1px; text-align: left;">QTY</th>
+                                <th style="margin-left: 300px; font-size: 12px; padding-bottom: 1px; text-align: right;">RATE</th>
+                                <th style="margin-right: 30px; font-size: 12px; padding-bottom: 1px; text-align: right;">AMOUNT(LKR)</th>
+                            </tr>
+                            
+                            <apex:variable var="rowNumber" value="{!1}" />
+                            
+                            <apex:repeat value="{!Prod}" var="item">
+                                <tr style="background-color: #9e9ba1;">
+                                    <td style="margin-left: 10px; font-size: 14px; text-align: left;"><strong>{!Floor(rowNumber)}</strong></td>
+                                    <td style="margin-left: 30px; font-size: 14px; text-align: left;"><strong>{!item.name}</strong></td>
+                                    <td style="margin-left: 100px; font-size: 14px; text-align: left;"><strong>{!item.Bundle_Quantity__c}</strong></td>
+                                    <td style="margin-left: 200px; font-size: 14px; text-align: right;"><strong>{!item.Bundle_Price_With_VAT__c}</strong></td>
+                                    <td style="margin-right: 30px; font-size: 14px; text-align: right;"><strong>{!item.Bundle_Price_with_VAT_Quantity__c}</strong></td>          
+                                </tr>
+                                <tr>
+                                    <td colspan="5">
+                                        <apex:repeat value="{!item.cgcloud__Product_Parts__r}" var="itemss">
+                                            <span style="margin-left: 10px; text-align: left; font-size: 13px; ">{!itemss.cgcloud__Quantity__c} &#160;&#160;{!itemss.Part_Description__c}</span><br/>
+                                        </apex:repeat>
+                                        	<span style="margin-left: 10px; text-align: left; font-size: 13px; ">{!item.Unit_Notes__c} </span><br/>
+                                    </td>
+                                </tr>
+                                
+                                <apex:variable var="rowNumber" value="{!rowNumber + 1}" /> 
+                            </apex:repeat>
+                        </tbody>
+                        
+                        <tr>
+                            <td colspan="5" style="background-color: white; height: 1px; width: 100%; padding-top: 0px;"> 
+                                <hr/>
+                            </td>
+                        </tr>
+                    </table>
+                    
+                    
+                    
+                    <table width="100%">
+                        <tbody>
+                            <tr>
+                                <td>
+                                    <span style="font-size: 10pt; float: left; margin-left: 480px;">
+                                        Amount:  
+                                    </span>
+                                    <span style="font-size: 10pt; float: right; margin-right: 5px;">
+                                        {!Quote.Grand_Total_with_Qty_VAT_I_H__c}
+                                    </span><br/>
+                                    <span style="font-size: 10pt; float: left; margin-left: 480px;">
+                                        Discount
+                                    </span>
+                                    <span style="font-size: 10pt; float: right; margin-right: 5px;">
+                                        {!Quote.Discounted_Price_For_I_H__c}
+                                    </span><br/>
+                                    <div style ="margin-left:  480px; background-color: black; height:1px; width:100% ;padding-top: 0px;">
+                                        <hr/>    
+                                    </div>
+                                    <span style="font-size: 10pt; float: left; margin-left: 480px;">
+                                        Total Value (LKR):  
+                                    </span>
+                                    <span style="font-size: 10pt; float: right; margin-right: 5px;">
+                                        {!Quote.Grand_Total_with_Discount_for_I_H__c}
+                                    </span><br/>              
+                                    <div style ="margin-left:  480px; background-color: black; height:1px; width:100% ;padding-top: 0px;">
+                                        <hr/>    
+                                    </div>
+                                </td>
+                            </tr>
+                        </tbody>
+                    </table> 
+                </apex:outputPanel>                
+                
+                
+             <Table Style=" Width:100%; border:1px solid black; border-collapse: collapse; ">
+                <tbody>
+                    <tr>
+                        <td style="font-size:10pt; width:100%; border: 1px solid black;border-collapse: collapse;"> {!Quote.Brand_Change_Note__c}   </td>
+                    </tr>
+                    
+                </tbody>
+          </Table>
+            <br/>
+                
+         <div style ="font-size:10pt; Margin-left: 20px; Width:90%;">
+					{!Quote.Quote_vise_Notes__c}
+         </div>
+		 <br/>                
+                
+                <Table Style="Margin-left: 20px; Width:90%; border:1px solid black; border-collapse: collapse; ">
+                    <tbody>
+                    <tr>
+                            <td style="font-size:10pt; width:20%; border: 1px solid black;border-collapse: collapse;">Terms :    </td>
+                            <td style="font-size:9pt; width:70%; border: 1px solid black;border-collapse: collapse;"> Delivery : {!Quote.Rep_Delivery__c} <br/>
+                                Payments : {!Quote.Payment_Terms__c}   </td>
+                    </tr>
+                    <tr>
+                        <td style="font-size:10pt; width:20%; border: 1px solid black;border-collapse: collapse;">Warranty :    </td>
+                        <td style="font-size:9pt; width:70%; border: 1px solid black;border-collapse: collapse;">  {!Quote.Warranty__c} </td>
+                        
+                    </tr>
+                        
+                        <div style =" background-color: black; height:1px; width:100% ;padding-top: 0px;">
+                            <hr/>    
+                        </div>
+                    </tbody>
+                </Table>
+                
+                <table width="100%">
+                    <tbody>
+                        <tr>
+                            <td>
+                                <span style="font-size: 10pt;margin-left: 10px;"><strong> Customer Details:</strong></span><br/>
+                                <span style="font-size:10pt;margin-left: 10px;">{!Quote.opportunity.Account.Name}</span><br/> <br/>
+                                <span style="font-size: 10pt;margin-left: 10px;"> Project &#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;: {!Quote.opportunity.Name}</span><br/>
+                                <span style="font-size:10pt;margin-left: 10px;">Prepared By &#160; : {!Quote.opportunity.createdby.name}</span><br/>
+                                <span style="font-size:10pt;margin-left: 10px;">Atn &#160;&#160;&#160; &#160; &#160; &#160; &#160; &#160;&#160;&#160;&#160;: Vishwa Sharma</span><br/>
+                            </td>
+                            
+                            <td>
+                                <span style="font-size:10pt;position:absolute; left:370px;"><strong> Product Standards:</strong></span><br/>
+                                <span style="font-size:10pt;position:absolute; left:370px;"> Standard &#160;&#160;: {!Quote.Standard__c}</span><br/>
+                                <span style="font-size:10pt;position:absolute; left:370px;">Protection&#160;: {!Quote.Protection__c} </span><br/>
+                                <span style="font-size:10pt;position:absolute; left:370px;">Colour &#160;&#160;&#160;&#160;&#160;: {!Quote.Colour__c}</span><br/>
+                                <span style="font-size:10pt;position:absolute; left:370px;">Validity&#160;&#160;&#160;&#160;: {!Quote.Rep_Validity__c}</span><br />
+                                <span style="font-size:10pt;position:absolute; left:370px;"></span><br />
+                            </td>
+                            <div style =" background-color: black; height:1px; width:100% ;padding-top: 0px;">
+                                <hr/>    
+                            </div>
+                        </tr>
+                    </tbody>      
+                </table> 
+                
+                
+                <table style= "Width: 100%; border:1px solid black; border-collapse: collapse;" >
+                    
+                    <tr >
+                        <th style="font-size: 14px; text-align:Center;border: 1px solid black;border-collapse: collapse;">NO</th> 
+                        <th style="font-size: 14px; text-align:Center;border: 1px solid black;border-collapse: collapse;">NAME</th>
+                        <th style="font-size: 14px; text-align:Center;border: 1px solid black;border-collapse: collapse;">QTY </th>
+                    </tr>
+                    <tbody>
+                        
+                        
+                        <apex:variable var="rowNumber" value="{!1}"/> 
+                        
+                        <apex:repeat value="{!prod}" var="item" >
+                            
+                            <tr >
+                                <td style="font-size: 14px;text-align:Center;border: 1px solid black;border-collapse: collapse;">{!Floor(rowNumber)}</td>
+                                <td style="font-size: 14px;text-align:Center;border: 1px solid black;border-collapse: collapse;">{!item.Name}</td> 
+                                <td style="font-size: 14px;text-align:Center;border: 1px solid black;border-collapse: collapse;">{!item.Bundle_Quantity__c}</td>            
+                            </tr>
+                            
+                            <apex:variable var="rowNumber" value="{!rowNumber + 1}" /> 
+                        </apex:repeat>
+                    </tbody>
+                    <div style ="background-color: black; height:1px; width:100% ; margin-top:-10px;padding-top: 0px;">
+                        <hr></hr>
+                </div> 
+            </table>
+            
+            
+            <apex:outputPanel rendered="{!Quote.VAT__c == 'Include'}">
+                <table width="100%">
+                    <tbody>
+                        <tr>
+                            <td>
+                                <span style="font-size: 10pt; float: left; margin-left: 480px;">
+                                    Amount:  
+                                </span>
+                                <span style="font-size: 10pt; float: right; margin-right: 5px;">
+                                    {!Quote.Products_Price_with_Quantity__c}
+                                </span><br/>
+                                <span style="font-size: 10pt; float: left; margin-left: 480px;">
+                                    VAT:  
+                                </span>
+                                <span style="font-size: 10pt; float: right; margin-right: 5px;">
+                                    {!Quote.Vat_Amount__c}
+                                </span><br/>
+                                <div style ="margin-left:  480px; background-color: black; height:1px; width:100% ;padding-top: 0px;">
+                                    <hr/>    
+                                </div>
+                                <span style="font-size: 10pt; float: left; margin-left: 480px;">
+                                    Total Value (LKR):  
+                                </span>
+                                <span style="font-size: 10pt; float: right; margin-right: 5px;">
+                                    {!Quote.Grand_Total_price_with_VAT__c}
+                                </span><br/>              
+                                <div style ="margin-left:  480px; background-color: black; height:1px; width:100% ;padding-top: 0px;">
+                                    <hr/>    
+                                </div>
+                            </td>
+                        </tr>
+                    </tbody>
+                </table> 
+            </apex:outputPanel>
+            
+            
+            <apex:outputPanel rendered="{!Quote.VAT__c == 'Exclude'}">
+                <table width="100%">
+                    <tbody>
+                        <tr>
+                            <td>
+                                <span style="font-size: 10pt; float: left; margin-left: 480px;">
+                                        Amount:  
+                                    </span>
+                                    <span style="font-size: 10pt; float: right; margin-right: 5px;">
+                                        {!Quote.Products_Price_with_Quantity__c}
+                                    </span><br/>
+                                    <div style ="margin-left:  480px; background-color: black; height:1px; width:100% ;padding-top: 0px;">
+                                        <hr/>    
+                                    </div>
+                                    <span style="font-size: 10pt; float: left; margin-left: 480px;">
+                                        Total Value (LKR):  
+                                    </span>
+                                    <span style="font-size: 10pt; float: right; margin-right: 5px;">
+                                        {!Quote.Products_Price_with_Quantity__c}
+                                    </span><br/>              
+                                    <div style ="margin-left:  480px; background-color: black; height:1px; width:100% ;padding-top: 0px;">
+                                        <hr/>    
+                                    </div>
+                            </td>
+                        </tr>
+                    </tbody>
+                </table> 
+            </apex:outputPanel>         
+            
+            
+            
+            
+             
+            <apex:outputPanel rendered="{!Quote.VAT__c == 'Include (Hidden)'}">
+                <table width="100%">
+                    <tbody>
+                        <tr>
+                            <td>
+                                 <span style="font-size: 10pt; float: left; margin-left: 480px;">
+                                        Amount:  
+                                    </span>
+                                    <span style="font-size: 10pt; float: right; margin-right: 5px;">
+                                        {!Quote.Grand_Total_with_Qty_VAT_I_H__c}
+                                    </span><br/>
+                                    <div style ="margin-left:  480px; background-color: black; height:1px; width:100% ;padding-top: 0px;">
+                                        <hr/>    
+                                    </div>
+                                    <span style="font-size: 10pt; float: left; margin-left: 480px;">
+                                        Total Value (LKR):  
+                                    </span>
+                                    <span style="font-size: 10pt; float: right; margin-right: 5px;">
+                                        {!Quote.Grand_Total_with_Qty_VAT_I_H__c}
+                                    </span><br/>              
+                                    <div style ="margin-left:  480px; background-color: black; height:1px; width:100% ;padding-top: 0px;">
+                                        <hr/>    
+                                    </div>
+                            </td>
+                        </tr>
+                    </tbody>
+                </table> 
+            </apex:outputPanel>         
+            
+            
+                       
+                
+                
+          <Table Style=" Width:100%; border:1px solid black; border-collapse: collapse; ">
+                <tbody>
+                    <tr>
+                        <td style="font-size:10pt; width:100%; border: 1px solid black;border-collapse: collapse;"> {!Quote.Brand_Change_Note__c}   </td>
+                    </tr>
+                </tbody>
+          </Table>
+            <br/>
+            
+  			<div style ="font-size:10pt; Margin-left: 20px; Width:90%;">
+					{!Quote.Quote_vise_Notes__c}
+        	</div>
+             <br/>
+            
+            <Table Style="Margin-left: 20px; Width:90%; border:1px solid black; border-collapse: collapse; ">
+                <tbody>
+                    <tr>
+                        <td style="font-size:10pt; width:20%; border: 1px solid black;border-collapse: collapse;">Terms :    </td>
+                        <td style="font-size:9pt; width:70%; border: 1px solid black;border-collapse: collapse;"> Delivery : {!Quote.Rep_Delivery__c} <br/>
+                            Payments : {!Quote.Payment_Terms__c}    </td>
+                    </tr>
+                    
+                    <tr>
+                        <td style="font-size:10pt; width:20%; border: 1px solid black;border-collapse: collapse;">Warranty :    </td>
+                        <td style="font-size:9pt; width:70%; border: 1px solid black;border-collapse: collapse;">  {!Quote.Warranty__c} </td>
+                        
+                    </tr>
+                    
+                    <div style =" background-color: black; height:1px; width:100% ;padding-top: 0px;">
+                        <hr/>    
+                    </div>
+                </tbody>
+            </Table>
+            
+            
+            
+        </body>            
+    </apex:form>
+</body>
+</apex:page>
