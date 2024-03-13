@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>orel_Deboard_Initiated__c</fullName>
+    <externalId>false</externalId>
+    <label>orel Deboard Initiated</label>
+    <required>false</required>
+    <trackFeedHistory>false</trackFeedHistory>
+    <type>Picklist</type>
+    <valueSet>
+        <restricted>true</restricted>
+        <valueSetDefinition>
+            <sorted>false</sorted>
+            <value>
+                <fullName>Initiated by Distributor</fullName>
+                <default>false</default>
+                <label>Initiated by Distributor</label>
+            </value>
+            <value>
+                <fullName>Initiated by Non-Distributor</fullName>
+                <default>false</default>
+                <label>Initiated by Non-Distributor</label>
+            </value>
+        </valueSetDefinition>
+    </valueSet>
+</CustomField>

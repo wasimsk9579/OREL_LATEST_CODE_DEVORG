@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Approver_responded__c</fullName>
+    <externalId>false</externalId>
+    <formula>OR(
+    ISPICKVAL(OrelStatus__c, &apos;Request Approved&apos;),
+    ISPICKVAL(OrelStatus__c, &apos;Request Rejected&apos;)
+)</formula>
+    <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
+    <label>Approver responded</label>
+    <trackTrending>false</trackTrending>
+    <type>Checkbox</type>
+</CustomField>

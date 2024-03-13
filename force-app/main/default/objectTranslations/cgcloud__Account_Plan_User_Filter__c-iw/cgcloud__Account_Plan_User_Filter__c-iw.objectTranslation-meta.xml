@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomObjectTranslation xmlns="http://soap.sforce.com/2006/04/metadata">
+    <caseValues>
+        <article>Definite</article>
+        <plural>false</plural>
+        <value>מסנן המשתמשים בתוכנית החשבון</value>
+    </caseValues>
+    <caseValues>
+        <article>None</article>
+        <plural>false</plural>
+        <value>מסנן משתמשים בתוכנית חשבון</value>
+    </caseValues>
+    <caseValues>
+        <article>Definite</article>
+        <plural>true</plural>
+        <value>מסנני המשתמשים בתוכנית החשבון</value>
+    </caseValues>
+    <caseValues>
+        <article>None</article>
+        <plural>true</plural>
+        <value>מסנני משתמשים בתוכנית חשבון</value>
+    </caseValues>
+    <gender>Masculine</gender>
+    <nameFieldLabel>שם מסנן משתמשי תוכנית חשבון</nameFieldLabel>
+</CustomObjectTranslation>

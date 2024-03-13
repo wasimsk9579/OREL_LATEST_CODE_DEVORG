@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Panel_type__c</fullName>
+    <externalId>false</externalId>
+    <label>Panel type</label>
+    <required>false</required>
+    <trackFeedHistory>false</trackFeedHistory>
+    <type>Picklist</type>
+    <valueSet>
+        <restricted>true</restricted>
+        <valueSetDefinition>
+            <sorted>false</sorted>
+            <value>
+                <fullName>Wired</fullName>
+                <default>false</default>
+                <label>Wired</label>
+            </value>
+            <value>
+                <fullName>Non wired</fullName>
+                <default>false</default>
+                <label>Non wired</label>
+            </value>
+        </valueSetDefinition>
+    </valueSet>
+</CustomField>

@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CompactLayout xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Retailer_compact_layout</fullName>
+    <fields>AccountId</fields>
+    <fields>StoreType</fields>
+    <fields>Orl_Status__c</fields>
+    <fields>Orl_Email__c</fields>
+    <fields>Orl_Mobile_Number__c</fields>
+    <label>Retailer compact layout</label>
+</CompactLayout>

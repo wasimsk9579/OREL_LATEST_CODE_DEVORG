@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ValidationRule xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Email_duplication_validation_rule</fullName>
+    <active>false</active>
+    <errorConditionFormula>AND(
+    
+        
+          
+                Email = PRIORVALUE(Email)
+            
+        
+  
+)</errorConditionFormula>
+    <errorMessage>Email should not be duplicate</errorMessage>
+</ValidationRule>

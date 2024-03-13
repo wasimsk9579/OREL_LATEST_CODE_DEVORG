@@ -1,0 +1,77 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<NavigationMenu xmlns="http://soap.sforce.com/2006/04/metadata">
+    <container>Orel</container>
+    <containerType>Network</containerType>
+    <label>Default Navigation</label>
+    <navigationMenuItem>
+        <label>Purchase Order</label>
+        <position>1</position>
+        <publiclyAvailable>true</publiclyAvailable>
+        <target>/purchase-order</target>
+        <type>InternalLink</type>
+    </navigationMenuItem>
+    <navigationMenuItem>
+        <label>Sales Order</label>
+        <position>2</position>
+        <publiclyAvailable>true</publiclyAvailable>
+        <target>/sales-order</target>
+        <type>InternalLink</type>
+    </navigationMenuItem>
+    <navigationMenuItem>
+        <label>Retail Store</label>
+        <position>3</position>
+        <publiclyAvailable>true</publiclyAvailable>
+        <target>/retailer-approval</target>
+        <type>InternalLink</type>
+    </navigationMenuItem>
+    <navigationMenuItem>
+        <label>Retail Store Order</label>
+        <position>4</position>
+        <publiclyAvailable>true</publiclyAvailable>
+        <target>/retail-order</target>
+        <type>InternalLink</type>
+    </navigationMenuItem>
+    <navigationMenuItem>
+        <label>Return Order</label>
+        <position>5</position>
+        <publiclyAvailable>true</publiclyAvailable>
+        <target>/return-order</target>
+        <type>InternalLink</type>
+    </navigationMenuItem>
+    <navigationMenuItem>
+        <label>Product</label>
+        <position>6</position>
+        <publiclyAvailable>false</publiclyAvailable>
+        <target>Product2</target>
+        <type>SalesforceObject</type>
+    </navigationMenuItem>
+    <navigationMenuItem>
+        <defaultListViewId>Distributor_Inventory</defaultListViewId>
+        <label>Inventory Details</label>
+        <position>7</position>
+        <publiclyAvailable>true</publiclyAvailable>
+        <target>cgcloud__Inventory__c</target>
+        <type>SalesforceObject</type>
+    </navigationMenuItem>
+    <navigationMenuItem>
+        <label>Visit</label>
+        <position>8</position>
+        <publiclyAvailable>true</publiclyAvailable>
+        <target>/visit</target>
+        <type>InternalLink</type>
+    </navigationMenuItem>
+    <navigationMenuItem>
+        <label>Credit Note</label>
+        <position>9</position>
+        <publiclyAvailable>true</publiclyAvailable>
+        <target>/credit-note</target>
+        <type>InternalLink</type>
+    </navigationMenuItem>
+    <navigationMenuItem>
+        <label>Support</label>
+        <position>10</position>
+        <publiclyAvailable>true</publiclyAvailable>
+        <target>/deboard-page</target>
+        <type>InternalLink</type>
+    </navigationMenuItem>
+</NavigationMenu>

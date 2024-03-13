@@ -1,0 +1,1311 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<RecordType xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Direct_Dealer</fullName>
+    <active>true</active>
+    <label>Direct Dealer</label>
+    <picklistValues>
+        <picklist>AccountSource</picklist>
+        <values>
+            <fullName>Advertisement</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Customer Event</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Employee Referral</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>External Referral</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Google AdWords</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Other</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Partner</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Purchased List</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Trade Show</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Webinar</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Website</fullName>
+            <default>false</default>
+        </values>
+    </picklistValues>
+    <picklistValues>
+        <picklist>Business_Area__c</picklist>
+        <values>
+            <fullName>0000</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>0001</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>0002</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>0003</fullName>
+            <default>false</default>
+        </values>
+    </picklistValues>
+    <picklistValues>
+        <picklist>Deboard_Status__c</picklist>
+        <values>
+            <fullName>Deboard initiated</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Request Approved</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Request Rejected</fullName>
+            <default>false</default>
+        </values>
+    </picklistValues>
+    <picklistValues>
+        <picklist>Deboarding_process_status__c</picklist>
+        <values>
+            <fullName>Completed</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Deboarding Initiated</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>In Process - Working with Reconciliation %26 Full and Final Settlement</fullName>
+            <default>false</default>
+        </values>
+    </picklistValues>
+    <picklistValues>
+        <picklist>Group__c</picklist>
+        <values>
+            <fullName>Electrical</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Industrial</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Lighting</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Project</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Ruhunu</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Water</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Wireman</fullName>
+            <default>false</default>
+        </values>
+    </picklistValues>
+    <picklistValues>
+        <picklist>Industry</picklist>
+        <values>
+            <fullName>Agriculture</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Apparel</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Banking</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Biotechnology</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Chemicals</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Communications</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Construction</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Consulting</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Education</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Electronics</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Energy</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Engineering</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Entertainment</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Environmental</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Finance</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Food %26 Beverage</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Government</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Healthcare</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Hospitality</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Insurance</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Machinery</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Manufacturing</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Media</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Not For Profit</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Other</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Recreation</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Retail</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Shipping</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Technology</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Telecommunications</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Transportation</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Utilities</fullName>
+            <default>false</default>
+        </values>
+    </picklistValues>
+    <picklistValues>
+        <picklist>ORL_Business_Area__c</picklist>
+        <values>
+            <fullName>ECMCO02 - NUGEGODA</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>ECMCO03 - PILIYANDALA</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>ECMCO04 - COLOMBO WEST</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>ECMCO05 - MORATUWA</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>ECMCO07 - PETTAH 2</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>ECMCO08 - HOMAGAMA</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>ECMCO09 - KOTTAWA</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>EGMRA01 - NEGAMBO</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>EGMRA02 - WATTALA</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>EGMRA03 - KADAWATHA</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>EGMRA04 - NITTABUWA</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>EGMRA05 - BIYAGAMA</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>EGMRA06 - MINUWANGODA</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>EGMRA07 - MEERIGAMA</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>EKDKD02 - GAMPOLA</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>EKDKD03 - MATHALE 1</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>EKDKD04 - PILIMATHALAWA 1</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>EKDKD05 - HATTON</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>EKDKD06 - KANDY-2</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>EKDKD08 - PILIMATHALAWA 2</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>EKHKA03 - KALUTHARA</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>EKHKA04 - HIKKADUWA</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>EKHKA05 - HORANA - 2</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>ENOAP02 - POLONNARUWA</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>ENOAP03 - TRINCOMALEE</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>ENOAP04 - MIHINTHALE - 1</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>ENOAP05 - MIHINTHALE - 2</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>ENOAP06 - ANURADHAPURA - 2</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>ENOAP09 - DAMBULLA</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>ENOJA01 - JAFFNA</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>ENOJA02 - KILINOCHCHI</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>ENOJA03 - JAFFNA 02</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>ENOJA04 - JAFFNA 03</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>ENWKG02 - PUTTALAM</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>ENWKG03 - NARAMMALA</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>ENWKG04 - KURUNEGALA-1</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>ENWKG05 - KURUNEGALA-2</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>ENWKG06- CHILAW-2</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>ENWKG08 - BATTULUOYA</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>ENWKG09 - KULIYAPITIYA</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>ENWKG10 - GALGAMUWA</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>ESBRA01 - BALANGODA</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>ESBRA02 - RATHNAPURA</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>ESBRA03 - EMBILIPITIYA</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>ESBRA04 - AVISSAWELLA</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>ESOMA01 - MATARA</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>ESOMA02 - AGUNUKOLAPELESSA</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>ESOMA03 - GALLE</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>ESOMA04 - DENIYAYA</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>ESOMA05 - YAKKALAMULLA</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>ESOMA08 - THISSAMAHARAMA</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>EUVAM01 - BADHULLA</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>EUVAM02 - DEHIATTAKANDIYA</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>EUVAM04 - BATTICALOA</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>EUVAM05 - KALMUNAI</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>EUVAM06 - MONARAGALA</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>EUVAM07 - BANDARAWELA</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>EUVAM08 - AMPARA</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>EUVAM09 - MAHIYANGANAYA</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>EUVAM10 - BADHULLA 02</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>ICMCO01</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>ICMCO02</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>ICMCO03</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>ICMCO04</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>ICMCO05</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>ICMCO06</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>ICMCO07</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>IGMRA01 - VEYANGODA</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>IGMRA02 - MINUWANGODA</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>IKDKD01 - KANDY</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>IKDKD02 - MATALE</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>IKDKD03 - KEGALLE</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>IKDKD04 - MAHIYANGANAYA</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>INOAP01</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>INOJA01</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>INOPO04</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>INOTR03</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>INOVA02</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>INWKG01</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>INWKG02</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>INWKG03</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>INWKG04</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>ISBRA01</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>ISOMA02</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>ISOMA03</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>IUVAM01</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>IUVAM03</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>IUVAM04</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>LCMCO01 - SRI-JAYAWARDANAPURA</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>LCMCO03 - KOTTE</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>LCMCO05 - NUGEGODA</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>LCMCO06 - MORATUWA</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>LCMCO07 - COL-WEST 1</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>LCMCO08 - MAHARAGAMA</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>LCMCO09 - COL-WEST 2</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>LCMCO10 - PILIYANDALA</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>LCMCO11 - KOTTAWA</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>LCMCO14 - KADUWELA</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>LGMRA01 - BADALGAMA</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>LGMRA02 - NITTAMBUWA</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>LGMRA03 - GAMPAHA</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>LGMRA04 - HANWELLA</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>LGMRA05 - GANEMULLA</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>LGMRA06 - COL-NORTH</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>LGMRA07 - KIRIBATHGODA</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>LGMRA09 - KIRINDIWELA</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>LGMRA10 - WELIWERIYA</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>LGMRA11 - WATTALA</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>LGMRA12 - JA-ELA</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>LGMRA13 - MINUWANGODA</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>LKDKD01 - PERADENIYA</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>LKDKD03 - MATALE</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>LKDKD04 - GAMPOLA</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>LKDKD05 - HATTON</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>LKDKD06 - NUWARAELIYA</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>LKDKD07 - KATUGASTOTA-01</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>LKDKD08 - DIGANA</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>LKDKD09 - KEGALLE</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>LKHKA01 - HORANA 1</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>LKHKA02 - HORANA 2</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>LNOAP01 - DAMBULLA</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>LNOAP02 - ANURADHAPURA</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>LNOAP04 - VAVUNIYA</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>LNOAP05 - POLONNARUWA</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>LNOAP06 - TRINCOMALEE</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>LNOAP07 - ANURADHAPURA 3</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>LNOJA01 - JAFFNA</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>LNOJA02 - KILINOCHCHI</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>LNWKG01 - GALGAMUWA</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>LNWKG02 - PUTTALAM</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>LNWKG03 - KURUNEGALA</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>LNWKG04 - REEDIGAMA</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>LNWKG06 - CHILAW</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>LNWKG07 - RAMBUKKANA%2FPOLGAHAWELA</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>LNWKG08 - ALAWWA 1</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>LNWKG09 - KULIYAPITIYA</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>LNWKG10 - CHILAW 1</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>LNWKG11 - POLPITHIGAMA</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>LNWKG12 - PARAGAHADENIYA</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>LSBRA01 - RUWANWELLA</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>LSBRA03 - AVISSAWELLA</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>LSBRA04 - BALANGODA</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>LSBRA05 - RATHNAPURA 1</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>LSBRA07 - KAHAWATTA</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>LSBRA08 - PALLEBEDDA</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>LSOMA01 - GALLE</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>LSOMA02 - MATARA</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>LSOMA03 - YAKKALAMULLA</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>LSOMA04 - THISSAMAHARAMA</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>LSOMA05 - HUNGAMA</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>LSOMA06 - PITIGALA</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>LSOMA07 - KALUTHARA</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>LSOMA08 - MATHUGAMA</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>LSOMA09 - WELIGAMA</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>LSOMA10 - WALASMULLA</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>LSOMA11 - EMBILIPITIYA</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>LSOMA13 - AMBALANGODA</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>LSOMA14 - BALAPITIYA</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>LSOMA15 - AKURESSA</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>LUVAM01 - WELIMADA</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>LUVAM02 - BANDARAWELA</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>LUVAM03 - PASSARA</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>LUVAM04 - MONARAGALA</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>LUVAM05 - MAHIYANGANAYA</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>LUVAM06 - AMPARA</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>LUVAM07 - BATTICALO</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>LUVAM08 - KALMUNAI</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>LUVAM09 - AKKAREIPATHTHU</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>LUVAM10 - BUTTALA</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>WATAM01-AMPARA</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>WATANU - ANURADHAPURA</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>WATBAT03-BATTICALOE</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>WATCHI01 - CHILLAW</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>WATCO01 - COLOMBO</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>WATCO01 - KOTTAWA</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>WATCO01 - MALABE</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>WATGALLE02 - GALLE</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>WATGAM01 - GAMPAHA</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>WATGAM02 - KADAWATHA</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>WATGAM03 - NEGAMBO</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>WATJAF01- JAFFNA</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>WATKA01-KANDY</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>WATKE01-KEGALLE</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>WATKL01-KALUTARA</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>WATKU01 - KURUNEGALA</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>WATMA01 - MATARA</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>WATMAHI03- MAHIYANGANAYA</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>WATMATALE02 - MATALE</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>WATMO02-MONARAGALA</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>WATPOL- WALIKANDA</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>WATPUT01 - PUTTALAM</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>WATTR01 - TRINCO</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>WATVAU - VAVUNIYA</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>WCMB02 - PILIYANDALA</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>WCMB03 - MORATUWA</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>WCMB04 - PETTAH</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>WCMB05 - MALABE</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>WCMB06 - MAHARAGAMA</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>WCMB07 - YATIYANTOTA</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>WGAME01 - GAMPAHA</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>WGAME02 - NITTAMBUWA</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>WGAME04 - DELGODA</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>WKDK01 - KANDY</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>WKDK01 - KEGALLE</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>WKDK04 - MATALE</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>WNOAP01 - ANURADHAPURA</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>WNOAP02 - POLONNARUWA</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>WNOAP03 - TRINCO</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>WNOAP04 - VAVUNIYA</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>WNOJA01 - JAFFNA</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>WNOWE01 - KURUNEGALA</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>WNOWE02 - CHILAW</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>WNOWE03 - PUTTALAM</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>WNOWE04 - GALGAMUWA</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>WSBRE01 - RATHNAPURA</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>WSOMA01 - ALUTGAMA</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>WSOMA02 - AMBALANGODA</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>WSOMA03 - GALLE</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>WSOMA04 - MATARA</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>WSOMA07 - HAMBANTOTA</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>WUVAE01- DEHIATTAKANDIYA</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>WUVAE02 - MONARAGALA</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>WUVAE04 - BATTICALOA</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>WUVAE05 - AKKARAIPATTU</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>WUVAE06 - BADULLA</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>WUVAE07 - BANDARAWELA</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>WUVAE08 - AMPARA</fullName>
+            <default>false</default>
+        </values>
+    </picklistValues>
+    <picklistValues>
+        <picklist>Orel_status__c</picklist>
+        <values>
+            <fullName>Deboarded</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Freeze</fullName>
+            <default>false</default>
+        </values>
+    </picklistValues>
+    <picklistValues>
+        <picklist>Orl_Tax_Type__c</picklist>
+        <values>
+            <fullName>Non-Tax Registered</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Tax Registered</fullName>
+            <default>false</default>
+        </values>
+    </picklistValues>
+    <picklistValues>
+        <picklist>Ownership</picklist>
+        <values>
+            <fullName>Other</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Private</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Public</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Subsidiary</fullName>
+            <default>false</default>
+        </values>
+    </picklistValues>
+    <picklistValues>
+        <picklist>Rating</picklist>
+        <values>
+            <fullName>Cold</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Hot</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Warm</fullName>
+            <default>false</default>
+        </values>
+    </picklistValues>
+    <picklistValues>
+        <picklist>Type</picklist>
+        <values>
+            <fullName>A</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Competitor</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Customer</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Integrator</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Investor</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Other</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Partner</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Press</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Prospect</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Reseller</fullName>
+            <default>false</default>
+        </values>
+    </picklistValues>
+    <picklistValues>
+        <picklist>Type__c</picklist>
+        <values>
+            <fullName>Company</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Direct Dealer</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Distributor</fullName>
+            <default>false</default>
+        </values>
+    </picklistValues>
+    <picklistValues>
+        <picklist>Type_of_customer__c</picklist>
+        <values>
+            <fullName>Direct Dealer</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Distributor</fullName>
+            <default>false</default>
+        </values>
+    </picklistValues>
+    <picklistValues>
+        <picklist>orel_Deboard_Initiated__c</picklist>
+        <values>
+            <fullName>Initiated by Distributor</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Initiated by Non-Distributor</fullName>
+            <default>false</default>
+        </values>
+    </picklistValues>
+</RecordType>

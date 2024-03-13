@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ValidationRule xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Rep_Discount_validation</fullName>
+    <active>true</active>
+    <errorConditionFormula>AND( $Profile.Name =&apos;Project Team Profile&apos;, ISCHANGED( Rep_Discount__c ), Rep_Discount__c &gt; 0.025)</errorConditionFormula>
+    <errorDisplayField>Rep_Discount__c</errorDisplayField>
+    <errorMessage>Error! You need to submit it for approval to project head for more discount.</errorMessage>
+</ValidationRule>

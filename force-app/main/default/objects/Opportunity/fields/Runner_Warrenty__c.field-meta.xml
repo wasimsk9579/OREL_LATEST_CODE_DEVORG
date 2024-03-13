@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Runner_Warrenty__c</fullName>
+    <defaultValue>&quot;For ORANGE ELECTRIC Products, Lifetime-Warranty for all Switches and Sockets, Low Voltage Switchgear 10kA &amp; SIGMA Ranges.&quot; + BR() +
+ &quot;5-Years Warranty for all Fan Controllers, Shaver-Outlet, Low Voltage Switchgear Alpha.&quot; + BR() +
+ &quot;24-Months Warranty for LED Lamps and Industrial Products. 12 to 18-Months Warranty for all CFLs. 12 Months Warranty for Home Appliances.&quot; + BR() +
+ &quot;The above Warranties would be applicable from Date of Invoice.&quot;</defaultValue>
+    <externalId>false</externalId>
+    <label>Runner Warrenty</label>
+    <length>90000</length>
+    <trackFeedHistory>false</trackFeedHistory>
+    <type>LongTextArea</type>
+    <visibleLines>3</visibleLines>
+</CustomField>

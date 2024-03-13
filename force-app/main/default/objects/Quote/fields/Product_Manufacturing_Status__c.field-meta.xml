@@ -1,0 +1,95 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Product_Manufacturing_Status__c</fullName>
+    <externalId>false</externalId>
+    <label>Product Manufacturing Status</label>
+    <required>false</required>
+    <trackHistory>false</trackHistory>
+    <type>Picklist</type>
+    <valueSet>
+        <restricted>true</restricted>
+        <valueSetDefinition>
+            <sorted>false</sorted>
+            <value>
+                <fullName>Raw Meterial</fullName>
+                <default>false</default>
+                <label>Raw Meterial</label>
+            </value>
+            <value>
+                <fullName>Laser Cutting</fullName>
+                <default>false</default>
+                <label>Laser Cutting</label>
+            </value>
+            <value>
+                <fullName>CNC Punching</fullName>
+                <default>false</default>
+                <label>CNC Punching</label>
+            </value>
+            <value>
+                <fullName>Bending</fullName>
+                <default>false</default>
+                <label>Bending</label>
+            </value>
+            <value>
+                <fullName>Fabricating</fullName>
+                <default>false</default>
+                <label>Fabricating</label>
+            </value>
+            <value>
+                <fullName>Arc Welding</fullName>
+                <default>false</default>
+                <label>Arc Welding</label>
+            </value>
+            <value>
+                <fullName>TIG Welding</fullName>
+                <default>false</default>
+                <label>TIG Welding</label>
+            </value>
+            <value>
+                <fullName>Grinding</fullName>
+                <default>false</default>
+                <label>Grinding</label>
+            </value>
+            <value>
+                <fullName>Finishing</fullName>
+                <default>false</default>
+                <label>Finishing</label>
+            </value>
+            <value>
+                <fullName>Filling</fullName>
+                <default>false</default>
+                <label>Filling</label>
+            </value>
+            <value>
+                <fullName>Sanding</fullName>
+                <default>false</default>
+                <label>Sanding</label>
+            </value>
+            <value>
+                <fullName>Powder Coating</fullName>
+                <default>false</default>
+                <label>Powder Coating</label>
+            </value>
+            <value>
+                <fullName>Hot Dip Galvanize</fullName>
+                <default>false</default>
+                <label>Hot Dip Galvanize</label>
+            </value>
+            <value>
+                <fullName>Ovening</fullName>
+                <default>false</default>
+                <label>Ovening</label>
+            </value>
+            <value>
+                <fullName>Assembing</fullName>
+                <default>false</default>
+                <label>Assembing</label>
+            </value>
+            <value>
+                <fullName>Finish Good</fullName>
+                <default>false</default>
+                <label>Finish Good</label>
+            </value>
+        </valueSetDefinition>
+    </valueSet>
+</CustomField>

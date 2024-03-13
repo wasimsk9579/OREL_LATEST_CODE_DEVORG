@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomObjectTranslation xmlns="http://soap.sforce.com/2006/04/metadata">
+    <caseValues>
+        <caseType>Nominative</caseType>
+        <plural>false</plural>
+        <value>Produkt mit ratenbasierter Finanzierung</value>
+    </caseValues>
+    <caseValues>
+        <caseType>Nominative</caseType>
+        <plural>true</plural>
+        <value>Manuelle Eingaben für Produkte mit ratenbasierter Finanzierung</value>
+    </caseValues>
+    <caseValues>
+        <caseType>Accusative</caseType>
+        <plural>false</plural>
+        <value>Produkt mit ratenbasierter Finanzierung</value>
+    </caseValues>
+    <caseValues>
+        <caseType>Accusative</caseType>
+        <plural>true</plural>
+        <value>Manuelle Eingaben für Produkte mit ratenbasierter Finanzierung</value>
+    </caseValues>
+    <caseValues>
+        <caseType>Genitive</caseType>
+        <plural>false</plural>
+        <value>Produkts mit ratenbasierter Finanzierung</value>
+    </caseValues>
+    <caseValues>
+        <caseType>Genitive</caseType>
+        <plural>true</plural>
+        <value>Manueller Eingaben für Produkte mit ratenbasierter Finanzierung</value>
+    </caseValues>
+    <caseValues>
+        <caseType>Dative</caseType>
+        <plural>false</plural>
+        <value>Produkt mit ratenbasierter Finanzierung</value>
+    </caseValues>
+    <caseValues>
+        <caseType>Dative</caseType>
+        <plural>true</plural>
+        <value>Manuellen Eingaben für Produkte mit ratenbasierter Finanzierung</value>
+    </caseValues>
+    <gender>Neuter</gender>
+    <nameFieldLabel>Name des Produkts mit ratenbasierter Fin</nameFieldLabel>
+</CustomObjectTranslation>

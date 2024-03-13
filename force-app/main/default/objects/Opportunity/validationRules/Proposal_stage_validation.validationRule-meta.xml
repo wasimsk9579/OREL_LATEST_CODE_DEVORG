@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ValidationRule xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Proposal_stage_validation</fullName>
+    <active>true</active>
+    <errorConditionFormula>AND(
+    ISPICKVAL(PRIORVALUE(StageName), &quot;Qualification&quot;),
+    ISPICKVAL(StageName, &quot;Proposal&quot;),
+    NOT(HasOpportunityLineItem),
+    RecordType.DeveloperName = &apos;Purchase_Order_Opportunity&apos;
+
+
+)</errorConditionFormula>
+    <errorDisplayField>AccountId</errorDisplayField>
+    <errorMessage>Before changing the Stage to &apos;Proposal&apos;, at least 1 product should be added.</errorMessage>
+</ValidationRule>

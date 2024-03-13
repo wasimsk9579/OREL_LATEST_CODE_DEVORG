@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ValidationRule xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Restrict_Creation_of_Opp_Line_Item</fullName>
+    <active>true</active>
+    <description>Prevents users from editing opportunity products after an opportunity is closed.</description>
+    <errorConditionFormula>OR(ISPICKVAL(Opportunity.StageName, &quot;Closed Won&quot;), ISPICKVAL(Opportunity.StageName, &quot;Closed Lost&quot;))</errorConditionFormula>
+    <errorMessage>Opportunity Line Items cannot be created or edited because the Opportunity is closed.</errorMessage>
+</ValidationRule>

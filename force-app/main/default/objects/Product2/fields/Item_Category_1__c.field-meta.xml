@@ -1,0 +1,75 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Item_Category_1__c</fullName>
+    <externalId>false</externalId>
+    <label>Item Category-1</label>
+    <required>false</required>
+    <trackHistory>false</trackHistory>
+    <type>Picklist</type>
+    <valueSet>
+        <restricted>true</restricted>
+        <valueSetDefinition>
+            <sorted>false</sorted>
+            <value>
+                <fullName>ACB</fullName>
+                <default>false</default>
+                <label>ACB</label>
+            </value>
+            <value>
+                <fullName>ACB Accessories</fullName>
+                <default>false</default>
+                <label>ACB Accessories</label>
+            </value>
+            <value>
+                <fullName>MCCB</fullName>
+                <default>false</default>
+                <label>MCCB</label>
+            </value>
+            <value>
+                <fullName>MCCB Accessories</fullName>
+                <default>false</default>
+                <label>MCCB Accessories</label>
+            </value>
+            <value>
+                <fullName>MCB</fullName>
+                <default>false</default>
+                <label>MCB</label>
+            </value>
+            <value>
+                <fullName>RCCB</fullName>
+                <default>false</default>
+                <label>RCCB</label>
+            </value>
+            <value>
+                <fullName>PFR</fullName>
+                <default>false</default>
+                <label>PFR</label>
+            </value>
+            <value>
+                <fullName>ELR</fullName>
+                <default>false</default>
+                <label>ELR</label>
+            </value>
+            <value>
+                <fullName>EFR</fullName>
+                <default>false</default>
+                <label>EFR</label>
+            </value>
+            <value>
+                <fullName>CAPASITOR</fullName>
+                <default>false</default>
+                <label>CAPASITOR</label>
+            </value>
+            <value>
+                <fullName>CONTACTOR</fullName>
+                <default>false</default>
+                <label>CONTACTOR</label>
+            </value>
+            <value>
+                <fullName>RELAY</fullName>
+                <default>false</default>
+                <label>RELAY</label>
+            </value>
+        </valueSetDefinition>
+    </valueSet>
+</CustomField>

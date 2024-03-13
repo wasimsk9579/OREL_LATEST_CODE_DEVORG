@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomObjectTranslation xmlns="http://soap.sforce.com/2006/04/metadata">
+    <caseValues>
+        <plural>false</plural>
+        <value>Salesforce 和行動應用程式識別碼對應</value>
+    </caseValues>
+    <nameFieldLabel>指派號碼</nameFieldLabel>
+</CustomObjectTranslation>

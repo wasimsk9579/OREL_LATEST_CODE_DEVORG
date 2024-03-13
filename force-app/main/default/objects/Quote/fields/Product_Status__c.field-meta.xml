@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Product_Status__c</fullName>
+    <externalId>false</externalId>
+    <formula>CASE(
+    Production_Status__c,
+    &quot;BOM Creation/New Item Add (BN)&quot;, IMAGE(&quot;/servlet/servlet.FileDownload?file=0151m000000ZYXQ&quot;, &quot;BOM creation state&quot;),
+    &quot;Customer Request (CR)&quot;, IMAGE(&quot;/servlet/servlet.FileDownload?file=0151m000000ZYXV&quot;, &quot;Customer request state&quot;),
+    &quot;Quotation (QT)&quot;, IMAGE(&quot;/servlet/servlet.FileDownload?file=0151m000000ZYXa&quot;, &quot;Quotation state&quot;),
+    &quot;Job Raised (JR)&quot;, IMAGE(&quot;/servlet/servlet.FileDownload?file=0151m000000ZYXf&quot;, &quot;Job Raised state&quot;),
+    &quot;Powder Coating (PC)&quot;, IMAGE(&quot;/servlet/servlet.FileDownload?file=0151m000000ZYXk&quot; , &quot;Powder Coating state&quot;),
+    &quot;Job Finish (JF)&quot;, IMAGE(&quot;/servlet/servlet.FileDownload?file=0151m000000ZYXp&quot;, &quot;Job Finish state&quot;),
+    IMAGE(&quot;/servlet/servlet.FileDownload?file=0151m000000ZYxo&quot;, &quot;Default Image&quot;)
+)</formula>
+    <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
+    <label>Product Status</label>
+    <required>false</required>
+    <trackHistory>false</trackHistory>
+    <type>Text</type>
+    <unique>false</unique>
+</CustomField>

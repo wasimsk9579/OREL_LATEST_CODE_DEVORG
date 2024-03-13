@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Brand_Change_Note__c</fullName>
+    <defaultValue>&quot;If a component in the requested brand is unavailable an equivalent component from another brand which meets the relevent standards will be used instead&quot;</defaultValue>
+    <externalId>false</externalId>
+    <label>Brand Change Note</label>
+    <length>90000</length>
+    <trackHistory>false</trackHistory>
+    <type>LongTextArea</type>
+    <visibleLines>3</visibleLines>
+</CustomField>

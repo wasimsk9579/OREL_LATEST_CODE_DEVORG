@@ -1,0 +1,1150 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>ORL_Business_Area__c</fullName>
+    <externalId>false</externalId>
+    <label>Business Area</label>
+    <required>false</required>
+    <trackFeedHistory>false</trackFeedHistory>
+    <type>Picklist</type>
+    <valueSet>
+        <restricted>true</restricted>
+        <valueSetDefinition>
+            <sorted>false</sorted>
+            <value>
+                <fullName>EGMRA03 - KADAWATHA</fullName>
+                <default>false</default>
+                <label>EGMRA03 - KADAWATHA</label>
+            </value>
+            <value>
+                <fullName>EGMRA01 - NEGAMBO</fullName>
+                <default>false</default>
+                <label>EGMRA01 - NEGAMBO</label>
+            </value>
+            <value>
+                <fullName>EKDKD02 - GAMPOLA</fullName>
+                <default>false</default>
+                <label>EKDKD02 - GAMPOLA</label>
+            </value>
+            <value>
+                <fullName>ESOMA02 - AGUNUKOLAPELESSA</fullName>
+                <default>false</default>
+                <label>ESOMA02 - AGUNUKOLAPELESSA</label>
+            </value>
+            <value>
+                <fullName>ESBRA01 - BALANGODA</fullName>
+                <default>false</default>
+                <label>ESBRA01 - BALANGODA</label>
+            </value>
+            <value>
+                <fullName>ECMCO02 - NUGEGODA</fullName>
+                <default>false</default>
+                <label>ECMCO02 - NUGEGODA</label>
+            </value>
+            <value>
+                <fullName>ENWKG03 - NARAMMALA</fullName>
+                <default>false</default>
+                <label>ENWKG03 - NARAMMALA</label>
+            </value>
+            <value>
+                <fullName>ECMCO05 - MORATUWA</fullName>
+                <default>false</default>
+                <label>ECMCO05 - MORATUWA</label>
+            </value>
+            <value>
+                <fullName>ENOAP06 - ANURADHAPURA - 2</fullName>
+                <default>false</default>
+                <label>ENOAP06 - ANURADHAPURA - 2</label>
+            </value>
+            <value>
+                <fullName>ESOMA03 - GALLE</fullName>
+                <default>false</default>
+                <label>ESOMA03 - GALLE</label>
+            </value>
+            <value>
+                <fullName>ESBRA02 - RATHNAPURA</fullName>
+                <default>false</default>
+                <label>ESBRA02 - RATHNAPURA</label>
+            </value>
+            <value>
+                <fullName>WCMB04 - PETTAH</fullName>
+                <default>false</default>
+                <label>WCMB04 - PETTAH</label>
+            </value>
+            <value>
+                <fullName>EKDKD06 - KANDY-2</fullName>
+                <default>false</default>
+                <label>EKDKD06 - KANDY-2</label>
+            </value>
+            <value>
+                <fullName>ENWKG06- CHILAW-2</fullName>
+                <default>false</default>
+                <label>ENWKG06- CHILAW-2</label>
+            </value>
+            <value>
+                <fullName>ESOMA04 - DENIYAYA</fullName>
+                <default>false</default>
+                <label>ESOMA04 - DENIYAYA</label>
+            </value>
+            <value>
+                <fullName>EGMRA06 - MINUWANGODA</fullName>
+                <default>false</default>
+                <label>EGMRA06 - MINUWANGODA</label>
+            </value>
+            <value>
+                <fullName>ENOAP05 - MIHINTHALE - 2</fullName>
+                <default>false</default>
+                <label>ENOAP05 - MIHINTHALE - 2</label>
+            </value>
+            <value>
+                <fullName>LCMCO01 - SRI-JAYAWARDANAPURA</fullName>
+                <default>false</default>
+                <label>LCMCO01 - SRI-JAYAWARDANAPURA</label>
+            </value>
+            <value>
+                <fullName>LCMCO07 - COL-WEST 1</fullName>
+                <default>false</default>
+                <label>LCMCO07 - COL-WEST 1</label>
+            </value>
+            <value>
+                <fullName>ESOMA05 - YAKKALAMULLA</fullName>
+                <default>false</default>
+                <label>ESOMA05 - YAKKALAMULLA</label>
+            </value>
+            <value>
+                <fullName>ESBRA03 - EMBILIPITIYA</fullName>
+                <default>false</default>
+                <label>ESBRA03 - EMBILIPITIYA</label>
+            </value>
+            <value>
+                <fullName>ECMCO09 - KOTTAWA</fullName>
+                <default>false</default>
+                <label>ECMCO09 - KOTTAWA</label>
+            </value>
+            <value>
+                <fullName>LCMCO11 - KOTTAWA</fullName>
+                <default>false</default>
+                <label>LCMCO11 - KOTTAWA</label>
+            </value>
+            <value>
+                <fullName>LGMRA13 - MINUWANGODA</fullName>
+                <default>false</default>
+                <label>LGMRA13 - MINUWANGODA</label>
+            </value>
+            <value>
+                <fullName>LGMRA03 - GAMPAHA</fullName>
+                <default>false</default>
+                <label>LGMRA03 - GAMPAHA</label>
+            </value>
+            <value>
+                <fullName>LGMRA04 - HANWELLA</fullName>
+                <default>false</default>
+                <label>LGMRA04 - HANWELLA</label>
+            </value>
+            <value>
+                <fullName>EUVAM02 - DEHIATTAKANDIYA</fullName>
+                <default>false</default>
+                <label>EUVAM02 - DEHIATTAKANDIYA</label>
+            </value>
+            <value>
+                <fullName>LKHKA02 - HORANA 2</fullName>
+                <default>false</default>
+                <label>LKHKA02 - HORANA 2</label>
+            </value>
+            <value>
+                <fullName>LKDKD01 - PERADENIYA</fullName>
+                <default>false</default>
+                <label>LKDKD01 - PERADENIYA</label>
+            </value>
+            <value>
+                <fullName>LKHKA01 - HORANA 1</fullName>
+                <default>false</default>
+                <label>LKHKA01 - HORANA 1</label>
+            </value>
+            <value>
+                <fullName>LSBRA04 - BALANGODA</fullName>
+                <default>false</default>
+                <label>LSBRA04 - BALANGODA</label>
+            </value>
+            <value>
+                <fullName>LUVAM07 - BATTICALO</fullName>
+                <default>false</default>
+                <label>LUVAM07 - BATTICALO</label>
+            </value>
+            <value>
+                <fullName>LSOMA02 - MATARA</fullName>
+                <default>false</default>
+                <label>LSOMA02 - MATARA</label>
+            </value>
+            <value>
+                <fullName>LSOMA03 - YAKKALAMULLA</fullName>
+                <default>false</default>
+                <label>LSOMA03 - YAKKALAMULLA</label>
+            </value>
+            <value>
+                <fullName>LSOMA06 - PITIGALA</fullName>
+                <default>false</default>
+                <label>LSOMA06 - PITIGALA</label>
+            </value>
+            <value>
+                <fullName>LSOMA10 - WALASMULLA</fullName>
+                <default>false</default>
+                <label>LSOMA10 - WALASMULLA</label>
+            </value>
+            <value>
+                <fullName>LSOMA13 - AMBALANGODA</fullName>
+                <default>false</default>
+                <label>LSOMA13 - AMBALANGODA</label>
+            </value>
+            <value>
+                <fullName>LNWKG06 - CHILAW</fullName>
+                <default>false</default>
+                <label>LNWKG06 - CHILAW</label>
+            </value>
+            <value>
+                <fullName>LNWKG09 - KULIYAPITIYA</fullName>
+                <default>false</default>
+                <label>LNWKG09 - KULIYAPITIYA</label>
+            </value>
+            <value>
+                <fullName>LGMRA07 - KIRIBATHGODA</fullName>
+                <default>false</default>
+                <label>LGMRA07 - KIRIBATHGODA</label>
+            </value>
+            <value>
+                <fullName>LSOMA04 - THISSAMAHARAMA</fullName>
+                <default>false</default>
+                <label>LSOMA04 - THISSAMAHARAMA</label>
+            </value>
+            <value>
+                <fullName>LCMCO03 - KOTTE</fullName>
+                <default>false</default>
+                <label>LCMCO03 - KOTTE</label>
+            </value>
+            <value>
+                <fullName>LNWKG08 - ALAWWA 1</fullName>
+                <default>false</default>
+                <label>LNWKG08 - ALAWWA 1</label>
+            </value>
+            <value>
+                <fullName>LKDKD09 - KEGALLE</fullName>
+                <default>false</default>
+                <label>LKDKD09 - KEGALLE</label>
+            </value>
+            <value>
+                <fullName>ENOJA02 - KILINOCHCHI</fullName>
+                <default>false</default>
+                <label>ENOJA02 - KILINOCHCHI</label>
+            </value>
+            <value>
+                <fullName>ENWKG08 - BATTULUOYA</fullName>
+                <default>false</default>
+                <label>ENWKG08 - BATTULUOYA</label>
+            </value>
+            <value>
+                <fullName>LCMCO06 - MORATUWA</fullName>
+                <default>false</default>
+                <label>LCMCO06 - MORATUWA</label>
+            </value>
+            <value>
+                <fullName>LNWKG07 - RAMBUKKANA/POLGAHAWELA</fullName>
+                <default>false</default>
+                <label>LNWKG07 - RAMBUKKANA/POLGAHAWELA</label>
+            </value>
+            <value>
+                <fullName>LSBRA07 - KAHAWATTA</fullName>
+                <default>false</default>
+                <label>LSBRA07 - KAHAWATTA</label>
+            </value>
+            <value>
+                <fullName>LNOAP02 - ANURADHAPURA</fullName>
+                <default>false</default>
+                <label>LNOAP02 - ANURADHAPURA</label>
+            </value>
+            <value>
+                <fullName>ESBRA04 - AVISSAWELLA</fullName>
+                <default>false</default>
+                <label>ESBRA04 - AVISSAWELLA</label>
+            </value>
+            <value>
+                <fullName>LUVAM09 - AKKAREIPATHTHU</fullName>
+                <default>false</default>
+                <label>LUVAM09 - AKKAREIPATHTHU</label>
+            </value>
+            <value>
+                <fullName>LSOMA11 - EMBILIPITIYA</fullName>
+                <default>false</default>
+                <label>LSOMA11 - EMBILIPITIYA</label>
+            </value>
+            <value>
+                <fullName>LUVAM01 - WELIMADA</fullName>
+                <default>false</default>
+                <label>LUVAM01 - WELIMADA</label>
+            </value>
+            <value>
+                <fullName>WCMB02 - PILIYANDALA</fullName>
+                <default>false</default>
+                <label>WCMB02 - PILIYANDALA</label>
+            </value>
+            <value>
+                <fullName>WCMB03 - MORATUWA</fullName>
+                <default>false</default>
+                <label>WCMB03 - MORATUWA</label>
+            </value>
+            <value>
+                <fullName>WGAME02 - NITTAMBUWA</fullName>
+                <default>false</default>
+                <label>WGAME02 - NITTAMBUWA</label>
+            </value>
+            <value>
+                <fullName>WCMB07 - YATIYANTOTA</fullName>
+                <default>false</default>
+                <label>WCMB07 - YATIYANTOTA</label>
+            </value>
+            <value>
+                <fullName>WNOAP02 - POLONNARUWA</fullName>
+                <default>false</default>
+                <label>WNOAP02 - POLONNARUWA</label>
+            </value>
+            <value>
+                <fullName>WUVAE02 - MONARAGALA</fullName>
+                <default>false</default>
+                <label>WUVAE02 - MONARAGALA</label>
+            </value>
+            <value>
+                <fullName>WNOJA01 - JAFFNA</fullName>
+                <default>false</default>
+                <label>WNOJA01 - JAFFNA</label>
+            </value>
+            <value>
+                <fullName>WUVAE04 - BATTICALOA</fullName>
+                <default>false</default>
+                <label>WUVAE04 - BATTICALOA</label>
+            </value>
+            <value>
+                <fullName>WUVAE05 - AKKARAIPATTU</fullName>
+                <default>false</default>
+                <label>WUVAE05 - AKKARAIPATTU</label>
+            </value>
+            <value>
+                <fullName>LSBRA01 - RUWANWELLA</fullName>
+                <default>false</default>
+                <label>LSBRA01 - RUWANWELLA</label>
+            </value>
+            <value>
+                <fullName>LKDKD06 - NUWARAELIYA</fullName>
+                <default>false</default>
+                <label>LKDKD06 - NUWARAELIYA</label>
+            </value>
+            <value>
+                <fullName>LCMCO10 - PILIYANDALA</fullName>
+                <default>false</default>
+                <label>LCMCO10 - PILIYANDALA</label>
+            </value>
+            <value>
+                <fullName>LGMRA02 - NITTAMBUWA</fullName>
+                <default>false</default>
+                <label>LGMRA02 - NITTAMBUWA</label>
+            </value>
+            <value>
+                <fullName>LSOMA01 - GALLE</fullName>
+                <default>false</default>
+                <label>LSOMA01 - GALLE</label>
+            </value>
+            <value>
+                <fullName>EUVAM07 - BANDARAWELA</fullName>
+                <default>false</default>
+                <label>EUVAM07 - BANDARAWELA</label>
+            </value>
+            <value>
+                <fullName>LNOAP01 - DAMBULLA</fullName>
+                <default>false</default>
+                <label>LNOAP01 - DAMBULLA</label>
+            </value>
+            <value>
+                <fullName>LKDKD07 - KATUGASTOTA-01</fullName>
+                <default>false</default>
+                <label>LKDKD07 - KATUGASTOTA-01</label>
+            </value>
+            <value>
+                <fullName>LSOMA15 - AKURESSA</fullName>
+                <default>false</default>
+                <label>LSOMA15 - AKURESSA</label>
+            </value>
+            <value>
+                <fullName>LGMRA01 - BADALGAMA</fullName>
+                <default>false</default>
+                <label>LGMRA01 - BADALGAMA</label>
+            </value>
+            <value>
+                <fullName>LCMCO08 - MAHARAGAMA</fullName>
+                <default>false</default>
+                <label>LCMCO08 - MAHARAGAMA</label>
+            </value>
+            <value>
+                <fullName>LUVAM04 - MONARAGALA</fullName>
+                <default>false</default>
+                <label>LUVAM04 - MONARAGALA</label>
+            </value>
+            <value>
+                <fullName>LNWKG10 - CHILAW 1</fullName>
+                <default>false</default>
+                <label>LNWKG10 - CHILAW 1</label>
+            </value>
+            <value>
+                <fullName>EKDKD08 - PILIMATHALAWA 2</fullName>
+                <default>false</default>
+                <label>EKDKD08 - PILIMATHALAWA 2</label>
+            </value>
+            <value>
+                <fullName>LGMRA12 - JA-ELA</fullName>
+                <default>false</default>
+                <label>LGMRA12 - JA-ELA</label>
+            </value>
+            <value>
+                <fullName>LSOMA05 - HUNGAMA</fullName>
+                <default>false</default>
+                <label>LSOMA05 - HUNGAMA</label>
+            </value>
+            <value>
+                <fullName>WSOMA04 - MATARA</fullName>
+                <default>false</default>
+                <label>WSOMA04 - MATARA</label>
+            </value>
+            <value>
+                <fullName>ENOAP04 - MIHINTHALE - 1</fullName>
+                <default>false</default>
+                <label>ENOAP04 - MIHINTHALE - 1</label>
+            </value>
+            <value>
+                <fullName>LKDKD03 - MATALE</fullName>
+                <default>false</default>
+                <label>LKDKD03 - MATALE</label>
+            </value>
+            <value>
+                <fullName>LSOMA07 - KALUTHARA</fullName>
+                <default>false</default>
+                <label>LSOMA07 - KALUTHARA</label>
+            </value>
+            <value>
+                <fullName>ICMCO01</fullName>
+                <default>false</default>
+                <label>ICMCO01</label>
+            </value>
+            <value>
+                <fullName>ICMCO02</fullName>
+                <default>false</default>
+                <label>ICMCO02</label>
+            </value>
+            <value>
+                <fullName>ICMCO03</fullName>
+                <default>false</default>
+                <label>ICMCO03</label>
+            </value>
+            <value>
+                <fullName>ISBRA01</fullName>
+                <default>false</default>
+                <label>ISBRA01</label>
+            </value>
+            <value>
+                <fullName>ICMCO04</fullName>
+                <default>false</default>
+                <label>ICMCO04</label>
+            </value>
+            <value>
+                <fullName>ICMCO05</fullName>
+                <default>false</default>
+                <label>ICMCO05</label>
+            </value>
+            <value>
+                <fullName>INOJA01</fullName>
+                <default>false</default>
+                <label>INOJA01</label>
+            </value>
+            <value>
+                <fullName>IUVAM01</fullName>
+                <default>false</default>
+                <label>IUVAM01</label>
+            </value>
+            <value>
+                <fullName>IKDKD01 - KANDY</fullName>
+                <default>false</default>
+                <label>IKDKD01 - KANDY</label>
+            </value>
+            <value>
+                <fullName>INWKG01</fullName>
+                <default>false</default>
+                <label>INWKG01</label>
+            </value>
+            <value>
+                <fullName>WNOAP04 - VAVUNIYA</fullName>
+                <default>false</default>
+                <label>WNOAP04 - VAVUNIYA</label>
+            </value>
+            <value>
+                <fullName>LNWKG03 - KURUNEGALA</fullName>
+                <default>false</default>
+                <label>LNWKG03 - KURUNEGALA</label>
+            </value>
+            <value>
+                <fullName>EKDKD04 - PILIMATHALAWA 1</fullName>
+                <default>false</default>
+                <label>EKDKD04 - PILIMATHALAWA 1</label>
+            </value>
+            <value>
+                <fullName>LSOMA14 - BALAPITIYA</fullName>
+                <default>false</default>
+                <label>LSOMA14 - BALAPITIYA</label>
+            </value>
+            <value>
+                <fullName>EKHKA04 - HIKKADUWA</fullName>
+                <default>false</default>
+                <label>EKHKA04 - HIKKADUWA</label>
+            </value>
+            <value>
+                <fullName>ICMCO06</fullName>
+                <default>false</default>
+                <label>ICMCO06</label>
+            </value>
+            <value>
+                <fullName>EKHKA03 - KALUTHARA</fullName>
+                <default>false</default>
+                <label>EKHKA03 - KALUTHARA</label>
+            </value>
+            <value>
+                <fullName>ENWKG04 - KURUNEGALA-1</fullName>
+                <default>false</default>
+                <label>ENWKG04 - KURUNEGALA-1</label>
+            </value>
+            <value>
+                <fullName>LCMCO05 - NUGEGODA</fullName>
+                <default>false</default>
+                <label>LCMCO05 - NUGEGODA</label>
+            </value>
+            <value>
+                <fullName>LNOAP04 - VAVUNIYA</fullName>
+                <default>false</default>
+                <label>LNOAP04 - VAVUNIYA</label>
+            </value>
+            <value>
+                <fullName>LNOAP07 - ANURADHAPURA 3</fullName>
+                <default>false</default>
+                <label>LNOAP07 - ANURADHAPURA 3</label>
+            </value>
+            <value>
+                <fullName>LNOJA01 - JAFFNA</fullName>
+                <default>false</default>
+                <label>LNOJA01 - JAFFNA</label>
+            </value>
+            <value>
+                <fullName>ENOJA03 - JAFFNA 02</fullName>
+                <default>false</default>
+                <label>ENOJA03 - JAFFNA 02</label>
+            </value>
+            <value>
+                <fullName>EUVAM04 - BATTICALOA</fullName>
+                <default>false</default>
+                <label>EUVAM04 - BATTICALOA</label>
+            </value>
+            <value>
+                <fullName>LUVAM03 - PASSARA</fullName>
+                <default>false</default>
+                <label>LUVAM03 - PASSARA</label>
+            </value>
+            <value>
+                <fullName>LUVAM02 - BANDARAWELA</fullName>
+                <default>false</default>
+                <label>LUVAM02 - BANDARAWELA</label>
+            </value>
+            <value>
+                <fullName>LKDKD04 - GAMPOLA</fullName>
+                <default>false</default>
+                <label>LKDKD04 - GAMPOLA</label>
+            </value>
+            <value>
+                <fullName>LKDKD08 - DIGANA</fullName>
+                <default>false</default>
+                <label>LKDKD08 - DIGANA</label>
+            </value>
+            <value>
+                <fullName>LGMRA05 - GANEMULLA</fullName>
+                <default>false</default>
+                <label>LGMRA05 - GANEMULLA</label>
+            </value>
+            <value>
+                <fullName>LUVAM05 - MAHIYANGANAYA</fullName>
+                <default>false</default>
+                <label>LUVAM05 - MAHIYANGANAYA</label>
+            </value>
+            <value>
+                <fullName>WGAME04 - DELGODA</fullName>
+                <default>false</default>
+                <label>WGAME04 - DELGODA</label>
+            </value>
+            <value>
+                <fullName>LCMCO14 - KADUWELA</fullName>
+                <default>false</default>
+                <label>LCMCO14 - KADUWELA</label>
+            </value>
+            <value>
+                <fullName>WSOMA01 - ALUTGAMA</fullName>
+                <default>false</default>
+                <label>WSOMA01 - ALUTGAMA</label>
+            </value>
+            <value>
+                <fullName>WGAME01 - GAMPAHA</fullName>
+                <default>false</default>
+                <label>WGAME01 - GAMPAHA</label>
+            </value>
+            <value>
+                <fullName>LSBRA05 - RATHNAPURA 1</fullName>
+                <default>false</default>
+                <label>LSBRA05 - RATHNAPURA 1</label>
+            </value>
+            <value>
+                <fullName>INOVA02</fullName>
+                <default>false</default>
+                <label>INOVA02</label>
+            </value>
+            <value>
+                <fullName>WNOWE02 - CHILAW</fullName>
+                <default>false</default>
+                <label>WNOWE02 - CHILAW</label>
+            </value>
+            <value>
+                <fullName>INWKG02</fullName>
+                <default>false</default>
+                <label>INWKG02</label>
+            </value>
+            <value>
+                <fullName>ECMCO08 - HOMAGAMA</fullName>
+                <default>false</default>
+                <label>ECMCO08 - HOMAGAMA</label>
+            </value>
+            <value>
+                <fullName>EGMRA07 - MEERIGAMA</fullName>
+                <default>false</default>
+                <label>EGMRA07 - MEERIGAMA</label>
+            </value>
+            <value>
+                <fullName>ISOMA02</fullName>
+                <default>false</default>
+                <label>ISOMA02</label>
+            </value>
+            <value>
+                <fullName>LUVAM10 - BUTTALA</fullName>
+                <default>false</default>
+                <label>LUVAM10 - BUTTALA</label>
+            </value>
+            <value>
+                <fullName>LUVAM08 - KALMUNAI</fullName>
+                <default>false</default>
+                <label>LUVAM08 - KALMUNAI</label>
+            </value>
+            <value>
+                <fullName>WNOWE01 - KURUNEGALA</fullName>
+                <default>false</default>
+                <label>WNOWE01 - KURUNEGALA</label>
+            </value>
+            <value>
+                <fullName>IGMRA02 - MINUWANGODA</fullName>
+                <default>false</default>
+                <label>IGMRA02 - MINUWANGODA</label>
+            </value>
+            <value>
+                <fullName>WSBRE01 - RATHNAPURA</fullName>
+                <default>false</default>
+                <label>WSBRE01 - RATHNAPURA</label>
+            </value>
+            <value>
+                <fullName>IUVAM03</fullName>
+                <default>false</default>
+                <label>IUVAM03</label>
+            </value>
+            <value>
+                <fullName>ESOMA08 - THISSAMAHARAMA</fullName>
+                <default>false</default>
+                <label>ESOMA08 - THISSAMAHARAMA</label>
+            </value>
+            <value>
+                <fullName>INOTR03</fullName>
+                <default>false</default>
+                <label>INOTR03</label>
+            </value>
+            <value>
+                <fullName>WSOMA07 - HAMBANTOTA</fullName>
+                <default>false</default>
+                <label>WSOMA07 - HAMBANTOTA</label>
+            </value>
+            <value>
+                <fullName>EKDKD03 - MATHALE 1</fullName>
+                <default>false</default>
+                <label>EKDKD03 - MATHALE 1</label>
+            </value>
+            <value>
+                <fullName>EGMRA04 - NITTABUWA</fullName>
+                <default>false</default>
+                <label>EGMRA04 - NITTABUWA</label>
+            </value>
+            <value>
+                <fullName>WKDK04 - MATALE</fullName>
+                <default>false</default>
+                <label>WKDK04 - MATALE</label>
+            </value>
+            <value>
+                <fullName>WKDK01 - KANDY</fullName>
+                <default>false</default>
+                <label>WKDK01 - KANDY</label>
+            </value>
+            <value>
+                <fullName>LGMRA11 - WATTALA</fullName>
+                <default>false</default>
+                <label>LGMRA11 - WATTALA</label>
+            </value>
+            <value>
+                <fullName>ENOAP09 - DAMBULLA</fullName>
+                <default>false</default>
+                <label>ENOAP09 - DAMBULLA</label>
+            </value>
+            <value>
+                <fullName>IKDKD03 - KEGALLE</fullName>
+                <default>false</default>
+                <label>IKDKD03 - KEGALLE</label>
+            </value>
+            <value>
+                <fullName>ESOMA01 - MATARA</fullName>
+                <default>false</default>
+                <label>ESOMA01 - MATARA</label>
+            </value>
+            <value>
+                <fullName>WNOWE04 - GALGAMUWA</fullName>
+                <default>false</default>
+                <label>WNOWE04 - GALGAMUWA</label>
+            </value>
+            <value>
+                <fullName>WUVAE07 - BANDARAWELA</fullName>
+                <default>false</default>
+                <label>WUVAE07 - BANDARAWELA</label>
+            </value>
+            <value>
+                <fullName>ICMCO07</fullName>
+                <default>false</default>
+                <label>ICMCO07</label>
+            </value>
+            <value>
+                <fullName>WNOAP03 - TRINCO</fullName>
+                <default>false</default>
+                <label>WNOAP03 - TRINCO</label>
+            </value>
+            <value>
+                <fullName>LNOAP06 - TRINCOMALEE</fullName>
+                <default>false</default>
+                <label>LNOAP06 - TRINCOMALEE</label>
+            </value>
+            <value>
+                <fullName>ENWKG02 - PUTTALAM</fullName>
+                <default>false</default>
+                <label>ENWKG02 - PUTTALAM</label>
+            </value>
+            <value>
+                <fullName>EGMRA05 - BIYAGAMA</fullName>
+                <default>false</default>
+                <label>EGMRA05 - BIYAGAMA</label>
+            </value>
+            <value>
+                <fullName>ECMCO04 - COLOMBO WEST</fullName>
+                <default>false</default>
+                <label>ECMCO04 - COLOMBO WEST</label>
+            </value>
+            <value>
+                <fullName>EGMRA02 - WATTALA</fullName>
+                <default>false</default>
+                <label>EGMRA02 - WATTALA</label>
+            </value>
+            <value>
+                <fullName>LNWKG11 - POLPITHIGAMA</fullName>
+                <default>false</default>
+                <label>LNWKG11 - POLPITHIGAMA</label>
+            </value>
+            <value>
+                <fullName>WCMB06 - MAHARAGAMA</fullName>
+                <default>false</default>
+                <label>WCMB06 - MAHARAGAMA</label>
+            </value>
+            <value>
+                <fullName>ENOJA04 - JAFFNA 03</fullName>
+                <default>false</default>
+                <label>ENOJA04 - JAFFNA 03</label>
+            </value>
+            <value>
+                <fullName>ECMCO07 - PETTAH 2</fullName>
+                <default>false</default>
+                <label>ECMCO07 - PETTAH 2</label>
+            </value>
+            <value>
+                <fullName>IGMRA01 - VEYANGODA</fullName>
+                <default>false</default>
+                <label>IGMRA01 - VEYANGODA</label>
+            </value>
+            <value>
+                <fullName>ENWKG05 - KURUNEGALA-2</fullName>
+                <default>false</default>
+                <label>ENWKG05 - KURUNEGALA-2</label>
+            </value>
+            <value>
+                <fullName>WUVAE08 - AMPARA</fullName>
+                <default>false</default>
+                <label>WUVAE08 - AMPARA</label>
+            </value>
+            <value>
+                <fullName>WSOMA03 - GALLE</fullName>
+                <default>false</default>
+                <label>WSOMA03 - GALLE</label>
+            </value>
+            <value>
+                <fullName>ENOAP03 - TRINCOMALEE</fullName>
+                <default>false</default>
+                <label>ENOAP03 - TRINCOMALEE</label>
+            </value>
+            <value>
+                <fullName>LNWKG04 - REEDIGAMA</fullName>
+                <default>false</default>
+                <label>LNWKG04 - REEDIGAMA</label>
+            </value>
+            <value>
+                <fullName>IUVAM04</fullName>
+                <default>false</default>
+                <label>IUVAM04</label>
+            </value>
+            <value>
+                <fullName>WNOWE03 - PUTTALAM</fullName>
+                <default>false</default>
+                <label>WNOWE03 - PUTTALAM</label>
+            </value>
+            <value>
+                <fullName>EUVAM09 - MAHIYANGANAYA</fullName>
+                <default>false</default>
+                <label>EUVAM09 - MAHIYANGANAYA</label>
+            </value>
+            <value>
+                <fullName>WATCO01 - MALABE</fullName>
+                <default>false</default>
+                <label>WATCO01 - MALABE</label>
+            </value>
+            <value>
+                <fullName>LSOMA09 - WELIGAMA</fullName>
+                <default>false</default>
+                <label>LSOMA09 - WELIGAMA</label>
+            </value>
+            <value>
+                <fullName>WATKL01-KALUTARA</fullName>
+                <default>false</default>
+                <label>WATKL01-KALUTARA</label>
+            </value>
+            <value>
+                <fullName>ISOMA03</fullName>
+                <default>false</default>
+                <label>ISOMA03</label>
+            </value>
+            <value>
+                <fullName>LNWKG12 - PARAGAHADENIYA</fullName>
+                <default>false</default>
+                <label>LNWKG12 - PARAGAHADENIYA</label>
+            </value>
+            <value>
+                <fullName>INOAP01</fullName>
+                <default>false</default>
+                <label>INOAP01</label>
+            </value>
+            <value>
+                <fullName>LSBRA03 - AVISSAWELLA</fullName>
+                <default>false</default>
+                <label>LSBRA03 - AVISSAWELLA</label>
+            </value>
+            <value>
+                <fullName>WATBAT03-BATTICALOE</fullName>
+                <default>false</default>
+                <label>WATBAT03-BATTICALOE</label>
+            </value>
+            <value>
+                <fullName>WATMO02-MONARAGALA</fullName>
+                <default>false</default>
+                <label>WATMO02-MONARAGALA</label>
+            </value>
+            <value>
+                <fullName>INOPO04</fullName>
+                <default>false</default>
+                <label>INOPO04</label>
+            </value>
+            <value>
+                <fullName>WATGAM01 - GAMPAHA</fullName>
+                <default>false</default>
+                <label>WATGAM01 - GAMPAHA</label>
+            </value>
+            <value>
+                <fullName>WATTR01 - TRINCO</fullName>
+                <default>false</default>
+                <label>WATTR01 - TRINCO</label>
+            </value>
+            <value>
+                <fullName>WATKU01 - KURUNEGALA</fullName>
+                <default>false</default>
+                <label>WATKU01 - KURUNEGALA</label>
+            </value>
+            <value>
+                <fullName>LSBRA08 - PALLEBEDDA</fullName>
+                <default>false</default>
+                <label>LSBRA08 - PALLEBEDDA</label>
+            </value>
+            <value>
+                <fullName>ENWKG09 - KULIYAPITIYA</fullName>
+                <default>false</default>
+                <label>ENWKG09 - KULIYAPITIYA</label>
+            </value>
+            <value>
+                <fullName>EKHKA05 - HORANA - 2</fullName>
+                <default>false</default>
+                <label>EKHKA05 - HORANA - 2</label>
+            </value>
+            <value>
+                <fullName>LNWKG02 - PUTTALAM</fullName>
+                <default>false</default>
+                <label>LNWKG02 - PUTTALAM</label>
+            </value>
+            <value>
+                <fullName>WSOMA02 - AMBALANGODA</fullName>
+                <default>false</default>
+                <label>WSOMA02 - AMBALANGODA</label>
+            </value>
+            <value>
+                <fullName>EUVAM01 - BADHULLA</fullName>
+                <default>false</default>
+                <label>EUVAM01 - BADHULLA</label>
+            </value>
+            <value>
+                <fullName>WATCHI01 - CHILLAW</fullName>
+                <default>false</default>
+                <label>WATCHI01 - CHILLAW</label>
+            </value>
+            <value>
+                <fullName>LGMRA09 - KIRINDIWELA</fullName>
+                <default>false</default>
+                <label>LGMRA09 - KIRINDIWELA</label>
+            </value>
+            <value>
+                <fullName>WATPUT01 - PUTTALAM</fullName>
+                <default>false</default>
+                <label>WATPUT01 - PUTTALAM</label>
+            </value>
+            <value>
+                <fullName>WATGAM02 - KADAWATHA</fullName>
+                <default>false</default>
+                <label>WATGAM02 - KADAWATHA</label>
+            </value>
+            <value>
+                <fullName>EUVAM06 - MONARAGALA</fullName>
+                <default>false</default>
+                <label>EUVAM06 - MONARAGALA</label>
+            </value>
+            <value>
+                <fullName>WCMB05 - MALABE</fullName>
+                <default>false</default>
+                <label>WCMB05 - MALABE</label>
+            </value>
+            <value>
+                <fullName>LUVAM06 - AMPARA</fullName>
+                <default>false</default>
+                <label>LUVAM06 - AMPARA</label>
+            </value>
+            <value>
+                <fullName>WATMA01 - MATARA</fullName>
+                <default>false</default>
+                <label>WATMA01 - MATARA</label>
+            </value>
+            <value>
+                <fullName>WATJAF01- JAFFNA</fullName>
+                <default>false</default>
+                <label>WATJAF01- JAFFNA</label>
+            </value>
+            <value>
+                <fullName>ENWKG10 - GALGAMUWA</fullName>
+                <default>false</default>
+                <label>ENWKG10 - GALGAMUWA</label>
+            </value>
+            <value>
+                <fullName>ENOAP02 - POLONNARUWA</fullName>
+                <default>false</default>
+                <label>ENOAP02 - POLONNARUWA</label>
+            </value>
+            <value>
+                <fullName>EUVAM10 - BADHULLA 02</fullName>
+                <default>false</default>
+                <label>EUVAM10 - BADHULLA 02</label>
+            </value>
+            <value>
+                <fullName>WUVAE06 - BADULLA</fullName>
+                <default>false</default>
+                <label>WUVAE06 - BADULLA</label>
+            </value>
+            <value>
+                <fullName>WATPOL- WALIKANDA</fullName>
+                <default>false</default>
+                <label>WATPOL- WALIKANDA</label>
+            </value>
+            <value>
+                <fullName>LNOAP05 - POLONNARUWA</fullName>
+                <default>false</default>
+                <label>LNOAP05 - POLONNARUWA</label>
+            </value>
+            <value>
+                <fullName>WATAM01-AMPARA</fullName>
+                <default>false</default>
+                <label>WATAM01-AMPARA</label>
+            </value>
+            <value>
+                <fullName>EUVAM05 - KALMUNAI</fullName>
+                <default>false</default>
+                <label>EUVAM05 - KALMUNAI</label>
+            </value>
+            <value>
+                <fullName>LGMRA06 - COL-NORTH</fullName>
+                <default>false</default>
+                <label>LGMRA06 - COL-NORTH</label>
+            </value>
+            <value>
+                <fullName>ECMCO03 - PILIYANDALA</fullName>
+                <default>false</default>
+                <label>ECMCO03 - PILIYANDALA</label>
+            </value>
+            <value>
+                <fullName>WNOAP01 - ANURADHAPURA</fullName>
+                <default>false</default>
+                <label>WNOAP01 - ANURADHAPURA</label>
+            </value>
+            <value>
+                <fullName>WATGAM03 - NEGAMBO</fullName>
+                <default>false</default>
+                <label>WATGAM03 - NEGAMBO</label>
+            </value>
+            <value>
+                <fullName>WATANU - ANURADHAPURA</fullName>
+                <default>false</default>
+                <label>WATANU - ANURADHAPURA</label>
+            </value>
+            <value>
+                <fullName>EKDKD05 - HATTON</fullName>
+                <default>false</default>
+                <label>EKDKD05 - HATTON</label>
+            </value>
+            <value>
+                <fullName>LKDKD05 - HATTON</fullName>
+                <default>false</default>
+                <label>LKDKD05 - HATTON</label>
+            </value>
+            <value>
+                <fullName>INWKG03</fullName>
+                <default>false</default>
+                <label>INWKG03</label>
+            </value>
+            <value>
+                <fullName>IKDKD02 - MATALE</fullName>
+                <default>false</default>
+                <label>IKDKD02 - MATALE</label>
+            </value>
+            <value>
+                <fullName>LNWKG01 - GALGAMUWA</fullName>
+                <default>false</default>
+                <label>LNWKG01 - GALGAMUWA</label>
+            </value>
+            <value>
+                <fullName>EUVAM08 - AMPARA</fullName>
+                <default>false</default>
+                <label>EUVAM08 - AMPARA</label>
+            </value>
+            <value>
+                <fullName>LCMCO09 - COL-WEST 2</fullName>
+                <default>false</default>
+                <label>LCMCO09 - COL-WEST 2</label>
+            </value>
+            <value>
+                <fullName>LNOJA02 - KILINOCHCHI</fullName>
+                <default>false</default>
+                <label>LNOJA02 - KILINOCHCHI</label>
+            </value>
+            <value>
+                <fullName>WATCO01 - COLOMBO</fullName>
+                <default>false</default>
+                <label>WATCO01 - COLOMBO</label>
+            </value>
+            <value>
+                <fullName>WATMATALE02 - MATALE</fullName>
+                <default>false</default>
+                <label>WATMATALE02 - MATALE</label>
+            </value>
+            <value>
+                <fullName>WATCO01 - KOTTAWA</fullName>
+                <default>false</default>
+                <label>WATCO01 - KOTTAWA</label>
+            </value>
+            <value>
+                <fullName>LGMRA10 - WELIWERIYA</fullName>
+                <default>false</default>
+                <label>LGMRA10 - WELIWERIYA</label>
+            </value>
+            <value>
+                <fullName>WATMAHI03- MAHIYANGANAYA</fullName>
+                <default>false</default>
+                <label>WATMAHI03- MAHIYANGANAYA</label>
+            </value>
+            <value>
+                <fullName>WATGALLE02 - GALLE</fullName>
+                <default>false</default>
+                <label>WATGALLE02 - GALLE</label>
+            </value>
+            <value>
+                <fullName>IKDKD04 - MAHIYANGANAYA</fullName>
+                <default>false</default>
+                <label>IKDKD04 - MAHIYANGANAYA</label>
+            </value>
+            <value>
+                <fullName>WUVAE01- DEHIATTAKANDIYA</fullName>
+                <default>false</default>
+                <label>WUVAE01- DEHIATTAKANDIYA</label>
+            </value>
+            <value>
+                <fullName>WATVAU - VAVUNIYA</fullName>
+                <default>false</default>
+                <label>WATVAU - VAVUNIYA</label>
+            </value>
+            <value>
+                <fullName>LSOMA08 - MATHUGAMA</fullName>
+                <default>false</default>
+                <label>LSOMA08 - MATHUGAMA</label>
+            </value>
+            <value>
+                <fullName>INWKG04</fullName>
+                <default>false</default>
+                <label>INWKG04</label>
+            </value>
+            <value>
+                <fullName>WATKE01-KEGALLE</fullName>
+                <default>false</default>
+                <label>WATKE01-KEGALLE</label>
+            </value>
+            <value>
+                <fullName>WATKA01-KANDY</fullName>
+                <default>false</default>
+                <label>WATKA01-KANDY</label>
+            </value>
+            <value>
+                <fullName>WKDK01 - KEGALLE</fullName>
+                <default>false</default>
+                <label>WKDK01 - KEGALLE</label>
+            </value>
+            <value>
+                <fullName>ENOJA01 - JAFFNA</fullName>
+                <default>false</default>
+                <label>ENOJA01 - JAFFNA</label>
+            </value>
+        </valueSetDefinition>
+    </valueSet>
+</CustomField>

@@ -1,0 +1,75 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Workflow xmlns="http://soap.sforce.com/2006/04/metadata">
+    <alerts>
+        <fullName>Return_Approved_Status_Email</fullName>
+        <description>Return Approved Status Email</description>
+        <protected>false</protected>
+        <recipients>
+            <type>accountOwner</type>
+        </recipients>
+        <recipients>
+            <recipient>sahil.mehra@cloudodyssey.co</recipient>
+            <type>user</type>
+        </recipients>
+        <recipients>
+            <recipient>wasimcloud@gmail.com</recipient>
+            <type>user</type>
+        </recipients>
+        <senderType>CurrentUser</senderType>
+        <template>Return_Request_Responses/Approve_Return</template>
+    </alerts>
+    <alerts>
+        <fullName>Return_Reject_Status_Email</fullName>
+        <description>Return Reject Status Email</description>
+        <protected>false</protected>
+        <recipients>
+            <type>accountOwner</type>
+        </recipients>
+        <recipients>
+            <recipient>sahil.mehra@cloudodyssey.co</recipient>
+            <type>user</type>
+        </recipients>
+        <senderType>CurrentUser</senderType>
+        <template>Return_Request_Responses/Reject_Return</template>
+    </alerts>
+    <fieldUpdates>
+        <fullName>Return_Reject_order_status</fullName>
+        <field>Return_Status__c</field>
+        <literalValue>Reject</literalValue>
+        <name>Return Reject order status</name>
+        <notifyAssignee>false</notifyAssignee>
+        <operation>Literal</operation>
+        <protected>false</protected>
+        <reevaluateOnChange>false</reevaluateOnChange>
+    </fieldUpdates>
+    <fieldUpdates>
+        <fullName>Return_Status_Pending</fullName>
+        <field>Return_Status__c</field>
+        <literalValue>Pending</literalValue>
+        <name>Return Status Pending</name>
+        <notifyAssignee>false</notifyAssignee>
+        <operation>Literal</operation>
+        <protected>false</protected>
+        <reevaluateOnChange>false</reevaluateOnChange>
+    </fieldUpdates>
+    <fieldUpdates>
+        <fullName>Return_order_status</fullName>
+        <field>Return_Status__c</field>
+        <literalValue>Approve</literalValue>
+        <name>Return order status</name>
+        <notifyAssignee>false</notifyAssignee>
+        <operation>Literal</operation>
+        <protected>false</protected>
+        <reevaluateOnChange>false</reevaluateOnChange>
+    </fieldUpdates>
+    <fieldUpdates>
+        <fullName>Return_pending</fullName>
+        <field>Return_Status__c</field>
+        <literalValue>Pending</literalValue>
+        <name>Return pending</name>
+        <notifyAssignee>false</notifyAssignee>
+        <operation>Literal</operation>
+        <protected>false</protected>
+        <reevaluateOnChange>false</reevaluateOnChange>
+    </fieldUpdates>
+</Workflow>

@@ -1,0 +1,715 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<RecordType xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Sales_Opportunity</fullName>
+    <active>true</active>
+    <businessProcess>Sales FLow</businessProcess>
+    <label>Sales</label>
+    <picklistValues>
+        <picklist>Canopy__c</picklist>
+        <values>
+            <fullName>No</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Yes</fullName>
+            <default>false</default>
+        </values>
+    </picklistValues>
+    <picklistValues>
+        <picklist>Coller_type__c</picklist>
+        <values>
+            <fullName>Flush</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Sunk</fullName>
+            <default>false</default>
+        </values>
+    </picklistValues>
+    <picklistValues>
+        <picklist>Colour__c</picklist>
+        <values>
+            <fullName>Hot Dipped G</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Hot Dipped Galvanized</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Orange Color White Powder coatied</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Powder Coated RAL 3020 %28Red%29 Powder Coated RAL 7032 %28Beige%29</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Powder Coated RAL 7035 %28Gray%29 Powder Couted RAL 9003 %28White%29 Powder Coated RAL 9005 %28Black%29</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Powder Coated RAL 9016 %28Traffic White%29 Black Mat</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>RAL 2004 Orange Gloss Finish RAL 9005 Black Textured Finish</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>RAL 2004 Orange Gloss Finish With Primer Coating</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>RAL 3020 Post Office Red Gloss Finish</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>RAL 3020 Post Office Red Textured Finish</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>RAL 3020 Post Office Red Textured Finish With Primer Coating RAL 3020 Post Office fled Gloss Finish With Primer Coating</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>RAL 7032 Beige Gloss Finish</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>RAL 7032 Beige Gloss Finish With Primer Coating</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>RAL 7032 Beige Textured Finish</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>RAL 7032 Beige Textured Finish With Primer Coating</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>RAL 7035 GRAY GLOSS FINISH</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>RAL 7035 Gray Gless finish With Primer Coating</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>RAL 7035 Gray textured Finish</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>RAL 7035 Gray textured Finish With Primer Coating RAL 9003 White Gloss Finish With Primer Coating</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>RAL 7036 Gray textured Finish</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>RAL 9003 White Gloss Finish</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>RAL 9005 Black Gloss Finish</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>RAL 9005 Black Sand Finish</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>RAL 9005 Black Sand Finish With Primer Coating</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>RAL 9005 Black Textured Finish With Primer Coating RAL 9005 Black Gloss Finish Fi With Primer Coating</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>With Out Powder Coated</fullName>
+            <default>false</default>
+        </values>
+    </picklistValues>
+    <picklistValues>
+        <picklist>Cover_Plate__c</picklist>
+        <values>
+            <fullName>Full</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>No</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Open</fullName>
+            <default>false</default>
+        </values>
+    </picklistValues>
+    <picklistValues>
+        <picklist>Cover_plates__c</picklist>
+        <values>
+            <fullName>No</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Yes</fullName>
+            <default>false</default>
+        </values>
+    </picklistValues>
+    <picklistValues>
+        <picklist>Currency__c</picklist>
+        <values>
+            <fullName>INR</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>LKR</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>USD</fullName>
+            <default>false</default>
+        </values>
+    </picklistValues>
+    <picklistValues>
+        <picklist>Customer_Calling_Language__c</picklist>
+        <values>
+            <fullName>English</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Hindi</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Sinhala</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Tamil</fullName>
+            <default>false</default>
+        </values>
+    </picklistValues>
+    <picklistValues>
+        <picklist>Design_Status__c</picklist>
+        <values>
+            <fullName>Drawings Good</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Drawings Rejected</fullName>
+            <default>false</default>
+        </values>
+    </picklistValues>
+    <picklistValues>
+        <picklist>Environment__c</picklist>
+        <values>
+            <fullName>Coastal area</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Indoor</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Outdoor</fullName>
+            <default>false</default>
+        </values>
+    </picklistValues>
+    <picklistValues>
+        <picklist>Finish__c</picklist>
+        <values>
+            <fullName>Gloss</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Sand</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Texture</fullName>
+            <default>false</default>
+        </values>
+    </picklistValues>
+    <picklistValues>
+        <picklist>ForecastCategoryName</picklist>
+        <values>
+            <fullName>Best Case</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Closed</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Commit</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Omitted</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Pipeline</fullName>
+            <default>false</default>
+        </values>
+    </picklistValues>
+    <picklistValues>
+        <picklist>L_bars__c</picklist>
+        <values>
+            <fullName>No</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Yes</fullName>
+            <default>false</default>
+        </values>
+    </picklistValues>
+    <picklistValues>
+        <picklist>LeadSource</picklist>
+        <values>
+            <fullName>Advertisement</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Customer Event</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Employee Referral</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>External Referral</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Google AdWords</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Other</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Partner</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Purchased List</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Trade Show</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Webinar</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Website</fullName>
+            <default>false</default>
+        </values>
+    </picklistValues>
+    <picklistValues>
+        <picklist>Loss_Reason__c</picklist>
+        <values>
+            <fullName>Lost to Competitor</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>No Budget %2F Lost Funding</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>No Decision %2F Non-Responsive</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Other</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Price</fullName>
+            <default>false</default>
+        </values>
+    </picklistValues>
+    <picklistValues>
+        <picklist>Mounting_Method__c</picklist>
+        <values>
+            <fullName>Free Solution</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Sunk</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Surface</fullName>
+            <default>false</default>
+        </values>
+    </picklistValues>
+    <picklistValues>
+        <picklist>Mounting_Plates__c</picklist>
+        <values>
+            <fullName>No</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Yes</fullName>
+            <default>false</default>
+        </values>
+    </picklistValues>
+    <picklistValues>
+        <picklist>Panel_type__c</picklist>
+        <values>
+            <fullName>Non Wired</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Wired</fullName>
+            <default>false</default>
+        </values>
+    </picklistValues>
+    <picklistValues>
+        <picklist>Payment_Terms__c</picklist>
+        <values>
+            <fullName>0 days</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>20%25 Payment to reserve and confirm the order</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>30 Days Credit</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>50%25 Advance%2C Balance 30 days Credit</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>60 Days Credit</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>60%25 Advance balance before delivery</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>60%25 Advance%2C Balance 60 days Credit</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>60%25 Advance%2E Balance 30 days Credit</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>CASH</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Cash on Delivery</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>F%2EO%2EC%2E</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>LC %40 30 Days Credit</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>LC 45 Days Credit</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>LC 90 days credit</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>LC%40Sight</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>TT</fullName>
+            <default>false</default>
+        </values>
+    </picklistValues>
+    <picklistValues>
+        <picklist>Project_Type__c</picklist>
+        <values>
+            <fullName>Bed Head</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Cable Management</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>International</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Lighting %26 Automation</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Non-Wired</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Wired</fullName>
+            <default>false</default>
+        </values>
+    </picklistValues>
+    <picklistValues>
+        <picklist>Protection__c</picklist>
+        <values>
+            <fullName>IP 42</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>IP 44</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>IP 54</fullName>
+            <default>true</default>
+        </values>
+        <values>
+            <fullName>IP 65</fullName>
+            <default>false</default>
+        </values>
+    </picklistValues>
+    <picklistValues>
+        <picklist>Rep_Delivery__c</picklist>
+        <values>
+            <fullName>%28Ex-Works%29 2-3 Working Days after drawings confirmation</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>%28Ex-Works%29 2-3 weeks after drawings confirmation</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>%28Ex-Works%294-5 weeks from sale</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>%28Ex-works%29 1-2 weeks after drawings confirmation %28Ex-works%29 2-3 weeks after drawings confirmation</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>%28Ex-works%29 2-4 weeks after drawings confirmation</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>%28Ex-works%29 3-4 Months after drawings confirmation</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>%28Ex-works%29 4 working Days after drawings confirmation</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>%28Ex-works%29 4-6 Months after drawings confirmation</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>%28Ex-works%29 4-6 weeks after drawings confirmation</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>%28Ex-works%29 4-6 working Days after drawings confirmation</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>%28Ex-works%29 5 working Days after drawings confirmation</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>%28Ex-works%29 6-8 weeks after drawings confirmation</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>%28Ex-works%29 7 working Days after drawings confirmation %28Ex-works%29 10 working Days after drawings confirmation</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>%28Ex-works%29 8-12 weeks after drawings confirmation</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>14 Working Days after drawings confirmation</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Ex-Stock Prior to Sale</fullName>
+            <default>false</default>
+        </values>
+    </picklistValues>
+    <picklistValues>
+        <picklist>Rep_Validity__c</picklist>
+        <values>
+            <fullName>14 Days</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>21 Days</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>30 Days</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>45 Days</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>60 Days</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>7 Days</fullName>
+            <default>false</default>
+        </values>
+    </picklistValues>
+    <picklistValues>
+        <picklist>Standards__c</picklist>
+        <values>
+            <fullName>BS EN 1461%3A2009</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>BS EN 61537%3A2007</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>IEC 61439-1</fullName>
+            <default>true</default>
+        </values>
+    </picklistValues>
+    <picklistValues>
+        <picklist>Status__c</picklist>
+        <values>
+            <fullName>Approved</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Pending</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Rejected</fullName>
+            <default>false</default>
+        </values>
+    </picklistValues>
+    <picklistValues>
+        <picklist>Tax_Type__c</picklist>
+        <values>
+            <fullName>SVAT</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>VAT</fullName>
+            <default>false</default>
+        </values>
+    </picklistValues>
+    <picklistValues>
+        <picklist>Type</picklist>
+        <values>
+            <fullName>Existing Business</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>New Business</fullName>
+            <default>false</default>
+        </values>
+    </picklistValues>
+    <picklistValues>
+        <picklist>VAT__c</picklist>
+        <values>
+            <fullName>Exclude</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Include</fullName>
+            <default>false</default>
+        </values>
+    </picklistValues>
+    <picklistValues>
+        <picklist>Validity__c</picklist>
+        <values>
+            <fullName>%28Ex-Works%29 2-3 Working Days after drawings confirmation</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>%28Ex-Works%29 2-3 weeks after drawings confirmation</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>%28Ex-Works%294-5 weeks from sale</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>%28Ex-works%29 1-2 weeks after drawings confirmation %28Ex-works%29 2-3 weeks after drawings confirmation</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>%28Ex-works%29 2-4 weeks after drawings confirmation</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>%28Ex-works%29 3-4 Months after drawings confirmation</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>%28Ex-works%29 4 working Days after drawings confirmation</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>%28Ex-works%29 4-6 Months after drawings confirmation</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>%28Ex-works%29 4-6 weeks after drawings confirmation</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>%28Ex-works%29 4-6 working Days after drawings confirmation</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>%28Ex-works%29 5 working Days after drawings confirmation</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>%28Ex-works%29 6-8 weeks after drawings confirmation</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>%28Ex-works%29 7 working Days after drawings confirmation %28Ex-works%29 10 working Days after drawings confirmation</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>%28Ex-works%29 8-12 weeks after drawings confirmation</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>14 Working Days after drawings confirmation</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Ex-Stock Prior to Sale</fullName>
+            <default>false</default>
+        </values>
+    </picklistValues>
+</RecordType>

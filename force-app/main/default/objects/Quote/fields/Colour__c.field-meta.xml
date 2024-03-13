@@ -1,0 +1,174 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Colour__c</fullName>
+    <externalId>false</externalId>
+    <label>Colour</label>
+    <required>false</required>
+    <trackHistory>false</trackHistory>
+    <type>Picklist</type>
+    <valueSet>
+        <valueSetDefinition>
+            <sorted>false</sorted>
+            <value>
+                <fullName>RAL 7032 Beige Textured Finish</fullName>
+                <default>false</default>
+                <label>RAL 7032 Beige Textured Finish</label>
+            </value>
+            <value>
+                <fullName>RAL 7032 Beige Gloss Finish</fullName>
+                <default>false</default>
+                <label>RAL 7032 Beige Gloss Finish</label>
+            </value>
+            <value>
+                <fullName>RAL 7035 Gray textured Finish</fullName>
+                <default>false</default>
+                <label>RAL 7035 Gray textured Finish</label>
+            </value>
+            <value>
+                <fullName>RAL 9003 White Gloss Finish</fullName>
+                <default>false</default>
+                <label>RAL 9003 White Gloss Finish</label>
+            </value>
+            <value>
+                <fullName>RAL 2004 Orange Gloss Finish</fullName>
+                <default>false</default>
+                <label>RAL 2004 Orange Gloss Finish</label>
+            </value>
+            <value>
+                <fullName>RAL 9005 Black Textured Finish</fullName>
+                <default>false</default>
+                <label>RAL 9005 Black Textured Finish</label>
+            </value>
+            <value>
+                <fullName>RAL 9005 Black Gloss Finish</fullName>
+                <default>false</default>
+                <label>RAL 9005 Black Gloss Finish</label>
+            </value>
+            <value>
+                <fullName>RAL 9005 Black Sand Finish</fullName>
+                <default>false</default>
+                <label>RAL 9005 Black Sand Finish</label>
+            </value>
+            <value>
+                <fullName>RAL 3020 Post Office Red Textured Finish</fullName>
+                <default>false</default>
+                <label>RAL 3020 Post Office Red Textured Finish</label>
+            </value>
+            <value>
+                <fullName>RAL 3020 Post Office Red Gloss Finish With Out Powder Coated</fullName>
+                <default>false</default>
+                <label>RAL 3020 Post Office Red Gloss Finish With Out Powder Coated</label>
+            </value>
+            <value>
+                <fullName>RAL 7032 Beige Textured Finish With Primer Coating</fullName>
+                <default>false</default>
+                <label>RAL 7032 Beige Textured Finish With Primer Coating</label>
+            </value>
+            <value>
+                <fullName>RAL 7032 Beige Gloss Finish With Primer Coating</fullName>
+                <default>false</default>
+                <label>RAL 7032 Beige Gloss Finish With Primer Coating</label>
+            </value>
+            <value>
+                <fullName>RAL 7035 Gray textured Finish With Primer Coating</fullName>
+                <default>false</default>
+                <label>RAL 7035 Gray textured Finish With Primer Coating</label>
+            </value>
+            <value>
+                <fullName>RAL 9003 White Gloss Finish With Primer Coating</fullName>
+                <default>false</default>
+                <label>RAL 9003 White Gloss Finish With Primer Coating</label>
+            </value>
+            <value>
+                <fullName>RAL 2004 Orange Gloss Finish With Primer Coating</fullName>
+                <default>false</default>
+                <label>RAL 2004 Orange Gloss Finish With Primer Coating</label>
+            </value>
+            <value>
+                <fullName>RAL 9005 Black Textured Finish With Primer Coating</fullName>
+                <default>false</default>
+                <label>RAL 9005 Black Textured Finish With Primer Coating</label>
+            </value>
+            <value>
+                <fullName>RAL 9005 Black Gloss Finish With Primer Coating</fullName>
+                <default>false</default>
+                <label>RAL 9005 Black Gloss Finish With Primer Coating</label>
+            </value>
+            <value>
+                <fullName>RAL 9005 Black Sand Finish With Primer Coating</fullName>
+                <default>false</default>
+                <label>RAL 9005 Black Sand Finish With Primer Coating</label>
+            </value>
+            <value>
+                <fullName>RAL 3020 Post Office Red Textured Finish With Primer Coating</fullName>
+                <default>false</default>
+                <label>RAL 3020 Post Office Red Textured Finish With Primer Coating</label>
+            </value>
+            <value>
+                <fullName>RAL 3020 Post Office Red Gloss Finish With Primer Coating</fullName>
+                <default>false</default>
+                <label>RAL 3020 Post Office Red Gloss Finish With Primer Coating</label>
+            </value>
+            <value>
+                <fullName>Hot Dipped Galvanized</fullName>
+                <default>false</default>
+                <label>Hot Dipped Galvanized</label>
+            </value>
+            <value>
+                <fullName>Powder Coated RAL 3020 (Red)</fullName>
+                <default>false</default>
+                <label>Powder Coated RAL 3020 (Red)</label>
+            </value>
+            <value>
+                <fullName>Powder Coated RAL 7032 (Beige)</fullName>
+                <default>false</default>
+                <label>Powder Coated RAL 7032 (Beige)</label>
+            </value>
+            <value>
+                <fullName>Powder Coated RAL 7035 (Gray)</fullName>
+                <default>false</default>
+                <label>Powder Coated RAL 7035 (Gray)</label>
+            </value>
+            <value>
+                <fullName>Powder Coated RAL 9003 (White) Powder Coated RAL 9005 (Black)</fullName>
+                <default>false</default>
+                <label>Powder Coated RAL 9003 (White) Powder Coated RAL 9005 (Black)</label>
+            </value>
+            <value>
+                <fullName>Hot Dipped</fullName>
+                <default>false</default>
+                <label>Hot Dipped</label>
+            </value>
+            <value>
+                <fullName>GI</fullName>
+                <default>false</default>
+                <label>GI</label>
+            </value>
+            <value>
+                <fullName>Orange Color</fullName>
+                <default>false</default>
+                <label>Orange Color</label>
+            </value>
+            <value>
+                <fullName>White- Powder coated Powder Coated RAL 9016 (Traffic White) Black Mat</fullName>
+                <default>false</default>
+                <label>White- Powder coated Powder Coated RAL 9016 (Traffic White) Black Mat</label>
+            </value>
+            <value>
+                <fullName>RAL 7035 Gray Gloss Finish With Primer Coating</fullName>
+                <default>false</default>
+                <label>RAL 7035 Gray Gloss Finish With Primer Coating</label>
+            </value>
+            <value>
+                <fullName>RAL 7038 Gray textured Finish</fullName>
+                <default>false</default>
+                <label>RAL 7038 Gray textured Finish</label>
+            </value>
+            <value>
+                <fullName>RAL 7035 GRAY GLOSS FINISH</fullName>
+                <default>false</default>
+                <label>RAL 7035 GRAY GLOSS FINISH</label>
+            </value>
+        </valueSetDefinition>
+    </valueSet>
+</CustomField>

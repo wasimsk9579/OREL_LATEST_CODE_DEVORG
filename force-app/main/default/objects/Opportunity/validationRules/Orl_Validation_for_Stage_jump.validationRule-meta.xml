@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ValidationRule xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Orl_Validation_for_Stage_jump</fullName>
+    <active>false</active>
+    <errorConditionFormula>IF((RecordType.DeveloperName = &quot;Purchase_Order_Opportunity&quot; ), 
+
+ IF( (ISPICKVAL( StageName, &quot;Closed Won&quot;)) ,
+  NOT((ISPICKVAL(PRIORVALUE(StageName), &quot;Proposal&quot;))) 
+ , false) ,false)</errorConditionFormula>
+    <errorDisplayField>StageName</errorDisplayField>
+    <errorMessage>Stage Should Not Move Directly To Closed Won</errorMessage>
+</ValidationRule>

@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ValidationRule xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Record_is_locked_for_approval</fullName>
+    <active>true</active>
+    <errorConditionFormula>AND( Is_Locked_For_Approval__c , PRIORVALUE( Is_Locked_For_Approval__c )  = FALSE)</errorConditionFormula>
+    <errorMessage>This record is locked for approval and cannot be edited until any action is peformed.</errorMessage>
+</ValidationRule>

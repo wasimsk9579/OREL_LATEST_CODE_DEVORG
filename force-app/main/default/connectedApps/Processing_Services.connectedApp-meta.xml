@@ -1,0 +1,75 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ConnectedApp xmlns="http://soap.sforce.com/2006/04/metadata">
+    <contactEmail>naga.subrahmanyam@cloudodyssey.co</contactEmail>
+    <contactPhone>9346855092</contactPhone>
+    <label>Processing Services</label>
+    <oauthConfig>
+        <callbackUrl>https://localhost:3000/fake</callbackUrl>
+        <certificate>MIIFWDCCA0CgAwIBAgIUAQAAAAAAAAAAAAAAAAAAAAAAAAEwDQYJKoZIhvcNAQEFBQAwLjEbMBkGA1UEAxMSMDBEMW0wMDAwMDAwTXRpRUFFMQ8wDQYDVQQKEwZzZi1yY2cwHhcNMjMwOTI3MTAxMTU4WhcNMjQwOTI2MTAxMTU4WjAuMRswGQYDVQQDExIwMEQxbTAwMDAwMDBNdGlFQUUxDzANBgNVBAoTBnNmLXJjZzCCAiIwDQYJKoZIhvcNAQEBBQADggIPADCCAgoCggIBAMJnKlHlkhYir9d9ESOlAfffdUbO6ZJ0eoJ2oF/C5TKJSH+AAIpFIxIA2OpSQ0oGdyiYH8c122Sa9cAi8TRZE6PUq7j132ndMQsKXZ6oPywoJSc7KWWGjX7oVT35D6yn3DlEJFC7DMalZp7uQsY5vydBXZUrNV9HKJgwcWqc2HXBuH693QTuSLA9WcQ1j/fy/4k0Ef+vsDkeOXL40uhnO0jN8Pg3FNQce8qNObNFuqEsjrbeFZThpU6cOOctVU0mGzTZ+F9PX3z9ETbpGmpb3j5i8YTGTtDC6PPlzVMKr/sgWt8GzydKdv59vtR4/vi9fNLv45cljkxhYrIRarb12SmBvklm2PCtvZJKIMu0/jfSnGYTlWX5Ww1ngVleymbPfGa5/vLZyJL7+jliPVG1uHIs8Zlk9QZ5Mqk2YiZ8VzuUUVfQ+o4YpVKMq2gXozds400p9qlbFRsMeg1RRmA6SWRe7iCL7xwkjaRkLRIEQ2ThwgkLb2O7CYtyM7o0lM6do4MAC7FsNxhf6VHkFhWddhkMXlZggsH0crn6rueSBy4LrBzepGstChLVoiE7JgcM9Swl3SYzWf/7MFNtQ1xxKY+KCSc52L+lMzcLzXXbe/1CFIcdI4NO+SQ8LQHwvEPHcfNyLVdl+OYd8VNm/eEi+P2IiwRkP4FtXO71DYhD4F7rAgMBAAGjbjBsMAwGA1UdEwQFMAMBAf8wCwYDVR0PBAQDAgeAMBMGA1UdJQQMMAoGCCsGAQUFBwMBMBAGCWCGSAGG+EIBAQQDAwEAMAkGA1UdEQQCMAAwHQYDVR0OBBYEFFalULg7Yus57p/oS5YnW/2K4Vh3MA0GCSqGSIb3DQEBBQUAA4ICAQCx1Zq+rcBPoy9BP77osAMM8xrCkr5RBvp1AjQqHee45W7u1sWZR9+dRczGbVVFnievAcgoem2h8reHUboucjAHvnKGguIrLgaAQcClKDk8ray3Cm4FlgX/y6DAmI9VgChOBDu0lkZKm8bVDuifvBQ6N3IZrv8d24nTJYrRLVcS3VxGkgNN92Ald9ZZQojD6Rrm1QEFbOt8WsfxQzZfcIRSQXYn72FPMOgLSh4GrDD1+9H3S5dRnmqnt7np3Z1CyS7GH2qbP9EDTmMSxKg2l3opyPhWVU9bBFMyLtm1u2JPLQAvWrY0zLhWpTqL/8GwssUMqB3PkaNbWS1zTZ1/lzZ52jUXr3CXCLcK296I8KxiriveCJUxLWQL1k368N2SxDPk7UHHRU42ss9zUYyCd5jJT4WHih2yNVPeoAsTl0buGmwKc8DfjiCZTZB+NVThUlj/uCpGjoFGCR8NbsE7yymOGJCeRSQ4wGYqGZd+5gYqMOo1qDHFzXsn+jgRfDatwRdCtKqfez8lpG5ZjKnIQfhvmxjthuLdjfMyiuLfO6P8kJGpPyngAX8Iwg8KdfagHeJ3+YeySciHXNWrF7lww16igB6f6XDLnvC73Q5RLz0MvQCSts1+czK/ZbxIeLFx6bjNaDcgDhwA23o7HwRm8/hH01sfG7dJOkMfParwoVFSAg==</certificate>
+        <consumerKey>3MVG9Gdzj3taRxuNGdVUqeORBjd3KGLb9D45.c7tTQmKbh3TjccwRyLGs8YOYBULNQemmuQVqSuFddzUpcYvX</consumerKey>
+        <isAdminApproved>true</isAdminApproved>
+        <isClientCredentialEnabled>false</isClientCredentialEnabled>
+        <isCodeCredentialEnabled>false</isCodeCredentialEnabled>
+        <isCodeCredentialPostOnly>false</isCodeCredentialPostOnly>
+        <isConsumerSecretOptional>true</isConsumerSecretOptional>
+        <isIntrospectAllTokens>false</isIntrospectAllTokens>
+        <isNamedUserJwtEnabled>false</isNamedUserJwtEnabled>
+        <isPkceRequired>false</isPkceRequired>
+        <isSecretRequiredForRefreshToken>false</isSecretRequiredForRefreshToken>
+        <scopes>Basic</scopes>
+        <scopes>Api</scopes>
+        <scopes>RefreshToken</scopes>
+        <scopes>OpenID</scopes>
+    </oauthConfig>
+    <oauthPolicy>
+        <ipRelaxation>ENFORCE</ipRelaxation>
+        <refreshTokenPolicy>infinite</refreshTokenPolicy>
+    </oauthPolicy>
+    <profileName>Distributor</profileName>
+    <profileName>Orel Profile</profileName>
+    <profileName>Standard User Clone</profileName>
+    <profileName>Finance Team</profileName>
+    <profileName>CGCloud_Batch_User</profileName>
+    <profileName>CGCloud_User_Profile</profileName>
+    <profileName>CGCloud_Basic_Sync_Admin_Profile</profileName>
+    <profileName>OREL Direct Dealer</profileName>
+    <profileName>OREL Sales Rep</profileName>
+    <profileName>OREL Regional Manager</profileName>
+    <profileName>test Sales Admin</profileName>
+    <profileName>test Sales Admins</profileName>
+    <profileName>System Admin</profileName>
+    <profileName>Project Team Profile</profileName>
+    <profileName>Project Head Profile</profileName>
+    <profileName>JKLL Integration Profile</profileName>
+    <profileName>Area Manager</profileName>
+    <profileName>quote detail Profile</profileName>
+    <profileName>test data</profileName>
+    <profileName>Payment Collector Profile</profileName>
+    <profileName>Regional Manager</profileName>
+    <profileName>Sales Team</profileName>
+    <profileName>Customer Community Plus User</profileName>
+    <profileName>Salesforce API Only System Integrations</profileName>
+    <profileName>Guest License User</profileName>
+    <profileName>Minimum Access - Salesforce</profileName>
+    <profileName>Identity User</profileName>
+    <profileName>Solution Manager</profileName>
+    <profileName>Read Only</profileName>
+    <profileName>System Administrator</profileName>
+    <profileName>CPQ Integration User</profileName>
+    <profileName>Executive Sponsor</profileName>
+    <profileName>Contract Manager</profileName>
+    <profileName>Marketing User</profileName>
+    <profileName>Standard User</profileName>
+    <profileName>End User</profileName>
+    <profileName>Chatter Moderator User</profileName>
+    <profileName>Chatter Free User</profileName>
+    <profileName>Chatter External User</profileName>
+    <profileName>Megabit Manager</profileName>
+    <profileName>CGCloud_User_Profile_Non_Sales</profileName>
+    <profileName>OREL Sales Admin</profileName>
+    <profileName>Sales Admin</profileName>
+    <profileName>System Administrator1</profileName>
+    <profileName>Production Team Profile</profileName>
+    <profileName>Engineering Draftsman</profileName>
+    <profileName>PaymentCollector Profile</profileName>
+</ConnectedApp>

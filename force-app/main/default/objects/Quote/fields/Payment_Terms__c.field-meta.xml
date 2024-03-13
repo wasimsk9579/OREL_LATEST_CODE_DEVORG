@@ -1,0 +1,94 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Payment_Terms__c</fullName>
+    <externalId>false</externalId>
+    <label>Payment Terms</label>
+    <required>false</required>
+    <trackHistory>false</trackHistory>
+    <type>Picklist</type>
+    <valueSet>
+        <valueSetDefinition>
+            <sorted>false</sorted>
+            <value>
+                <fullName>60% Advance balance before delivery</fullName>
+                <default>false</default>
+                <label>60% Advance balance before delivery</label>
+            </value>
+            <value>
+                <fullName>Cash on Delivery</fullName>
+                <default>false</default>
+                <label>Cash on Delivery</label>
+            </value>
+            <value>
+                <fullName>30 Days Credit</fullName>
+                <default>false</default>
+                <label>30 Days Credit</label>
+            </value>
+            <value>
+                <fullName>CASH</fullName>
+                <default>false</default>
+                <label>CASH</label>
+            </value>
+            <value>
+                <fullName>60 Days Credit</fullName>
+                <default>false</default>
+                <label>60 Days Credit</label>
+            </value>
+            <value>
+                <fullName>F.O.C.</fullName>
+                <default>false</default>
+                <label>F.O.C.</label>
+            </value>
+            <value>
+                <fullName>60% Advance. Balance 60 days Credit</fullName>
+                <default>false</default>
+                <label>60% Advance. Balance 60 days Credit</label>
+            </value>
+            <value>
+                <fullName>60% Advance. Balance 30 days Credit</fullName>
+                <default>false</default>
+                <label>60% Advance. Balance 30 days Credit</label>
+            </value>
+            <value>
+                <fullName>LC@Sight</fullName>
+                <default>false</default>
+                <label>LC@Sight</label>
+            </value>
+            <value>
+                <fullName>20% Payment to reserve and confirm the order</fullName>
+                <default>false</default>
+                <label>20% Payment to reserve and confirm the order</label>
+            </value>
+            <value>
+                <fullName>LC@ 90 days credit</fullName>
+                <default>false</default>
+                <label>LC@ 90 days credit</label>
+            </value>
+            <value>
+                <fullName>TT</fullName>
+                <default>false</default>
+                <label>TT</label>
+            </value>
+            <value>
+                <fullName>0 days</fullName>
+                <default>false</default>
+                <label>0 days</label>
+            </value>
+            <value>
+                <fullName>LC@ 45 Days Credit</fullName>
+                <default>false</default>
+                <label>LC@ 45 Days Credit</label>
+            </value>
+            <value>
+                <fullName>LC@ 30 Days Credit</fullName>
+                <default>false</default>
+                <label>LC@ 30 Days Credit</label>
+            </value>
+            <value>
+                <fullName>50% Advance, Balance 30 days Credit</fullName>
+                <default>false</default>
+                <label>50% Advance, Balance 30 days Credit</label>
+            </value>
+        </valueSetDefinition>
+    </valueSet>
+</CustomField>

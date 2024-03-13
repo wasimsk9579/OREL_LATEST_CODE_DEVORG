@@ -30,6 +30,10 @@
     </types>
     <types>
         <members>*</members>
+        <name>Validations</name>
+    </types>
+    <types>
+        <members>*</members>
         <name>StaticResource</name>
     </types>
     <version>59.0</version>

@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomApplication xmlns="http://soap.sforce.com/2006/04/metadata">
+    <brand>
+        <headerColor>#0070D2</headerColor>
+        <logoVersion>1</logoVersion>
+        <shouldOverrideOrgTheme>false</shouldOverrideOrgTheme>
+    </brand>
+    <description>Build stronger customer relationships, manage renewals, and stay organized.</description>
+    <formFactors>Small</formFactors>
+    <formFactors>Large</formFactors>
+    <isNavAutoTempTabsDisabled>false</isNavAutoTempTabsDisabled>
+    <isNavPersonalizationDisabled>false</isNavPersonalizationDisabled>
+    <isNavTabPersistenceDisabled>false</isNavTabPersistenceDisabled>
+    <label>Success Manager</label>
+    <navType>Standard</navType>
+    <setupExperience>all</setupExperience>
+    <tabs>standard-home</tabs>
+    <tabs>standard-Account</tabs>
+    <tabs>standard-Contact</tabs>
+    <tabs>standard-Contract</tabs>
+    <tabs>standard-Event</tabs>
+    <tabs>Custom_Object__c</tabs>
+    <tabs>cgc_sync__Sync_Mobile_App_PL_Map_Ext__c</tabs>
+    <tabs>cgcloud__Order_Item_Inventory_Transaction__c</tabs>
+    <tabs>cgcloud__Order_Payment__c</tabs>
+    <tabs>Orl_invoice__c</tabs>
+    <tabs>JKLL_Inventory__c</tabs>
+    <tabs>cgcloud__Order_Item__c</tabs>
+    <tabs>FOC_Condition__c</tabs>
+    <tabs>OrelRequestTracking__c</tabs>
+    <tabs>Discount_Line_Item__c</tabs>
+    <tabs>Stock_Audit__c</tabs>
+    <tabs>Stock_Audit_Line_Item__c</tabs>
+    <tabs>Payment__c</tabs>
+    <uiType>Lightning</uiType>
+    <utilityBar>Relationship_Management_UtilityBar</utilityBar>
+</CustomApplication>

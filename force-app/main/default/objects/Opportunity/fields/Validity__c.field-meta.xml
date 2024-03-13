@@ -1,0 +1,95 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Validity__c</fullName>
+    <externalId>false</externalId>
+    <label>Validity</label>
+    <required>false</required>
+    <trackFeedHistory>false</trackFeedHistory>
+    <type>Picklist</type>
+    <valueSet>
+        <restricted>true</restricted>
+        <valueSetDefinition>
+            <sorted>false</sorted>
+            <value>
+                <fullName>Ex-Stock Prior to Sale</fullName>
+                <default>false</default>
+                <label>Ex-Stock Prior to Sale</label>
+            </value>
+            <value>
+                <fullName>(Ex-Works)4-5 weeks from sale</fullName>
+                <default>false</default>
+                <label>(Ex-Works)4-5 weeks from sale</label>
+            </value>
+            <value>
+                <fullName>(Ex-works) 4 working Days after drawings confirmation</fullName>
+                <default>false</default>
+                <label>(Ex-works) 4 working Days after drawings confirmation</label>
+            </value>
+            <value>
+                <fullName>(Ex-works) 5 working Days after drawings confirmation</fullName>
+                <default>false</default>
+                <label>(Ex-works) 5 working Days after drawings confirmation</label>
+            </value>
+            <value>
+                <fullName>(Ex-works) 7 working Days after drawings confirmation (Ex-works) 10 working Days after drawings confirmation</fullName>
+                <default>false</default>
+                <label>(Ex-works) 7 working Days after drawings confirmation (Ex-works) 10 working Days after drawings confirmation</label>
+            </value>
+            <value>
+                <fullName>(Ex-works) 1-2 weeks after drawings confirmation (Ex-works) 2-3 weeks after drawings confirmation</fullName>
+                <default>false</default>
+                <label>(Ex-works) 1-2 weeks after drawings confirmation (Ex-works) 2-3 weeks after drawings confirmation</label>
+            </value>
+            <value>
+                <fullName>(Ex-works) 6-8 weeks after drawings confirmation</fullName>
+                <default>false</default>
+                <label>(Ex-works) 6-8 weeks after drawings confirmation</label>
+            </value>
+            <value>
+                <fullName>(Ex-works) 2-4 weeks after drawings confirmation</fullName>
+                <default>false</default>
+                <label>(Ex-works) 2-4 weeks after drawings confirmation</label>
+            </value>
+            <value>
+                <fullName>(Ex-works) 4-6 working Days after drawings confirmation</fullName>
+                <default>false</default>
+                <label>(Ex-works) 4-6 working Days after drawings confirmation</label>
+            </value>
+            <value>
+                <fullName>(Ex-works) 4-6 weeks after drawings confirmation</fullName>
+                <default>false</default>
+                <label>(Ex-works) 4-6 weeks after drawings confirmation</label>
+            </value>
+            <value>
+                <fullName>(Ex-works) 8-12 weeks after drawings confirmation</fullName>
+                <default>false</default>
+                <label>(Ex-works) 8-12 weeks after drawings confirmation</label>
+            </value>
+            <value>
+                <fullName>(Ex-Works) 2-3 weeks after drawings confirmation</fullName>
+                <default>false</default>
+                <label>(Ex-Works) 2-3 weeks after drawings confirmation</label>
+            </value>
+            <value>
+                <fullName>(Ex-Works) 2-3 Working Days after drawings confirmation</fullName>
+                <default>false</default>
+                <label>(Ex-Works) 2-3 Working Days after drawings confirmation</label>
+            </value>
+            <value>
+                <fullName>14 Working Days after drawings confirmation</fullName>
+                <default>false</default>
+                <label>14 Working Days after drawings confirmation</label>
+            </value>
+            <value>
+                <fullName>(Ex-works) 4-6 Months after drawings confirmation</fullName>
+                <default>false</default>
+                <label>(Ex-works) 4-6 Months after drawings confirmation</label>
+            </value>
+            <value>
+                <fullName>(Ex-works) 3-4 Months after drawings confirmation</fullName>
+                <default>false</default>
+                <label>(Ex-works) 3-4 Months after drawings confirmation</label>
+            </value>
+        </valueSetDefinition>
+    </valueSet>
+</CustomField>

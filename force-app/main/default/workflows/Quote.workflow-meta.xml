@@ -1,0 +1,280 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Workflow xmlns="http://soap.sforce.com/2006/04/metadata">
+    <alerts>
+        <fullName>Approval_Email_Alert</fullName>
+        <description>Approval Email Alert</description>
+        <protected>false</protected>
+        <recipients>
+            <recipient>project.team@cloud.com</recipient>
+            <type>user</type>
+        </recipients>
+        <senderType>CurrentUser</senderType>
+        <template>unfiled$public/Quote_Approval_template</template>
+    </alerts>
+    <alerts>
+        <fullName>Notification_to_project_head</fullName>
+        <description>Notification to project head</description>
+        <protected>false</protected>
+        <recipients>
+            <recipient>project.head@cloud.com</recipient>
+            <type>user</type>
+        </recipients>
+        <senderType>CurrentUser</senderType>
+        <template>unfiled$public/Notify_Project_head_for_customer_quote_rejection</template>
+    </alerts>
+    <alerts>
+        <fullName>Notify_finance_team</fullName>
+        <description>Notify finance team</description>
+        <protected>false</protected>
+        <recipients>
+            <recipient>patrick.cranfill@orel.com</recipient>
+            <type>user</type>
+        </recipients>
+        <senderType>CurrentUser</senderType>
+        <template>unfiled$public/New_Quote</template>
+    </alerts>
+    <alerts>
+        <fullName>Notify_project_head_for_quote_discount</fullName>
+        <description>Notify project head for quote discount alert</description>
+        <protected>false</protected>
+        <recipients>
+            <recipient>project.head@cloud.com</recipient>
+            <type>user</type>
+        </recipients>
+        <senderType>CurrentUser</senderType>
+        <template>unfiled$public/Notify_project_head_for_quote_discount</template>
+    </alerts>
+    <alerts>
+        <fullName>Quote_acceptance_notification_to_project_team_alert</fullName>
+        <description>Quote acceptance notification to project team alert</description>
+        <protected>false</protected>
+        <recipients>
+            <recipient>project.team@cloud.com</recipient>
+            <type>user</type>
+        </recipients>
+        <senderType>CurrentUser</senderType>
+        <template>unfiled$public/Quote_acceptance_notification_to_project_team</template>
+    </alerts>
+    <alerts>
+        <fullName>Quote_acceptance_notification_to_sales_team_alert</fullName>
+        <description>Quote acceptance notification to sales team alert</description>
+        <protected>false</protected>
+        <recipients>
+            <type>accountOwner</type>
+        </recipients>
+        <senderType>CurrentUser</senderType>
+        <template>unfiled$public/Quote_acceptance_notification_to_sales_team</template>
+    </alerts>
+    <alerts>
+        <fullName>Quote_discount_approval_alert</fullName>
+        <description>Quote discount approval alert</description>
+        <protected>false</protected>
+        <recipients>
+            <type>owner</type>
+        </recipients>
+        <senderType>CurrentUser</senderType>
+        <template>unfiled$public/Quote_discount_approval</template>
+    </alerts>
+    <alerts>
+        <fullName>Quote_discount_rejection_alert</fullName>
+        <description>Quote discount rejection alert</description>
+        <protected>false</protected>
+        <recipients>
+            <type>owner</type>
+        </recipients>
+        <senderType>CurrentUser</senderType>
+        <template>unfiled$public/Quote_discount_rejection</template>
+    </alerts>
+    <alerts>
+        <fullName>Quote_rejection_notification_to_sales_team_alert</fullName>
+        <description>Quote rejection notification to sales team alert</description>
+        <protected>false</protected>
+        <recipients>
+            <recipient>pathiwada.methushal@cloudodyssey.co</recipient>
+            <type>user</type>
+        </recipients>
+        <senderType>CurrentUser</senderType>
+        <template>unfiled$public/Quote_rejection_notification_to_sales_team</template>
+    </alerts>
+    <alerts>
+        <fullName>Rejection_Email_Alert</fullName>
+        <ccEmails>bhuvanesh442@gmail.com</ccEmails>
+        <ccEmails>pratikshaagresfdc@gmail.com</ccEmails>
+        <description>Rejection Email Alert</description>
+        <protected>false</protected>
+        <recipients>
+            <recipient>project.team@cloud.com</recipient>
+            <type>user</type>
+        </recipients>
+        <senderType>CurrentUser</senderType>
+        <template>unfiled$public/Quote_Rejection_Template</template>
+    </alerts>
+    <alerts>
+        <fullName>To_notify_finance_team</fullName>
+        <ccEmails>bhuvanesh442@gmail.com</ccEmails>
+        <description>To notify finance team</description>
+        <protected>false</protected>
+        <recipients>
+            <recipient>bhuvanesh.s@cloudodyssey.co</recipient>
+            <type>user</type>
+        </recipients>
+        <recipients>
+            <recipient>patrick.cranfill@orel.com</recipient>
+            <type>user</type>
+        </recipients>
+        <senderType>CurrentUser</senderType>
+        <template>unfiled$public/New_Quote</template>
+    </alerts>
+    <alerts>
+        <fullName>orel_customer_quote_update</fullName>
+        <ccEmails>agreprati22@gmail.com</ccEmails>
+        <description>orel customer quote update</description>
+        <protected>false</protected>
+        <recipients>
+            <recipient>project.head@cloud.com</recipient>
+            <type>user</type>
+        </recipients>
+        <senderType>CurrentUser</senderType>
+        <template>unfiled$public/orel_customer_quote_update</template>
+    </alerts>
+    <fieldUpdates>
+        <fullName>Approval_status_update</fullName>
+        <field>Orl_Approval_Status__c</field>
+        <literalValue>Approved</literalValue>
+        <name>Approval status update</name>
+        <notifyAssignee>false</notifyAssignee>
+        <operation>Literal</operation>
+        <protected>false</protected>
+        <reevaluateOnChange>false</reevaluateOnChange>
+    </fieldUpdates>
+    <fieldUpdates>
+        <fullName>Disc_approval_status_update</fullName>
+        <field>Discount_Approval_Status__c</field>
+        <literalValue>Approved</literalValue>
+        <name>Disc approval status update</name>
+        <notifyAssignee>false</notifyAssignee>
+        <operation>Literal</operation>
+        <protected>false</protected>
+        <reevaluateOnChange>false</reevaluateOnChange>
+    </fieldUpdates>
+    <fieldUpdates>
+        <fullName>Disc_rejection_status</fullName>
+        <field>Discount_Approval_Status__c</field>
+        <literalValue>Rejected</literalValue>
+        <name>Disc rejection status</name>
+        <notifyAssignee>false</notifyAssignee>
+        <operation>Literal</operation>
+        <protected>false</protected>
+        <reevaluateOnChange>false</reevaluateOnChange>
+    </fieldUpdates>
+    <fieldUpdates>
+        <fullName>Discount_Approval_status_update</fullName>
+        <field>Orl_Approval_Status__c</field>
+        <literalValue>Approved</literalValue>
+        <name>Discount Approval status update</name>
+        <notifyAssignee>false</notifyAssignee>
+        <operation>Literal</operation>
+        <protected>false</protected>
+        <reevaluateOnChange>false</reevaluateOnChange>
+    </fieldUpdates>
+    <fieldUpdates>
+        <fullName>Field_update</fullName>
+        <field>Orl_Approval_Status__c</field>
+        <literalValue>Pending</literalValue>
+        <name>Field update</name>
+        <notifyAssignee>false</notifyAssignee>
+        <operation>Literal</operation>
+        <protected>false</protected>
+        <reevaluateOnChange>false</reevaluateOnChange>
+    </fieldUpdates>
+    <fieldUpdates>
+        <fullName>Final_Runner_Approval</fullName>
+        <field>Runner_Discount_Status__c</field>
+        <literalValue>Approved</literalValue>
+        <name>Final Runner Approval</name>
+        <notifyAssignee>false</notifyAssignee>
+        <operation>Literal</operation>
+        <protected>false</protected>
+        <reevaluateOnChange>false</reevaluateOnChange>
+    </fieldUpdates>
+    <fieldUpdates>
+        <fullName>Final_Runner_Rejection</fullName>
+        <field>Runner_Discount_Status__c</field>
+        <literalValue>Rejected</literalValue>
+        <name>Final Runner Rejection</name>
+        <notifyAssignee>false</notifyAssignee>
+        <operation>Literal</operation>
+        <protected>false</protected>
+        <reevaluateOnChange>false</reevaluateOnChange>
+    </fieldUpdates>
+    <fieldUpdates>
+        <fullName>Initial_Runner_Submission</fullName>
+        <field>Runner_Discount_Status__c</field>
+        <literalValue>Pending</literalValue>
+        <name>Initial Runner Submission</name>
+        <notifyAssignee>false</notifyAssignee>
+        <operation>Literal</operation>
+        <protected>false</protected>
+        <reevaluateOnChange>false</reevaluateOnChange>
+    </fieldUpdates>
+    <fieldUpdates>
+        <fullName>Initial_disc_field_update</fullName>
+        <field>Discount_Approval_Status__c</field>
+        <literalValue>Pending</literalValue>
+        <name>Initial disc field update</name>
+        <notifyAssignee>false</notifyAssignee>
+        <operation>Literal</operation>
+        <protected>false</protected>
+        <reevaluateOnChange>false</reevaluateOnChange>
+    </fieldUpdates>
+    <fieldUpdates>
+        <fullName>Initial_field_update</fullName>
+        <field>Orl_Approval_Status__c</field>
+        <literalValue>Pending</literalValue>
+        <name>Initial field update</name>
+        <notifyAssignee>false</notifyAssignee>
+        <operation>Literal</operation>
+        <protected>false</protected>
+        <reevaluateOnChange>false</reevaluateOnChange>
+    </fieldUpdates>
+    <fieldUpdates>
+        <fullName>Quote_rejection_status</fullName>
+        <field>Status</field>
+        <literalValue>Denied</literalValue>
+        <name>Quote rejection status</name>
+        <notifyAssignee>false</notifyAssignee>
+        <operation>Literal</operation>
+        <protected>false</protected>
+        <reevaluateOnChange>false</reevaluateOnChange>
+    </fieldUpdates>
+    <fieldUpdates>
+        <fullName>Rejection_status</fullName>
+        <field>Orl_Approval_Status__c</field>
+        <literalValue>Rejected</literalValue>
+        <name>Rejection status</name>
+        <notifyAssignee>false</notifyAssignee>
+        <operation>Literal</operation>
+        <protected>false</protected>
+        <reevaluateOnChange>false</reevaluateOnChange>
+    </fieldUpdates>
+    <fieldUpdates>
+        <fullName>Update_Quote_status</fullName>
+        <field>Status</field>
+        <literalValue>Accepted</literalValue>
+        <name>Update Quote status</name>
+        <notifyAssignee>false</notifyAssignee>
+        <operation>Literal</operation>
+        <protected>false</protected>
+        <reevaluateOnChange>false</reevaluateOnChange>
+    </fieldUpdates>
+    <fieldUpdates>
+        <fullName>discount_rejection</fullName>
+        <field>Orl_Approval_Status__c</field>
+        <literalValue>Rejected</literalValue>
+        <name>discount rejection</name>
+        <notifyAssignee>false</notifyAssignee>
+        <operation>Literal</operation>
+        <protected>false</protected>
+        <reevaluateOnChange>false</reevaluateOnChange>
+    </fieldUpdates>
+</Workflow>

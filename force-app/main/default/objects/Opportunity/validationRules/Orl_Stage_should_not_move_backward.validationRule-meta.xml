@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ValidationRule xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Orl_Stage_should_not_move_backward</fullName>
+    <active>false</active>
+    <errorConditionFormula>IF( (  RecordType.DeveloperName= &quot;Purchase_Order_Opportunity&quot; ) ,
+
+(CASE   
+ (   
+       StageName  , 
+           
+           &quot;Qualification&quot;, 1,   
+           &quot;Proposal&quot;, 2,   
+           
+           &quot;Closed Won&quot;, 3,
+  
+           0   
+ )   
+ &lt;   
+ CASE   
+ (   
+      PRIORVALUE(StageName) ,
+           
+           &quot;Qualification&quot;, 1,   
+           &quot;Proposal&quot;, 2,   
+           
+           &quot;Closed Won&quot;, 3,   
+               
+           0   
+ )),
+false)</errorConditionFormula>
+    <errorDisplayField>StageName</errorDisplayField>
+    <errorMessage>Stage Should Not Move Backward.</errorMessage>
+</ValidationRule>

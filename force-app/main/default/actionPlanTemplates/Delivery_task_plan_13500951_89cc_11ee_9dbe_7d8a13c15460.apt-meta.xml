@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ActionPlanTemplate xmlns="http://soap.sforce.com/2006/04/metadata">
+    <isAdHocItemCreationEnabled>true</isAdHocItemCreationEnabled>
+    <name>Delivery task plan</name>
+    <targetEntityType>Account</targetEntityType>
+    <uniqueName>Delivery_task_plan_13500951_89cc_11ee_9dbe_7d8a13c15460</uniqueName>
+</ActionPlanTemplate>

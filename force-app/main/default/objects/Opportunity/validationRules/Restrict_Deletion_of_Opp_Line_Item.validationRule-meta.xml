@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ValidationRule xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Restrict_Deletion_of_Opp_Line_Item</fullName>
+    <active>true</active>
+    <description>Prevents users from deleting opportunity products after an opportunity is closed.</description>
+    <errorConditionFormula>AND(OR(ISPICKVAL(StageName, &quot;Closed Won&quot;),
+
+ISPICKVAL(StageName, &quot;Closed Lost&quot;)),
+
+Number_of_Line_Items__c &lt;
+
+PRIORVALUE(Number_of_Line_Items__c) )</errorConditionFormula>
+    <errorMessage>Opportunity Line Items cannot be deleted because the opportunity is closed.</errorMessage>
+</ValidationRule>

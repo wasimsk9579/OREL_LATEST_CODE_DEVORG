@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ListView xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>All_RetailStore</fullName>
+    <columns>Name</columns>
+    <columns>Account</columns>
+    <columns>RetailLocationGroup</columns>
+    <columns>STREET</columns>
+    <columns>Orl_Status__c</columns>
+    <columns>StoreType</columns>
+    <columns>CITY</columns>
+    <columns>COUNTRY</columns>
+    <columns>DeliveryMethod</columns>
+    <columns>DeliveryFrequency</columns>
+    <columns>CreatedDate</columns>
+    <filterScope>Everything</filterScope>
+    <label>All</label>
+</ListView>

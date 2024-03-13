@@ -1,0 +1,10 @@
+<aura:component implements="lightning:isUrlAddressable">
+    <aura:attribute name="assessmentTaskId" type="String"/>
+    <aura:attribute name="visitId" type="String"/>
+ 
+    <aura:handler name="init" value="{!this}" action="{!c.onPageReferenceChanged}"/>
+    <aura:handler name="change" value="{!v.pageReference}" action="{!c.onPageReferenceChanged}"/>
+ 
+    <c:myLWC assessmentTaskId="{!v.assessmentTaskId}" visitId="{!v.visitId}">
+    </c:myLWC>
+ </aura:component>
