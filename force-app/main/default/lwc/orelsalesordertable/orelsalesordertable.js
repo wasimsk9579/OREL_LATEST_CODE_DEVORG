@@ -307,12 +307,12 @@ export default class orelsalesordertable extends LightningElement {
   
 
 loadsalesdata() {
-    console.log('userId', this.userId);
     getsalesorder({ userId: this.userId })
         .then(result => {
             this.allData = result;
+            console.log('resultt',JSON.stringify(this.allData));
             this.allData.forEach(record => {
-        record.disableButton = record.GRNGenerated__c === 'Completed';
+            record.disableButton = record.GRNGenerated__c === 'Completed';
     });
             this.variable = false;
 
@@ -422,7 +422,7 @@ loadsalesdata() {
           }
 
 
-          handleSearch(event) {
+ handleSearch(event) {
     const searchTerm = event.target.value.toLowerCase();
     this.currentPage = 1;
     if (searchTerm) {
@@ -477,6 +477,24 @@ loadsalesdata() {
         return this.currentPage === this.totalPages;
     }
 
+
+    handleinvoice(event)
+    {
+        //this.variable=true;
+        this.orderId = event.currentTarget.dataset.id;
+        console.log('Order Id:', this.orderId);
+        this.clickinvoiceId=this.orderId;
+        this.invvariable=true;
+        this.variable=true;
+        
+    }
+
+    handleVariableClose()
+    {
+      this.prvariable=false;
+      this.invvariable =false;
+      this.variable=false;
+    }
     /* Inside your JavaScript file
 handleDisableButton = obj =>  {
     if(!obj.GRNGenerated__c)

@@ -1,0 +1,72 @@
+<template>
+<lightning-card>
+<h1 style="font-size: 20px; padding-left:600px;margin-bottom: 20px;"><b>Distributor Details</b></h1>    
+  <template if:true={accData}>
+            <!-- <div class="account-details">
+                <table class="account-table">
+                    <tr>
+                        <td><b>Distributor Name</b></td>
+                        <td>{accData.Name}</td>
+                    </tr>
+                    <tr>
+                        <td><b>Phone No.</b></td>
+                        <td>{accData.Phone}</td>
+                    </tr>
+                    <tr>
+                        <td><b>Address</b></td>
+                        <td>{accData.distaddress}</td>
+                    </tr>
+                    <tr>
+                        <td><b>Onboarded Date</b></td>
+                        <td>{accData.Appointed_Date__c}</td>
+                    </tr>
+                    <tr>
+                        <td><b>Orel Status</b></td>
+                        <td>{accData.Orel_status__c}</td>
+                    </tr>
+                    <tr>
+                        <td><b>Bank Guarantee</b></td>
+                        <td>{accData.Bank_Guarantee__c}</td>
+                    </tr>
+                    <tr>
+                        <td><b>Bank Guarantee Channel</b></td>
+                        <td>{accData.Bank_guarantee_Channels__c}</td>
+                    </tr>
+                    <tr>
+                        <td><b>BG Amount</b></td>
+                        <td>{accData.BG_amount__c}</td>
+                    </tr>
+                    <tr>
+                        <td><b>Credit Limit</b></td>
+                        <td>{accData.Credit_Limit__c}</td>
+                    </tr>
+                    <tr>
+                        <td><b>BPR Code</b></td>
+                        <td>{accData.BPR_code__c}</td>
+                    </tr>
+                    <tr>
+                        <td><b>Distributor Catogory</b></td>
+                        <td>{accData.Distributor_Catogory__c}</td>
+                    </tr>
+                    <tr>
+                        <td><b>VAT Number</b></td>
+                        <td>{accData.VAT_Number__c}</td>
+                    </tr>
+                  
+                    <tr>
+                        <td><b>Expiry Date</b></td>
+                        <td>{accData.Expiry_date__c}</td>
+                    </tr>
+                </table>
+            </div>-->
+            <lightning-record-form
+                                key={Account.Id}
+                                object-api-name="Orl_invoice__c"
+                                record-id={Account.Id}
+                                mode="readonly"
+                                layout-type="Full"
+                                columns="2">
+                     </lightning-record-form>
+        </template> 
+    </lightning-card>
+</template>

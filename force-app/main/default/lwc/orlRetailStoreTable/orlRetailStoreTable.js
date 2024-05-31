@@ -33,7 +33,7 @@ export default class OrlRetailStoreTable extends NavigationMixin(LightningElemen
         {label: 'Name', fieldName: 'rName', type: 'text', sortable: true },
         {label: 'City', fieldName: 'rAddress', type: 'text', sortable: true },
         {label: 'DeliveryMethod', fieldName: 'DeliveryMethod', type: 'text', sortable: true },
-        {label: 'Priority', fieldName: 'Priority', type: 'text',sortable: true }
+        {label: 'Priority', fieldName: 'StoreType', type: 'text',sortable: true }
     ];
     
 // connectedCallback: A lifecycle hook that is called when the component is inserted into the DOM. It initializes the userId and calls the callApexMethod method.
@@ -58,14 +58,12 @@ export default class OrlRetailStoreTable extends NavigationMixin(LightningElemen
     callApexMethod() {
         getRetailStoreData({ userIds: this.userId })
             .then(result => {    
-                console.log('retored data:'+ result);
                 this.allData = result.map((item, index) => ({ ...item, 
                     index: index + 1,
                     DeliveryMethod: item.Retail_Store__r.DeliveryMethod,
                     StoreType: item.Retail_Store__r.StoreType ,
                     rAddress: this.formatAddress(item.Retail_Store__r.Address),
-                    rName:item.Retail_Store__r.Name,
-                    Priority:item.Retail_Store__r.Priority
+                    rName:item.Retail_Store__r.Name
                 }));
                 this.initialData = [...this.allData];
                 this.updateTotalPages();
@@ -79,7 +77,7 @@ export default class OrlRetailStoreTable extends NavigationMixin(LightningElemen
   //  onHandleSort: A method to handle sorting of the data based on column headers.
 
     onHandleSort(event) {
-        const { fieldName: sortedBy, sortDirection } = event.detail;p
+        const { fieldName: sortedBy, sortDirection } = event.detail;
         const cloneData = [...this.allData];
         cloneData.sort((a, b) => {
             return this.sortBy(a, b, sortedBy, sortDirection);

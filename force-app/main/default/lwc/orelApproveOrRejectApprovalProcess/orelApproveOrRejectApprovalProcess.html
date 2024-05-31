@@ -10,8 +10,8 @@
         </div> -->
         <div class="container">
           <div><span class="label">Name</span><span class="separator"> : </span><span class="value">{opportunity.Name}</span></div>
-          <div><span class="label">Stage Name</span><span class="separator"> : </span><span class="value">{opportunity.StageName}</span></div>
           <div><span class="label">Close Date</span><span class="separator"> : </span><span class="value">{opportunity.CloseDate}</span></div>
+          <div><span class="label">Total Amount</span><span class="separator"> : </span><span class="value">{opportunity.Amount}</span></div>
           <div><span class="label">Status</span><span class="separator"> : </span><span class="value">{opportunity.Status__c}</span></div>
       </div>
       
@@ -22,7 +22,10 @@
         data={opportunitylineitem}
         columns={columns}
         hide-checkbox-column>
-</lightning-datatable>  
+</lightning-datatable> 
+
+
+
 <template if:true={error}>
     <p>Error loading Opportunity data: {error}</p>
 </template>

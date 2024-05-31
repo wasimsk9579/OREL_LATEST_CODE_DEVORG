@@ -10,7 +10,7 @@ export default class Getproductinfo extends LightningElement {
     productData;
     error;
     columns = [
-        { label: 'Order Item Number', fieldName: 'Name' },
+        { label: 'Product Item Number', fieldName: 'Name' },
         { label: 'Product', fieldName: 'productName'},
         { label: 'Quantity', fieldName: 'quantity'}
     ];

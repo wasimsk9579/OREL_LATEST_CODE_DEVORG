@@ -87,26 +87,22 @@
                 <thead class="slds-p-bottom_medium">
             <tr class="slds-line-height_reset">
               <th class="" scope="col">
-                <div class="slds-truncate" title="Name">Name</div>
+                <div class="slds-truncate" title="Name">SO Number</div>
               </th>
               <th class="" scope="col">
-                <div class="slds-truncate" title="Order Template">Order Template</div>
-              </th>
-              <th class="" scope="col">
-                <div class="slds-truncate" title="Customer">Customer</div>
+                <div class="slds-truncate" title="Name">PO Number</div>
               </th>
               <th class="" scope="col">
                 <div class="slds-truncate" title="Order date">Order date</div>
               </th>
-              
                 <th class="" scope="col">
-                  <div class="slds-truncate" title="Initiate Date">Initiate Date</div>
+                  <div class="slds-truncate" title="Delivery Date">Delivery date</div>
                 </th>
                 <th class="" scope="col">
-                  <div class="slds-truncate" title="Delivery Date">Delivery Date</div>
+                  <div class="slds-truncate" title="Delivery Date">Delivery Status</div>
                 </th>
                 <th class="" scope="col">
-                  <div class="slds-truncate" title="Delivery Recipient">Delivery Recipient</div>
+                  <div class="slds-truncate" title="Delivery Recipient">Total Amount</div>
                 </th>
                 <th>
                     <div class="slds-truncate" title="GRN Generated">GRN Generated</div>
@@ -116,8 +112,10 @@
                 </th>  
                 <th>
                   <div class="slds-truncate" title="View Products">View products</div>
-                
                 </th> 
+                <th>
+                  <div class="slds-truncate" title="Invoice">Invoice</div> 
+                </th>
             </tr>
           </thead>
         
@@ -126,13 +124,20 @@
             <template for:each={allData} for:item="obj">
               <tr class="inputRows" key={obj.Id}>
                 <th data-label="Name" scope="row" data-id={obj.Id} >{obj.Name}</th>
-                <th data-label="Order Template" data-id={obj.Id} >{obj.cgcloud__Order_Template__r.Name}</th>
-                <th data-label="Customer" data-id={obj.Id} >{obj.cgcloud__Order_Account__r.Name}</th>
+                <!-- <th data-label="Purchase" scope="row" data-id={obj.Id} >{obj.PurchasOrder__r.Name}</th> -->
+                <th data-label="Purchase Order Number" scope="row" data-id={obj.Id}>
+                  <template if:true={obj.PurchasOrder__r}>
+                      {obj.PurchasOrder__r.Name}
+                  </template>
+                  <template if:false={obj.PurchasOrder__r}>
+                      
+                  </template>
+              </th>
                 <td data-label="Order date" data-id={obj.Id} >{obj.cgcloud__Order_Date__c}</td>
-                  <td data-label="Initiate Date" data-id={obj.Id}>{obj.cgcloud__Initiation_Date__c}</td>
                   <td data-label="Delivery Date" data-id={obj.Id}>{obj.cgcloud__Delivery_Date__c} </td>
-                  <td data-label="Delivery Recipient" data-id={obj.Id}> {obj.cgcloud__Delivery_Recipient__r.Name}</td>
-                  <td data-label="GRN Generated" data-id={obj.Id}> {obj.GRNGenerated__c}</td>
+                  <td data-label="Delivery Status" data-id={obj.Id}>{obj.Delivery_Status__c} </td>
+                  <td data-label="Delivery Recipient" data-id={obj.Id}>LKR {obj.Gross_Value_After_Tax__c}</td>
+                  <td data-label="GRN Generated" data-id={obj.Id}> {obj.GRNGenerated__c}</td> 
                   <td>
                     <div>
                       <lightning-button variant="brand" name="GRN Generated" label="GRN Generated" onclick={handlepdf} data-id={obj.Id} disabled={obj.disableButton}></lightning-button>
@@ -141,6 +146,11 @@
                   <td>
                     <div>
                       <lightning-button variant="brand" name="View products" label="View products" onclick={handleproduct} data-id={obj.Id} ></lightning-button>
+                    </div>
+                  </td> 
+                  <td>
+                    <div>
+                      <lightning-button variant="brand" name="Invoice" label="Invoice" onclick={handleinvoice} data-id={obj.Id} ></lightning-button>
                     </div>
                   </td>        
               </tr>
@@ -190,7 +200,7 @@
           <div class="slds-modal__container slds-modal__container_full-screen">
             <!-- Modal Header -->
             <header class="slds-modal__header">
-              <h2 id="modal-heading-02" class="slds-text-heading_medium slds-hyphenate">Product Details</h2>
+              <h2 id="modal-heading-02" class="slds-text-heading_medium slds-hyphenate">SO Order Product Details</h2>
             </header>
     
             <!-- Modal Body -->
@@ -207,4 +217,26 @@
         </section>
       </template>
       
+
+      <template if:true={invvariable}>
+        <section role="dialog" tabindex="-1" aria-labelledby="modal-heading-02" aria-modal="true" aria-describedby="modal-content-id-2" class="slds-modal slds-fade-in-open custom-modal-size full-screen-modal">
+          <div class="slds-modal__container slds-modal__container_full-screen">
+            <!-- Modal Header -->
+            <header class="slds-modal__header">
+              <h2 id="modal-heading-04" class="slds-text-heading_medium slds-hyphenate">Invoice</h2>
+            </header>
+    
+            <!-- Modal Body -->
+            <div class="slds-modal__content slds-var-p-around_medium slds-size_full">
+              <!-- Your specific content for the 'variable' template -->
+              <c-Orelposoinvoice order-id={clickinvoiceId}></c-Orelposoinvoice> 
+            </div>
+    
+            <!-- Modal Footer -->
+            <footer class="slds-modal__footer">
+              <lightning-button label="Close" variant="brand" onclick={handleVariableClose} name="submit" class="slds-var-m-left_x-small"></lightning-button>
+            </footer>
+          </div>
+        </section>
+      </template>
   </template>

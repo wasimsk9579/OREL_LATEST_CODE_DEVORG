@@ -1,0 +1,119 @@
+<!-- <template>
+    <div class="container">
+        <template if:true={products}>
+            <section>
+                <table class="slds-text-heading_small">
+                    <thead>
+                        <tr>
+                            <th>Product Name</th>
+                            <th>Product Price</th>
+                            <th>Product Image</th>
+                            <th>Product Quantity</th>
+                           
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <template for:each={products} for:item="product">
+                            <tr key={product.id}>
+                                <td data-cell="Product Name">
+                                    <p class="slds-text-link pointer-hover" data-id={product.id}>
+                                        <strong data-id={product.id}>{product.Name}</strong>
+                                    </p>
+                                </td>
+                                <td data-cell="Product Price">
+                                    <p class="slds-text-link pointer-hover" data-id={product.id}>
+                                        <template for:each={product.PricebookEntries} for:item="priceEntry">
+                                            <h2 key={priceEntry.Id} class="product-price">Price: {priceEntry.UnitPrice}</h2>
+                                        </template>
+                                    </p>
+                                </td>
+                                <td data-cell="Product Image">
+                                    <img if:true={product.ImageUrl} src={product.ImageUrl} alt="Product Image" class="product-image" />
+                                    <template if:false={product.ImageUrl}>
+                                        <strong>{product.name}</strong>
+                                    </template>
+                                </td>
+                           <template for:each={Quantity} for:item=qty>
+                            <td data-cell="Product Quantity">
+                                <p class="slds-text-link pointer-hover" data-id={qty.id}>
+                                    {qty.quantities}
+                                </p>
+                            </td>
+                              
+                           </template>
+                            </tr>
+                        </template>
+                    </tbody>
+                </table>
+            </section>
+        </template> -->
+
+        
+        <!--/////////////////////////////////////////////////////////////////////////////////////////////////////////////// -->
+        <template>
+            <div class="container">
+                <template if:true={products}>
+                    <section>
+                        <table class="slds-text-heading_small">
+                            <thead>
+                                <tr>
+                                    <th>Product Image</th>
+                                    <th>Product Name</th>
+                                    <th>Product Price</th>
+                                    <th>Quantity</th>
+                                    <th>Total Price</th>
+                                 
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <template for:each={products} for:item="product">
+                                    <tr key={product.Id}>
+                                        <td data-cell="Product Image">
+                                            <template if:true={product.ImageUrl}>
+                                                <img src={product.ImageUrl} alt="Product Image" class="product-image" />
+                                            </template>
+                                            <template if:false={product.ImageUrl}>
+                                                <strong>No Image Available</strong>
+                                            </template>
+                                        </td>
+                                        <td data-cell="Product Name">
+                                            <p class="slds-text-link pointer-hover" data-id={product.Id}>
+                                                <strong>{product.Name}</strong>
+                                            </p>
+                                        </td>
+                                      
+                                        <td data-cell="Product Price">
+                                            <template for:each={product.PricebookEntries} for:item="priceEntry">
+                                                <h2 key={priceEntry.Id} class="product-price">{priceEntry.UnitPrice}</h2>
+                                            </template>
+                                        </td> 
+                                        <!-- <td data-cell="Product Quantity">
+                                            <template for:each={Quantities} for:item="qty">
+                                                <p key={qty.Id} class="slds-text-link pointer-hover" data-id={qty.Id}>
+                                                      <lightning-input class="inputClass-quantity-1" value={qty.quantities} placeholder="enter the quantity"  onchange={handlePQuantityChange}></lightning-input>     
+                                                </p>
+                                            </template>
+                                        </td> -->
+
+                                        <td data-cell="Product Quantity">
+                                            <template for:each={Quantities} for:item="qty">
+                                              
+                                                <lightning-input key={qty.Id} class="inputClass-quantity-1" value={qty.Quantity} placeholder="enter the quantity" onchange={handlePQuantityChange}></lightning-input>
+                                            </template>
+                                        </td>
+                                        <td data-cell="Product Quantity">
+                                            <template for:each={Quantities} for:item="qty">
+                                              
+                                                <lightning-input key={qty.Id} class="inputClass-quantity-1" value={qty.TotalPrice} placeholder="enter the quantity" onchange={handlePQuantityChange}></lightning-input>
+                                            </template>
+                                        </td>
+                                    </tr>
+                                </template>
+                            </tbody>
+                        </table>
+                    </section>
+                </template>
+            </div>
+        </template>
+        
+

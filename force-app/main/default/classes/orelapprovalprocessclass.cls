@@ -41,7 +41,7 @@ public without sharing class orelapprovalprocessclass {
 
                     // Create a new SingleEmailMessage object
                     List<Messaging.SingleEmailMessage> messages = new List<Messaging.SingleEmailMessage>();
-                    String opportunityURL = location+'my.site.com/s/purchase-order';
+                    String opportunityURL = location+'my.site.com/OrlPartial/s/purchase-order';
                     // String body = opp.Name + ' Has Requested your Approval for the following item:' +
                     //               '\nTo approve or reject this item, ' + opportunityURL +
                     //               '\n\nThank you' + opp.Name;
@@ -70,6 +70,8 @@ public without sharing class orelapprovalprocessclass {
                     messages.add(message);
                     Messaging.SendEmailResult[] results = Messaging.sendEmail(messages);
                     
+               
+
                     if (results.size() > 0) {
                         if (results[0].success) {
                             System.debug('The email was sent successfully.');
@@ -131,7 +133,7 @@ public without sharing class orelapprovalprocessclass {
     public static List<OpportunityLineItem> getopplineitemdata(String oppId){
         try {
             System.debug('oppId' +oppId);
-            return [SELECT Id,OpportunityId,Name,Product2.Name,Quantity,UnitPrice,ListPrice,TotalPrice FROM OpportunityLineItem WHERE OpportunityId = :oppId];
+            return [SELECT Id,OpportunityId,Product2Id,Name,Product2.Name,Quantity,UnitPrice,ListPrice,TotalPrice FROM OpportunityLineItem WHERE OpportunityId = :oppId];
            // system.debug('oportunityrecord' + opprecord);
            
         } catch (Exception e) {
@@ -175,6 +177,7 @@ public without sharing class orelapprovalprocessclass {
                 Notification.setTargetId(opp.Id);
                 Notification.send(new Set<String> {opp.OwnerId}); 
 
+                system.debug('ownerid'+opp.OwnerId);
             } else {
                 System.debug('Error approving record: ' + result.getErrors()[0].getMessage());
             }
@@ -218,7 +221,7 @@ public without sharing class orelapprovalprocessclass {
                 Notification.setTargetId(opp.Id);
                 Notification.send(new Set<String> {opp.OwnerId}); 
  
-            
+                 system.debug('owner'+opp.OwnerId);
                     } 
             
                
@@ -236,6 +239,34 @@ public without sharing class orelapprovalprocessclass {
         system.debug ('status =' +approvalStatus);
         return approvalStatus;
     }
+
+
+    @AuraEnabled
+    public static List<cgcloud__Inventory__c> holdInventory(string  userId , list<string> prodId ) {
+        try {
+            User currentUser = [SELECT AccountId FROM User WHERE Id = :userId LIMIT 1];
+            Id userAccountId = currentUser.AccountId;
+            system.debug('userAccountId'+userAccountId);
+           system.debug('prodId'+prodId);
+          
+            List<cgcloud__Inventory__c> inventoryList = [SELECT Id, Name, cgcloud__Account__c, cgcloud__Balance__c, cgcloud__Product__c, Orl_Inventory_type__c, Inventory_Control_Template_Type__c	
+                                                         FROM cgcloud__Inventory__c 
+                                                         WHERE Orl_Inventory_type__c = 'Distributor Inventory' 
+                                                         AND Inventory_Control_Template_Type__c = 'Primary Inventory'
+                                                         AND cgcloud__Product__c IN :prodId 
+                                                         AND cgcloud__Account__c = :userAccountId];
+
+            // List<cgcloud__Inventory__c> inventoryList = [SELECT Id, Name, cgcloud__Account__c, cgcloud__Balance__c, cgcloud__Product__c, Orl_Inventory_type__c, Inventory_Control_Template_Type__c	
+            // FROM cgcloud__Inventory__c 
+            // WHERE Id='a39H40000004G6TIAU'];
+
+         system.debug('inventoryList'+inventoryList);
+         return inventoryList;
+        } catch (Exception e) {
+            throw new AuraHandledException(e.getMessage());
+        }
+    }
+    
    
 
 

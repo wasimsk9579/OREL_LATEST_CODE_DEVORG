@@ -93,6 +93,7 @@ export default class Orelpurchaseapprovalprocess extends LightningElement {
     error;
 
     @api invoke() {
+        console.log('Current recordId:', this.recordId);
         this.fetchOppId();
     }
 

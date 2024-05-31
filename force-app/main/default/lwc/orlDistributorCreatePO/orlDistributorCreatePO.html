@@ -1,4 +1,4 @@
-<template>
+<!-- <template>
     <template if:true={page1}>
         <div class="inputCard">
             <lightning-input
@@ -8,6 +8,7 @@
                 onchange={handleSearch}>
             </lightning-input>
         </div>
+
         <lightning-datatable
             key-field="Id"
             data={productsData}
@@ -16,12 +17,11 @@
             rowselection={handleRowSelected}
             onrowselection={handleRowSelection}>
         </lightning-datatable>
-        
        
-        <!-- Row 1 -->
+        
         <lightning-layout multiple-rows>
             <lightning-layout-item size="6" small-device-size="6" medium-device-size="6" large-device-size="6" padding="horizontal-small">
-                <!-- <lightning-button variant="destructive" label="Close" onclick={handleCancle} class="slds-m-left_x-small"></lightning-button> -->
+            
             </lightning-layout-item>
             <lightning-layout-item size="6" small-device-size="6" medium-device-size="6" large-device-size="6" padding="horizontal-small">
                 <lightning-button variant="brand" label="Next" title="Next" onclick={handleNext} class="slds-m-left_x-small nextButton"></lightning-button>
@@ -43,6 +43,9 @@
                         <div class="slds-truncate" title="Product Name">Product Name</div>
                     </th>
                     <th class="" scope="col">
+                        <div class="slds-truncate" title="Product Name">Product Image</div>
+                    </th>
+                    <th class="" scope="col">
                         <div class="slds-truncate" title="Product Name">Product Code</div>
                     </th>
                     <th class="" scope="col">
@@ -60,6 +63,9 @@
                             <div>{product.Name}</div>
                         </td>
                         <td>
+                            <div> <img src={imageUrl} alt="Product Image" /></div>
+                        </td>
+                        <td>
                             <div>{product.ProductCode}</div>
                         </td>
                         <td>
@@ -68,13 +74,14 @@
                         <td>
                             <div class="slds-truncate">
                                 <lightning-input type="number" variant="standard" name="quantity" value={product.AskedQuantity} placeholder="Enter quantity here" data-id={index} onchange={handleQuantityChange}></lightning-input>
+                            
                             </div>
                         </td>
                     </tr>
                 </template>
             </tbody>
         </table>
-        <!-- Row 1 -->
+ 
         <lightning-layout multiple-rows>
             <div if:true={showSpinner} class="Spinner">
                 <lightning-spinner alternative-text="Loading" size="medium"></lightning-spinner>
@@ -86,5 +93,200 @@
                 <lightning-button variant="brand" label="Submit" title="submit" onclick={handleSubmit} class="submitButton"></lightning-button>
             </lightning-layout-item>
         </lightning-layout>
+    </template>
+</template> -->
+
+<!-- 
+<template>
+    <template for:each={products} for:item="product">
+        <div key={product.Id}>
+            <div>
+                <p>{imageLabel}</p>
+                <img if:true={product.ImageUrl} src={product.ImageUrl} alt="Product Image" />
+                <p if:false={product.ImageUrl}>No Image Found</p>
+            </div>
+            <h1>Name: {product.Name}</h1>
+            <template for:each={product.PricebookEntries} for:item="priceEntry">
+                <h2 key={priceEntry.Id}>Price: {priceEntry.UnitPrice}</h2>
+            </template>
+        </div>
+    </template>
+</template> -->
+<!-- orelproductcart.html -->
+<!-- orelproductcart.html -->
+
+
+<!-- <template>
+    <template if:true={showProductList}>
+    <lightning-card>
+        <div  style="display:flex; position: relative; left: 86%; gap:1%" class="carticon">
+            <img class="cart-img" src={myimage} alt="ICON" onclick ={viewCart}>
+           
+ <span id="quantity">Item:{quantity}</span>
+        </div>
+       
+    <div class="product-container"> 
+        <template for:each={products} for:item="product">
+
+            <div key={product.Id} class="product-item">
+                <div class="product-image-container">
+                    <img if:true={product.ImageUrl} src={product.ImageUrl} alt="Product Image" class="product-image" />
+                </div>
+                <div class="product-details">
+                    <h1 class="product-name">Name: {product.Name}</h1>
+                    <template for:each={product.PricebookEntries} for:item="priceEntry">
+                      <h2 key={priceEntry.Id} class="product-price">Price: {priceEntry.UnitPrice}</h2>
+                    </template>
+                    
+                   
+                    <div class="add-to-cart">
+                       <p class="qty-sty">Quantity</p>
+                       <div class="btn-conatiner">
+                          <button class="qty-btn" value={product.Id} onclick={decrementQuantity} disabled={isButtonDisabled}>-</button>
+                          <input class="input-qty" onchange={handleQuantityChange} disabled={inputQuantity}></input>
+                          <button class="qty-btn" value={product.Id} onclick={incrementQuantity} disabled={incrementButtonDisabled}>+</button>
+                       </div> 
+                    </div>
+                    <lightning-button label="Add to Cart" onclick={handleAddToCart} value={product.Id} data-id={product.Id} disabled={product.isButtonDisabled} variant="brand"></lightning-button>
+                  </div>
+            </div>
+        </template>
+    </div>
+</lightning-card>
+</template>
+<template if:false={showProductList}>
+   <c-orelcarttable rec-id={cartId}></c-orelcarttable>
+
+</template>
+</template> -->
+
+<template>
+   
+    <template if:true={showProductList}>
+        <lightning-card>
+             <!-- Search records -->
+             <div class="inputCartCard">
+                <lightning-input
+                    style="width:30%;"
+                    type="text"
+                    placeholder="Search"
+                    onchange={handleCartSearch}>
+                </lightning-input>
+            </div>
+
+            <div style="display:flex; position: relative; left: 86%; gap:1%" class="carticon">
+                <img class="cart-img" src={myimage} alt="ICON" onclick={viewCart}>
+                <span id="quantity">Item:{quantity}</span>
+            </div>
+            <div class="product-container">
+                <template for:each={products} for:item="product" for:index="index">
+                    <div key={product.Id} class="product-item">
+                        <div class="product-image-container">
+                            <img if:true={product.ImageUrl} src={product.ImageUrl} alt="Product Image" class="product-image" />
+                        </div>
+                        <div class="product-details">
+                            <h1 class="product-name">Name: {product.Name}</h1>
+                            <template for:each={product.PricebookEntries} for:item="priceEntry">
+                                <h2 key={priceEntry.Id} class="product-price">Price: {priceEntry.UnitPrice}</h2>
+                            </template>
+                            <div class="add-to-cart">
+                                <p class="qty-sty">Quantity</p>
+                                <div class="btn-conatiner">
+                                    <button class="qty-btn" value={product.Id} onclick={decrementQuantity} disabled={ButtonDisabled}>-</button>
+                                    <input class="input-qty" onchange={handleproductQuantityChange} onfocus={showMessage} onblur={hideMessage} disabled={inputQuantity} value={product.Quantity} data-id={product.Id}></input>
+                                    <button class="qty-btn" value={product.Id} onclick={incrementQuantity} disabled={incrementButtonDisabled}>+</button>
+                                </div>
+                                
+                                <template if:true={product.showErrorMessage}>
+                                    <div class="error-message">{errormessage}</div>
+                                </template>
+                            </div>
+                            <div class="addbt">
+                            <lightning-button  label="Add to Cart" onclick={handleAddToCart} value={product.Id} data-index={index}  variant="brand"></lightning-button>
+                        </div>
+                        </div>
+                    </div>
+                </template>
+            </div>
+
+            <div class="pageCartHandler">
+                <lightning-button class="Cartbuttons" label="Previous" onclick={handleCartPrevious} disabled={isCartFirstPage}>
+                </lightning-button>
+                <div class="buttonCartText">Page {currentCartPage} of {totalCartPages}</div>
+                <lightning-button class="Cartbuttons" label="Next" onclick={handleCartNext} disabled={isCartLastPage}>
+                </lightning-button>
+              </div>
+        </lightning-card>
+    </template>
+
+    <template if:false={showProductList}>
+        
+            <div class="container">
+                <div class="back-button">
+                    <lightning-button label="Back" onclick={handleBack} class="back-button" variant="Base"  icon-name="utility:back"></lightning-button>
+                </div>
+                <template if:true={selectedRecords}>
+                    <section>
+                        <table class="slds-text-heading_small">
+                            <thead>
+                                <tr>
+                                    <th>Product Image</th>
+                                    <th>Product Name</th>
+                                    <th>Product Price</th>
+                                    <th>Quantity</th>
+                                    <th>Total Price</th>
+                                 
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <template for:each={selectedRecords} for:item="cproduct">
+                                    <tr key={cproduct.Id}>
+                                        <td data-cell="c Image">
+                                            <template if:true={cproduct.ImageUrl}>
+                                                <img src={cproduct.ImageUrl} alt="Product Image" class="product-image" />
+                                            </template>
+                                            <template if:false={cproduct.ImageUrl}>
+                                                <strong>No Image Available</strong>
+                                            </template>
+                                        </td>
+                                        <td data-cell="Product Name">
+                                            <p class="slds-text-link pointer-hover" data-id={cproduct.Id}>
+                                                <strong>{cproduct.Name}</strong>
+                                            </p>
+                                        </td>
+                                      
+                                        <td data-cell="Product Price">
+                                            <template for:each={cproduct.PricebookEntries} for:item="priceEntry">
+                                                <h2 key={priceEntry.Id} class="product-price">{priceEntry.UnitPrice}</h2>
+                                            </template>
+                                        </td> 
+                                        <td data-cell="Quantity">
+                                            <lightning-input style="width: 50%; margin-bottom:5%"  type="number" value={cproduct.Quantity} onchange={handlecartQuantityChange} data-id={cproduct.Id}></lightning-input>
+                                        </td>
+                                        <td data-cell="Total Price" >
+                                            {cproduct.TotalPrice}
+                                        </td>
+                                    </tr>
+                                </template>
+                            </tbody>
+                            <tr>
+                                <td colspan="3"></td> <!-- Empty cells for alignment -->
+                                <td class="line">
+                                    <hr style="border-top: 1px solid black; margin: 5px 0;"> <!-- Horizontal line -->
+                                    <div class="total">
+                                    <strong>TOTAL</strong>
+                                    <h6>: {totalPriceSum} </h6><!-- Total of all Total Prices -->
+                                </div>
+                                </td>
+                               
+                            </tr>
+                        </table>
+                      <div class="checkout">
+                        <button  onclick={handleCheckout}>Checkout</button>
+                      </div>
+                    </section>
+                </template>
+            </div>
+       
     </template>
 </template>

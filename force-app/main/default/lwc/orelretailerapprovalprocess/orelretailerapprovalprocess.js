@@ -1,6 +1,6 @@
 import { LightningElement, api } from 'lwc';
 import submitForApproval from '@salesforce/apex/RetailerInitialApprovalSubController.submitForApproval';
-import returnRetailerId from '@salesforce/apex/RetailerInitialApprovalSubController.returnretailerId';
+import returnretailerId from '@salesforce/apex/RetailerInitialApprovalSubController.returnretailerId';
 import { ShowToastEvent } from 'lightning/platformShowToastEvent';
 export default class Orelretailerapprovalprocess extends LightningElement {
     
@@ -15,7 +15,7 @@ export default class Orelretailerapprovalprocess extends LightningElement {
     }
 
     fetchretailerId() {
-        returnRetailerId({ retailerId: this.recordId })
+        returnretailerId({ retailerId: this.recordId })
             .then(result => {
                 if (result) {
                     this.retailerId = result;

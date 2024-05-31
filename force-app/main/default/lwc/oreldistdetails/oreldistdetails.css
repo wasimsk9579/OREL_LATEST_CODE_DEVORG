@@ -1,0 +1,20 @@
+.account-details {
+    width: 100%;
+    overflow-x: auto;
+    font-size: 16px; /* Change the font size as needed */
+}
+
+.account-table {
+    width: 100%;
+    border-collapse: collapse;
+    table-layout: fixed;
+    background-color: #e9e7e7;
+
+}
+
+.account-table td {
+    border: 1px solid black;
+    padding: 8px;
+    width: 50%; /* Equal width for both columns */
+    word-wrap: break-word;
+}
